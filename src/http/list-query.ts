@@ -1,4 +1,5 @@
 import { HttpError } from "./error-handler.js";
+import type { PaginatedData } from "./contratos.js";
 
 function readPositiveInteger(value: unknown, name: string): number | undefined {
   if (value === undefined) return undefined;
@@ -22,7 +23,6 @@ export function readPagination(query: { page?: unknown; limit?: unknown }) {
   };
 }
 
-
 type ListOptions<T> = {
   page?: number;
   limit?: number;
@@ -33,7 +33,7 @@ type ListOptions<T> = {
 export function queryList<T>(
   items: readonly T[],
   { page = 1, limit = 10, filter, compare }: ListOptions<T> = {},
-) {
+): PaginatedData<T> {
   if (
     !Number.isSafeInteger(page) ||
     page < 1 ||

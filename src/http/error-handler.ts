@@ -1,4 +1,5 @@
 import type { ErrorRequestHandler, RequestHandler } from "express";
+import type { ApiFailure } from "./contratos.js";
 
 export class HttpError extends Error {
   constructor(
@@ -33,12 +34,14 @@ export const errorHandler: ErrorRequestHandler = (err, _req, res, next) => {
     error = new HttpError(500, "INTERNAL_ERROR", "Error interno del servidor");
   }
 
-  res.status(error.status).json({
-    success: false,
-    data: null,
-    error: {
-      code: error.code,
-      message: error.message,
-    },
-  });
+const body: ApiFailure = {
+  success: false,
+  data: null,
+  error: {
+    code: error.code,
+    message: error.message,
+  },
+};
+
+res.status(error.status).json(body);
 };
