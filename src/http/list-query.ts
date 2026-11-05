@@ -1,5 +1,28 @@
 import { HttpError } from "./error-handler.js";
 
+function readPositiveInteger(value: unknown, name: string): number | undefined {
+  if (value === undefined) return undefined;
+
+  if (typeof value === "string" && /^[1-9]\d*$/.test(value)) {
+    const number = Number(value);
+    if (Number.isSafeInteger(number)) return number;
+  }
+
+  throw new HttpError(
+    400,
+    "INVALID_PAGINATION",
+    `${name} debe ser un entero positivo`,
+  );
+}
+
+export function readPagination(query: { page?: unknown; limit?: unknown }) {
+  return {
+    page: readPositiveInteger(query.page, "page"),
+    limit: readPositiveInteger(query.limit, "limit"),
+  };
+}
+
+
 type ListOptions<T> = {
   page?: number;
   limit?: number;
