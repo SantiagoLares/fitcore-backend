@@ -2,7 +2,6 @@
 
 Este documento define los endpoints de la API de Fit_Core, sus parámetros y el formato de sus respuestas, para que el front y el back puedan trabajar en paralelo.
 
-
 ## Índice
 
 - [Convenciones generales](#convenciones-generales)
@@ -53,12 +52,12 @@ Error:
 
 Todos los `GET` de listado aceptan estos parámetros, con las mismas reglas:
 
-| Parámetro | Por defecto | Reglas |
-|---|---|---|
-| `page` | `1` | Entero mayor o igual a 1 |
-| `limit` | `10` | Entero entre 1 y 100 |
-| `sortBy` | Depende de la entidad | Solo los campos permitidos en cada entidad |
-| `order` | `asc` | `asc` o `desc` |
+| Parámetro | Por defecto           | Reglas                                     |
+| --------- | --------------------- | ------------------------------------------ |
+| `page`    | `1`                   | Entero mayor o igual a 1                   |
+| `limit`   | `10`                  | Entero entre 1 y 100                       |
+| `sortBy`  | Depende de la entidad | Solo los campos permitidos en cada entidad |
+| `order`   | `asc`                 | `asc` o `desc`                             |
 
 - Si algún parámetro es inválido (`page=abc`, `limit=500`, un `sortBy` no permitido), la API responde `400`.
 - Si se pide una página mayor que `totalPages`, la API responde `200` con `data: []` y el `meta` con el total real.
@@ -67,17 +66,17 @@ Todos los `GET` de listado aceptan estos parámetros, con las mismas reglas:
 
 ### Códigos de estado
 
-| Código | Cuándo |
-|---|---|
-| `200` | Consulta o modificación exitosa |
-| `201` | Registro creado |
-| `204` | Baja exitosa (respuesta sin contenido) |
-| `400` | Datos o parámetros inválidos, o un dato del cuerpo apunta a un registro inexistente |
-| `401` | No hay sesión iniciada, o el token es inválido o venció |
-| `403` | La sesión no tiene permiso para esa acción |
-| `404` | El registro de la ruta no existe |
-| `409` | Conflicto con un dato único o con una regla del negocio |
-| `500` | Error interno del servidor |
+| Código | Cuándo                                                                              |
+| ------ | ----------------------------------------------------------------------------------- |
+| `200`  | Consulta o modificación exitosa                                                     |
+| `201`  | Registro creado                                                                     |
+| `204`  | Baja exitosa (respuesta sin contenido)                                              |
+| `400`  | Datos o parámetros inválidos, o un dato del cuerpo apunta a un registro inexistente |
+| `401`  | No hay sesión iniciada, o el token es inválido o venció                             |
+| `403`  | La sesión no tiene permiso para esa acción                                          |
+| `404`  | El registro de la ruta no existe                                                    |
+| `409`  | Conflicto con un dato único o con una regla del negocio                             |
+| `500`  | Error interno del servidor                                                          |
 
 `404` se usa solo cuando no existe el recurso de la **ruta** (`/alumnos/99`). Si lo que no existe es un dato del **cuerpo** (por ejemplo, un `claseId` inválido al inscribir), la respuesta es `400`.
 
@@ -88,11 +87,11 @@ Todos los `GET` de listado aceptan estos parámetros, con las mismas reglas:
 
 ### Permisos
 
-| Perfil | Acceso |
-|---|---|
-| Administración | Todo |
-| Profesor | Lectura de sus clases, sus horarios y las inscripciones a sus clases |
-| Alumno | Lectura de sus propios datos, inscripciones, cuotas y pagos, y de la lista de clases y horarios |
+| Perfil         | Acceso                                                                                          |
+| -------------- | ----------------------------------------------------------------------------------------------- |
+| Administración | Todo                                                                                            |
+| Profesor       | Lectura de sus clases, sus horarios y las inscripciones a sus clases                            |
+| Alumno         | Lectura de sus propios datos, inscripciones, cuotas y pagos, y de la lista de clases y horarios |
 
 Si una sesión intenta algo fuera de su perfil, la API responde `403`.
 
@@ -100,10 +99,10 @@ Si una sesión intenta algo fuera de su perfil, la API responde `403`.
 
 ## Autenticación
 
-| Método | Ruta | Descripción | Códigos |
-|---|---|---|---|
-| POST | `/api/v1/auth/login` | Inicia sesión | 200, 400, 401 |
-| GET | `/api/v1/auth/me` | Datos del usuario de la sesión | 200, 401 |
+| Método | Ruta                 | Descripción                    | Códigos       |
+| ------ | -------------------- | ------------------------------ | ------------- |
+| POST   | `/api/v1/auth/login` | Inicia sesión                  | 200, 400, 401 |
+| GET    | `/api/v1/auth/me`    | Datos del usuario de la sesión | 200, 401      |
 
 ### POST /auth/login
 
@@ -119,7 +118,13 @@ Respuesta `200`:
 {
   "data": {
     "token": "eyJhbGciOi...",
-    "usuario": { "id": 1, "nombre": "Ana Pérez", "email": "admin@fitcore.com", "perfil": "Administración", "activo": true }
+    "usuario": {
+      "id": 1,
+      "nombre": "Ana Pérez",
+      "email": "admin@fitcore.com",
+      "perfil": "Administración",
+      "activo": true
+    }
   }
 }
 ```
@@ -137,23 +142,23 @@ Devuelve `{ "data": usuario }` del usuario de la sesión, con la misma forma que
 
 Solo Administración.
 
-| Método | Ruta | Descripción | Códigos |
-|---|---|---|---|
-| GET | `/api/v1/usuarios` | Lista paginada | 200, 400 |
-| GET | `/api/v1/usuarios/:id` | Detalle | 200, 400, 404 |
-| POST | `/api/v1/usuarios` | Alta | 201, 400, 409 |
-| PUT | `/api/v1/usuarios/:id` | Modificación | 200, 400, 404, 409 |
-| DELETE | `/api/v1/usuarios/:id` | Baja lógica | 204, 400, 404, 409 |
+| Método | Ruta                   | Descripción    | Códigos            |
+| ------ | ---------------------- | -------------- | ------------------ |
+| GET    | `/api/v1/usuarios`     | Lista paginada | 200, 400           |
+| GET    | `/api/v1/usuarios/:id` | Detalle        | 200, 400, 404      |
+| POST   | `/api/v1/usuarios`     | Alta           | 201, 400, 409      |
+| PUT    | `/api/v1/usuarios/:id` | Modificación   | 200, 400, 404, 409 |
+| DELETE | `/api/v1/usuarios/:id` | Baja lógica    | 204, 400, 404, 409 |
 
 ### Campos
 
-| Campo | Tipo | Notas |
-|---|---|---|
-| `id` | number | Lo genera el servidor |
-| `nombre` | string | |
-| `email` | string | Único |
-| `perfil` | string | `Alumno`, `Profesor` o `Administración` |
-| `activo` | boolean | |
+| Campo    | Tipo    | Notas                                   |
+| -------- | ------- | --------------------------------------- |
+| `id`     | number  | Lo genera el servidor                   |
+| `nombre` | string  |                                         |
+| `email`  | string  | Único                                   |
+| `perfil` | string  | `Alumno`, `Profesor` o `Administración` |
+| `activo` | boolean |                                         |
 
 La contraseña nunca se devuelve en ninguna respuesta.
 
@@ -165,7 +170,12 @@ La contraseña nunca se devuelve en ninguna respuesta.
 ### POST
 
 ```json
-{ "nombre": "Ana Pérez", "email": "ana@mail.com", "password": "secreto123", "perfil": "Administración" }
+{
+  "nombre": "Ana Pérez",
+  "email": "ana@mail.com",
+  "password": "secreto123",
+  "perfil": "Administración"
+}
 ```
 
 - Todos los campos son obligatorios. La contraseña debe tener al menos 8 caracteres.
@@ -184,27 +194,27 @@ Cambia `activo` a `false`; el usuario ya no puede iniciar sesión. Un usuario no
 
 ## Alumnos
 
-| Método | Ruta | Descripción | Códigos |
-|---|---|---|---|
-| GET | `/api/v1/alumnos` | Lista paginada | 200, 400 |
-| GET | `/api/v1/alumnos/:id` | Detalle | 200, 400, 404 |
-| POST | `/api/v1/alumnos` | Alta | 201, 400, 409 |
-| PUT | `/api/v1/alumnos/:id` | Modificación | 200, 400, 404, 409 |
-| DELETE | `/api/v1/alumnos/:id` | Baja lógica | 204, 400, 404 |
+| Método | Ruta                  | Descripción    | Códigos            |
+| ------ | --------------------- | -------------- | ------------------ |
+| GET    | `/api/v1/alumnos`     | Lista paginada | 200, 400           |
+| GET    | `/api/v1/alumnos/:id` | Detalle        | 200, 400, 404      |
+| POST   | `/api/v1/alumnos`     | Alta           | 201, 400, 409      |
+| PUT    | `/api/v1/alumnos/:id` | Modificación   | 200, 400, 404, 409 |
+| DELETE | `/api/v1/alumnos/:id` | Baja lógica    | 204, 400, 404      |
 
 ### Campos
 
-| Campo | Tipo | Notas |
-|---|---|---|
-| `id` | number | Lo genera el servidor |
-| `usuarioId` | number | Usuario asociado |
-| `dni` | string | Único |
-| `nombre` | string | |
-| `apellido` | string | |
-| `email` | string | |
-| `telefono` | string | |
+| Campo       | Tipo   | Notas                        |
+| ----------- | ------ | ---------------------------- |
+| `id`        | number | Lo genera el servidor        |
+| `usuarioId` | number | Usuario asociado             |
+| `dni`       | string | Único                        |
+| `nombre`    | string |                              |
+| `apellido`  | string |                              |
+| `email`     | string |                              |
+| `telefono`  | string |                              |
 | `fechaAlta` | string | La pone el servidor al crear |
-| `estado` | string | `activo` o `baja` |
+| `estado`    | string | `activo` o `baja`            |
 
 ### Listado
 
@@ -243,25 +253,25 @@ Cambia el `estado` a `baja` y cancela sus inscripciones activas. Se conservan su
 
 ## Profesores
 
-| Método | Ruta | Descripción | Códigos |
-|---|---|---|---|
-| GET | `/api/v1/profesores` | Lista paginada | 200, 400 |
-| GET | `/api/v1/profesores/:id` | Detalle | 200, 400, 404 |
-| POST | `/api/v1/profesores` | Alta | 201, 400, 409 |
-| PUT | `/api/v1/profesores/:id` | Modificación | 200, 400, 404, 409 |
-| DELETE | `/api/v1/profesores/:id` | Baja física | 204, 400, 404, 409 |
+| Método | Ruta                     | Descripción    | Códigos            |
+| ------ | ------------------------ | -------------- | ------------------ |
+| GET    | `/api/v1/profesores`     | Lista paginada | 200, 400           |
+| GET    | `/api/v1/profesores/:id` | Detalle        | 200, 400, 404      |
+| POST   | `/api/v1/profesores`     | Alta           | 201, 400, 409      |
+| PUT    | `/api/v1/profesores/:id` | Modificación   | 200, 400, 404, 409 |
+| DELETE | `/api/v1/profesores/:id` | Baja física    | 204, 400, 404, 409 |
 
 ### Campos
 
-| Campo | Tipo | Notas |
-|---|---|---|
-| `id` | number | Lo genera el servidor |
-| `usuarioId` | number | Usuario asociado |
-| `dni` | string | Único |
-| `nombre` | string | |
-| `apellido` | string | |
-| `email` | string | |
-| `telefono` | string | |
+| Campo          | Tipo   | Notas                             |
+| -------------- | ------ | --------------------------------- |
+| `id`           | number | Lo genera el servidor             |
+| `usuarioId`    | number | Usuario asociado                  |
+| `dni`          | string | Único                             |
+| `nombre`       | string |                                   |
+| `apellido`     | string |                                   |
+| `email`        | string |                                   |
+| `telefono`     | string |                                   |
 | `especialidad` | string | Por ejemplo, `Funcional` o `Yoga` |
 
 El detalle (`GET /profesores/:id`) suma `clases`: una lista con `id` y `nombre` de las clases que dicta.
@@ -301,25 +311,25 @@ Profesores no tiene campo de estado, así que la baja es física. Si el profesor
 
 ## Clases
 
-| Método | Ruta | Descripción | Códigos |
-|---|---|---|---|
-| GET | `/api/v1/clases` | Lista paginada | 200, 400 |
-| GET | `/api/v1/clases/:id` | Detalle | 200, 400, 404 |
-| POST | `/api/v1/clases` | Alta | 201, 400 |
-| PUT | `/api/v1/clases/:id` | Modificación | 200, 400, 404, 409 |
-| DELETE | `/api/v1/clases/:id` | Baja física | 204, 400, 404, 409 |
+| Método | Ruta                 | Descripción    | Códigos            |
+| ------ | -------------------- | -------------- | ------------------ |
+| GET    | `/api/v1/clases`     | Lista paginada | 200, 400           |
+| GET    | `/api/v1/clases/:id` | Detalle        | 200, 400, 404      |
+| POST   | `/api/v1/clases`     | Alta           | 201, 400           |
+| PUT    | `/api/v1/clases/:id` | Modificación   | 200, 400, 404, 409 |
+| DELETE | `/api/v1/clases/:id` | Baja física    | 204, 400, 404, 409 |
 
 ### Campos
 
-| Campo | Tipo | Notas |
-|---|---|---|
-| `id` | number | Lo genera el servidor |
-| `nombre` | string | |
-| `tipo` | string | Por ejemplo, `Funcional` o `Spinning` |
-| `cupoMaximo` | number | Entero mayor o igual a 1 |
-| `cuposOcupados` | number | Calculado: inscripciones activas |
+| Campo              | Tipo   | Notas                                   |
+| ------------------ | ------ | --------------------------------------- |
+| `id`               | number | Lo genera el servidor                   |
+| `nombre`           | string |                                         |
+| `tipo`             | string | Por ejemplo, `Funcional` o `Spinning`   |
+| `cupoMaximo`       | number | Entero mayor o igual a 1                |
+| `cuposOcupados`    | number | Calculado: inscripciones activas        |
 | `cuposDisponibles` | number | Calculado: `cupoMaximo - cuposOcupados` |
-| `profesor` | object | `{ id, nombre, apellido }` |
+| `profesor`         | object | `{ id, nombre, apellido }`              |
 
 El detalle (`GET /clases/:id`) suma `horarios`: la lista de horarios de la clase, con la forma de Horarios.
 
@@ -360,23 +370,23 @@ Elimina la clase y sus horarios. Si tiene inscripciones activas → `409`.
 
 ## Horarios
 
-| Método | Ruta | Descripción | Códigos |
-|---|---|---|---|
-| GET | `/api/v1/horarios` | Lista paginada | 200, 400 |
-| GET | `/api/v1/horarios/:id` | Detalle | 200, 400, 404 |
-| POST | `/api/v1/horarios` | Alta | 201, 400 |
-| PUT | `/api/v1/horarios/:id` | Modificación | 200, 400, 404 |
-| DELETE | `/api/v1/horarios/:id` | Baja física | 204, 400, 404, 409 |
+| Método | Ruta                   | Descripción    | Códigos            |
+| ------ | ---------------------- | -------------- | ------------------ |
+| GET    | `/api/v1/horarios`     | Lista paginada | 200, 400           |
+| GET    | `/api/v1/horarios/:id` | Detalle        | 200, 400, 404      |
+| POST   | `/api/v1/horarios`     | Alta           | 201, 400           |
+| PUT    | `/api/v1/horarios/:id` | Modificación   | 200, 400, 404      |
+| DELETE | `/api/v1/horarios/:id` | Baja física    | 204, 400, 404, 409 |
 
 ### Campos
 
-| Campo | Tipo | Notas |
-|---|---|---|
-| `id` | number | Lo genera el servidor |
-| `claseId` | number | |
-| `diaSemana` | string | `lunes`, `martes`, `miercoles`, `jueves`, `viernes`, `sabado` o `domingo` |
-| `horaInicio` | string | `HH:MM` |
-| `horaFin` | string | `HH:MM`, posterior a `horaInicio` |
+| Campo        | Tipo   | Notas                                                                     |
+| ------------ | ------ | ------------------------------------------------------------------------- |
+| `id`         | number | Lo genera el servidor                                                     |
+| `claseId`    | number |                                                                           |
+| `diaSemana`  | string | `lunes`, `martes`, `miercoles`, `jueves`, `viernes`, `sabado` o `domingo` |
+| `horaInicio` | string | `HH:MM`                                                                   |
+| `horaFin`    | string | `HH:MM`, posterior a `horaInicio`                                         |
 
 ### Listado
 
@@ -406,24 +416,24 @@ Si es el único horario de la clase → `409`, porque toda clase debe tener al m
 
 ## Inscripciones
 
-| Método | Ruta | Descripción | Códigos |
-|---|---|---|---|
-| GET | `/api/v1/inscripciones` | Lista paginada | 200, 400 |
-| GET | `/api/v1/inscripciones/:id` | Detalle | 200, 400, 404 |
-| POST | `/api/v1/inscripciones` | Inscribir a un alumno en una clase | 201, 200, 400, 409 |
-| DELETE | `/api/v1/inscripciones/:id` | Cancelar | 204, 400, 404, 409 |
+| Método | Ruta                        | Descripción                        | Códigos            |
+| ------ | --------------------------- | ---------------------------------- | ------------------ |
+| GET    | `/api/v1/inscripciones`     | Lista paginada                     | 200, 400           |
+| GET    | `/api/v1/inscripciones/:id` | Detalle                            | 200, 400, 404      |
+| POST   | `/api/v1/inscripciones`     | Inscribir a un alumno en una clase | 201, 200, 400, 409 |
+| DELETE | `/api/v1/inscripciones/:id` | Cancelar                           | 204, 400, 404, 409 |
 
 No hay `PUT`: una inscripción solo se crea o se cancela.
 
 ### Campos
 
-| Campo | Tipo | Notas |
-|---|---|---|
-| `id` | number | Lo genera el servidor |
-| `alumno` | object | `{ id, nombre, apellido }` |
-| `clase` | object | `{ id, nombre }` |
-| `fechaInscripcion` | string | La pone el servidor |
-| `estado` | string | `activa` o `cancelada` |
+| Campo              | Tipo   | Notas                      |
+| ------------------ | ------ | -------------------------- |
+| `id`               | number | Lo genera el servidor      |
+| `alumno`           | object | `{ id, nombre, apellido }` |
+| `clase`            | object | `{ id, nombre }`           |
+| `fechaInscripcion` | string | La pone el servidor        |
+| `estado`           | string | `activa` o `cancelada`     |
 
 ### Listado
 
@@ -450,25 +460,25 @@ Cambia el `estado` a `cancelada` y libera el cupo. Si ya estaba cancelada → `4
 
 ## Cuotas
 
-| Método | Ruta | Descripción | Códigos |
-|---|---|---|---|
-| GET | `/api/v1/cuotas` | Lista paginada | 200, 400 |
-| GET | `/api/v1/cuotas/:id` | Detalle | 200, 400, 404 |
-| POST | `/api/v1/cuotas` | Alta | 201, 400, 409 |
-| PUT | `/api/v1/cuotas/:id` | Modificación | 200, 400, 404, 409 |
-| DELETE | `/api/v1/cuotas/:id` | Baja física | 204, 400, 404, 409 |
+| Método | Ruta                 | Descripción    | Códigos            |
+| ------ | -------------------- | -------------- | ------------------ |
+| GET    | `/api/v1/cuotas`     | Lista paginada | 200, 400           |
+| GET    | `/api/v1/cuotas/:id` | Detalle        | 200, 400, 404      |
+| POST   | `/api/v1/cuotas`     | Alta           | 201, 400, 409      |
+| PUT    | `/api/v1/cuotas/:id` | Modificación   | 200, 400, 404, 409 |
+| DELETE | `/api/v1/cuotas/:id` | Baja física    | 204, 400, 404, 409 |
 
 ### Campos
 
-| Campo | Tipo | Notas |
-|---|---|---|
-| `id` | number | Lo genera el servidor |
-| `alumno` | object | `{ id, nombre, apellido }` |
-| `periodo` | string | `AAAA-MM`. Único por alumno: un alumno no puede tener dos cuotas del mismo período |
-| `monto` | number | Mayor que 0 |
-| `fechaVencimiento` | string | |
-| `estado` | string | Calculado: `pagada`, `pendiente` o `vencida` |
-| `pago` | object o null | `{ id, fechaPago, medioPago }` si está pagada |
+| Campo              | Tipo          | Notas                                                                              |
+| ------------------ | ------------- | ---------------------------------------------------------------------------------- |
+| `id`               | number        | Lo genera el servidor                                                              |
+| `alumno`           | object        | `{ id, nombre, apellido }`                                                         |
+| `periodo`          | string        | `AAAA-MM`. Único por alumno: un alumno no puede tener dos cuotas del mismo período |
+| `monto`            | number        | Mayor que 0                                                                        |
+| `fechaVencimiento` | string        |                                                                                    |
+| `estado`           | string        | Calculado: `pagada`, `pendiente` o `vencida`                                       |
+| `pago`             | object o null | `{ id, fechaPago, medioPago }` si está pagada                                      |
 
 El estado se calcula, no se guarda:
 
@@ -505,25 +515,25 @@ Si la cuota ya está pagada → `409`.
 
 ## Pagos
 
-| Método | Ruta | Descripción | Códigos |
-|---|---|---|---|
-| GET | `/api/v1/pagos` | Lista paginada | 200, 400 |
-| GET | `/api/v1/pagos/:id` | Detalle | 200, 400, 404 |
-| POST | `/api/v1/pagos` | Registrar el pago de una cuota | 201, 400, 409 |
-| DELETE | `/api/v1/pagos/:id` | Anular | 204, 400, 404 |
+| Método | Ruta                | Descripción                    | Códigos       |
+| ------ | ------------------- | ------------------------------ | ------------- |
+| GET    | `/api/v1/pagos`     | Lista paginada                 | 200, 400      |
+| GET    | `/api/v1/pagos/:id` | Detalle                        | 200, 400, 404 |
+| POST   | `/api/v1/pagos`     | Registrar el pago de una cuota | 201, 400, 409 |
+| DELETE | `/api/v1/pagos/:id` | Anular                         | 204, 400, 404 |
 
 No hay `PUT`: un pago mal cargado se anula y se registra de nuevo, para que quede trazabilidad.
 
 ### Campos
 
-| Campo | Tipo | Notas |
-|---|---|---|
-| `id` | number | Lo genera el servidor |
-| `cuota` | object | `{ id, periodo, alumno: { id, nombre, apellido } }` |
-| `fechaPago` | string | |
-| `monto` | number | |
-| `medioPago` | string | `efectivo`, `transferencia`, `debito` o `credito` |
-| `registradoPor` | object | `{ id, nombre }` del usuario que lo cargó |
+| Campo           | Tipo   | Notas                                               |
+| --------------- | ------ | --------------------------------------------------- |
+| `id`            | number | Lo genera el servidor                               |
+| `cuota`         | object | `{ id, periodo, alumno: { id, nombre, apellido } }` |
+| `fechaPago`     | string |                                                     |
+| `monto`         | number |                                                     |
+| `medioPago`     | string | `efectivo`, `transferencia`, `debito` o `credito`   |
+| `registradoPor` | object | `{ id, nombre }` del usuario que lo cargó           |
 
 ### Listado
 
