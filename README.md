@@ -1,40 +1,35 @@
-PS C:\Users\lares\fitcore-backend> $respuesta = Invoke-WebRequest http://localhost:3000/api/v1/health
+# Fitcore Backend
 
-> > $respuesta.StatusCode
-> > $respuesta.Content
+API de Fitcore desarrollada con Express y TypeScript.
 
-Advertencia de seguridad: riesgo de
-ejecución de script
-Invoke-WebRequest analiza el
-contenido de la página web. El código
-de script de la página web se puede
-ejecutar cuando se analiza la
-página.
-ACCIÓN RECOMENDADA:
-Usa el modificador
--UseBasicParsing para evitar la
-ejecución de código de script.
+## Ejecutar en local
 
-      ¿Quieres continuar?
+Usá Node.js 20 y npm. Desde la raíz del repositorio, en PowerShell:
 
-[S] Sí [O] Sí a todo [N] No  
-[T] No a todo[U] Suspender  
-[?] Ayuda  
-(el valor predeterminado es "N"):O  
-200
-{"status":"ok","service":"fitcore-backend"}
-PS C:\Users\lares\fitcore-backend> npm run build
+```powershell
+npm ci
+if (-not (Test-Path .env)) { Copy-Item sample.env .env }
+npm run dev
+```
 
-> > git check-ignore .env
-> > git status --short
+`sample.env` documenta las variables `PORT` y `CORS_ORIGIN`.
+El archivo `.env` es local y Git lo ignora.
 
-> fitcore-backend@1.0.0 build
-> tsc
+Para compilar el proyecto, ejecutá `npm run build`.
 
-.env
-?? package-lock.json
-?? package.json
-?? sample.env
-?? src/
-?? tsconfig.json
-PS C:\Users\lares\fitcore-backend>
+## Respuestas de la API
+
+`GET /api/v1/health` devuelve HTTP 200:
+
+```json
+{"success":true,"data":{"status":"ok","service":"fitcore-backend"},"error":null}
+```
+
+Una ruta inexistente devuelve HTTP 404:
+
+```json
+{"success":false,"data":null,"error":{"code":"NOT_FOUND","message":"Ruta no encontrada"}}
+## Flujo de trabajo
+
+Cada integrante trabaja en `alumno/nombre` y abre sus PR hacia `develop`.
+`main` queda para versiones validadas.
