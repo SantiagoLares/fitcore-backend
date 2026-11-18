@@ -29,15 +29,6 @@ Una ruta inexistente devuelve HTTP 404:
 
 ```json
 {"success":false,"data":null,"error":{"code":"NOT_FOUND","message":"Ruta no encontrada"}}
-```
-
-## Listados mock
-
-`queryList` (`src/http/list-query.ts`) aplica filtro, orden y paginado,
-en ese orden. Devuelve `items` y `pagination`, con `page`, `limit`,
-`total` y `totalPages`. Por defecto usa página 1 y 10 elementos por
-página. Cada listado define sus propios filtros y criterios de orden.
-
 ## Flujo de trabajo
 
 Cada integrante trabaja en `alumno/nombre` y abre sus PR hacia `develop`.
