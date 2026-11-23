@@ -9,6 +9,7 @@ import {
 import {
   crearClase,
   modificarClase,
+  eliminarClase,
 } from "../services/clases-write.js";
 import type { Clase, ClaseProfesor } from "../models/clase.js";
 import type { Horario } from "../models/horario.js";
@@ -53,6 +54,12 @@ clasesRouter.put("/:id", (req, res) => {
   const clase = modificarClase(clases, profesores, req.params.id, req.body);
 
   return sendSuccess(res, clase);
+});
+
+clasesRouter.delete("/:id", (req, res) => {
+  eliminarClase(clases, horarios, req.params.id);
+
+  return res.status(204).send();
 });
 
 export default clasesRouter;
