@@ -8,6 +8,7 @@ export class HttpError extends Error {
     message: string,
   ) {
     super(message);
+    this.name = "HttpError";
   }
 }
 
@@ -26,22 +27,29 @@ export const errorHandler: ErrorRequestHandler = (err, _req, res, next) => {
   if (err instanceof HttpError && err.status >= 400 && err.status < 500) {
     error = err;
   } else if (err?.type === "entity.parse.failed") {
-    error = new HttpError(400, "INVALID_JSON", "El cuerpo de la solicitud no es JSON válido");
+    error = new HttpError(
+      400,
+      "INVALID_JSON",
+      "El cuerpo de la solicitud no es JSON válido",
+    );
   } else if (err?.type === "entity.too.large") {
-    error = new HttpError(413, "PAYLOAD_TOO_LARGE", "El cuerpo de la solicitud es demasiado grande");
+    error = new HttpError(
+      413,
+      "PAYLOAD_TOO_LARGE",
+      "El cuerpo de la solicitud es demasiado grande",
+    );
   } else {
     console.error(err);
-    error = new HttpError(500, "INTERNAL_ERROR", "Error interno del servidor");
+    error = new HttpError(
+      500,
+      "INTERNAL_ERROR",
+      "Error interno del servidor",
+    );
   }
 
-const body: ApiFailure = {
-  success: false,
-  data: null,
-  error: {
-    code: error.code,
-    message: error.message,
-  },
-};
+  const body: ApiFailure = {
+    error: error.message,
+  };
 
-res.status(error.status).json(body);
+  res.status(error.status).json(body);
 };

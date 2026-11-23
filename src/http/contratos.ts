@@ -1,28 +1,19 @@
-export type ApiSuccess<T> = {
-  success: true;
+export interface PaginationMeta {
+  page: number;
+  limit: number;
+  total: number;
+  totalPages: number;
+}
+
+export interface ItemResponse<T> {
   data: T;
-  error: null;
-};
+}
 
-export type ApiFailure = {
-  success: false;
-  data: null;
-  error: {
-    code: string;
-    message: string;
-  };
-};
+export interface PaginatedResponse<T> {
+  data: T[];
+  meta: PaginationMeta;
+}
 
-export type ApiResponse<T> = ApiSuccess<T> | ApiFailure;
-
-export type PaginatedData<T> = {
-  items: T[];
-  pagination: {
-    page: number;
-    limit: number;
-    total: number;
-    totalPages: number;
-  };
-};
-
-export type PaginatedResponse<T> = ApiResponse<PaginatedData<T>>;
+export interface ApiFailure {
+  error: string;
+}

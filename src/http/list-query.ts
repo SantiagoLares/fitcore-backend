@@ -1,11 +1,12 @@
 import { HttpError } from "./error-handler.js";
-import type { PaginatedData } from "./contratos.js";
+import type { PaginatedResponse } from "./contratos.js";
 
 function readPositiveInteger(value: unknown, name: string): number | undefined {
   if (value === undefined) return undefined;
 
   if (typeof value === "string" && /^[1-9]\d*$/.test(value)) {
     const number = Number(value);
+
     if (Number.isSafeInteger(number)) return number;
   }
 
@@ -33,7 +34,7 @@ type ListOptions<T> = {
 export function queryList<T>(
   items: readonly T[],
   { page = 1, limit = 10, filter, compare }: ListOptions<T> = {},
-): PaginatedData<T> {
+): PaginatedResponse<T> {
   if (
     !Number.isSafeInteger(page) ||
     page < 1 ||
@@ -59,7 +60,7 @@ export function queryList<T>(
   const start = (page - 1) * limit;
 
   return {
-    items: page > totalPages ? [] : result.slice(start, start + limit),
-    pagination: { page, limit, total, totalPages },
+    data: page > totalPages ? [] : result.slice(start, start + limit),
+    meta: { page, limit, total, totalPages },
   };
 }
