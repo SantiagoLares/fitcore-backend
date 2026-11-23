@@ -6,7 +6,10 @@ import {
   listarClases,
   obtenerClasePorId,
 } from "../services/clases.js";
-import { crearClase } from "../services/clases-write.js";
+import {
+  crearClase,
+  modificarClase,
+} from "../services/clases-write.js";
 import type { Clase, ClaseProfesor } from "../models/clase.js";
 import type { Horario } from "../models/horario.js";
 
@@ -44,6 +47,12 @@ clasesRouter.post("/", (req, res) => {
   res.location(`/api/v1/clases/${clase.id}`);
 
   return sendSuccess(res, clase, 201);
+});
+
+clasesRouter.put("/:id", (req, res) => {
+  const clase = modificarClase(clases, profesores, req.params.id, req.body);
+
+  return sendSuccess(res, clase);
 });
 
 export default clasesRouter;
