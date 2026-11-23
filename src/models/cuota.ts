@@ -1,7 +1,6 @@
 export type CuotaEstado = 'pagada' | 'pendiente' | 'vencida'
 
 
-
 export interface CuotaAlumno {
   id: number
   nombre: string
