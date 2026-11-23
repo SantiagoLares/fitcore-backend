@@ -1,3 +1,6 @@
+
+import type { Horario } from "./horario.js";
+
 export interface ClaseProfesor {
   id: number;
   nombre: string;
@@ -12,4 +15,8 @@ export interface Clase {
   cuposOcupados: number;
   cuposDisponibles: number;
   profesor: ClaseProfesor;
+}
+
+export interface ClaseDetalle extends Clase {
+  horarios: Horario[];
 }
