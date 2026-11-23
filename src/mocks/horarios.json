@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "claseId": 1,
+    "diaSemana": "lunes",
+    "horaInicio": "08:00",
+    "horaFin": "09:00"
+  },
+  {
+    "id": 2,
+    "claseId": 2,
+    "diaSemana": "lunes",
+    "horaInicio": "10:00",
+    "horaFin": "11:00"
+  },
+  {
+    "id": 3,
+    "claseId": 3,
+    "diaSemana": "lunes",
+    "horaInicio": "15:00",
+    "horaFin": "16:00"
+  },
+  {
+    "id": 4,
+    "claseId": 4,
+    "diaSemana": "lunes",
+    "horaInicio": "17:00",
+    "horaFin": "18:00"
+  },
+  {
+    "id": 5,
+    "claseId": 5,
+    "diaSemana": "lunes",
+    "horaInicio": "20:00",
+    "horaFin": "21:00"
+  },
+  {
+    "id": 6,
+    "claseId": 6,
+    "diaSemana": "martes",
+    "horaInicio": "08:00",
+    "horaFin": "09:00"
+  },
+  {
+    "id": 7,
+    "claseId": 7,
+    "diaSemana": "martes",
+    "horaInicio": "10:00",
+    "horaFin": "11:00"
+  },
+  {
+    "id": 8,
+    "claseId": 8,
+    "diaSemana": "martes",
+    "horaInicio": "15:00",
+    "horaFin": "16:00"
+  },
+  {
+    "id": 9,
+    "claseId": 9,
+    "diaSemana": "martes",
+    "horaInicio": "17:00",
+    "horaFin": "18:00"
+  },
+  {
+    "id": 10,
+    "claseId": 10,
+    "diaSemana": "martes",
+    "horaInicio": "20:00",
+    "horaFin": "21:00"
+  },
+  {
+    "id": 11,
+    "claseId": 11,
+    "diaSemana": "miercoles",
+    "horaInicio": "08:00",
+    "horaFin": "09:00"
+  },
+  {
+    "id": 12,
+    "claseId": 12,
+    "diaSemana": "miercoles",
+    "horaInicio": "10:00",
+    "horaFin": "11:00"
+  },
+  {
+    "id": 13,
+    "claseId": 13,
+    "diaSemana": "miercoles",
+    "horaInicio": "15:00",
+    "horaFin": "16:00"
+  },
+  {
+    "id": 14,
+    "claseId": 14,
+    "diaSemana": "miercoles",
+    "horaInicio": "17:00",
+    "horaFin": "18:00"
+  },
+  {
+    "id": 15,
+    "claseId": 15,
+    "diaSemana": "miercoles",
+    "horaInicio": "20:00",
+    "horaFin": "21:00"
+  },
+  {
+    "id": 16,
+    "claseId": 16,
+    "diaSemana": "jueves",
+    "horaInicio": "08:00",
+    "horaFin": "09:00"
+  },
+  {
+    "id": 17,
+    "claseId": 17,
+    "diaSemana": "jueves",
+    "horaInicio": "10:00",
+    "horaFin": "11:00"
+  },
+  {
+    "id": 18,
+    "claseId": 18,
+    "diaSemana": "jueves",
+    "horaInicio": "15:00",
+    "horaFin": "16:00"
+  },
+  {
+    "id": 19,
+    "claseId": 19,
+    "diaSemana": "jueves",
+    "horaInicio": "17:00",
+    "horaFin": "18:00"
+  },
+  {
+    "id": 20,
+    "claseId": 20,
+    "diaSemana": "jueves",
+    "horaInicio": "20:00",
+    "horaFin": "21:00"
+  },
+  {
+    "id": 21,
+    "claseId": 21,
+    "diaSemana": "viernes",
+    "horaInicio": "08:00",
+    "horaFin": "09:00"
+  },
+  {
+    "id": 22,
+    "claseId": 22,
+    "diaSemana": "viernes",
+    "horaInicio": "10:00",
+    "horaFin": "11:00"
+  },
+  {
+    "id": 23,
+    "claseId": 23,
+    "diaSemana": "viernes",
+    "horaInicio": "15:00",
+    "horaFin": "16:00"
+  },
+  {
+    "id": 24,
+    "claseId": 24,
+    "diaSemana": "viernes",
+    "horaInicio": "17:00",
+    "horaFin": "18:00"
+  },
+  {
+    "id": 25,
+    "claseId": 25,
+    "diaSemana": "viernes",
+    "horaInicio": "20:00",
+    "horaFin": "21:00"
+  },
+  {
+    "id": 26,
+    "claseId": 26,
+    "diaSemana": "lunes",
+    "horaInicio": "08:00",
+    "horaFin": "09:00"
+  },
+  {
+    "id": 27,
+    "claseId": 27,
+    "diaSemana": "lunes",
+    "horaInicio": "10:00",
+    "horaFin": "11:00"
+  },
+  {
+    "id": 28,
+    "claseId": 28,
+    "diaSemana": "lunes",
+    "horaInicio": "15:00",
+    "horaFin": "16:00"
+  },
+  {
+    "id": 29,
+    "claseId": 29,
+    "diaSemana": "lunes",
+    "horaInicio": "17:00",
+    "horaFin": "18:00"
+  },
+  {
+    "id": 30,
+    "claseId": 30,
+    "diaSemana": "lunes",
+    "horaInicio": "20:00",
+    "horaFin": "21:00"
+  }
+]
