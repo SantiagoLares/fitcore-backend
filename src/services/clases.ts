@@ -2,7 +2,7 @@ import { HttpError } from "../http/error-handler.js";
 import { queryList, readPagination } from "../http/list-query.js";
 import type { Clase } from "../models/clase.js";
 import type { Horario } from "../models/horario.js";
-
+import type { ClaseDetalle } from "../models/clase.js";
 type Query = Record<string, unknown>;
 
 const camposOrden = [
@@ -149,4 +149,37 @@ export function listarClases(
       return (comparacion || a.id - b.id) * direccion;
     },
   });
+}
+
+export function obtenerClasePorId(
+  clases: readonly Clase[],
+  horarios: readonly Horario[],
+  id: unknown,
+): ClaseDetalle {
+  if (
+    typeof id !== "string" ||
+    !/^[1-9]\d*$/.test(id) ||
+    !Number.isSafeInteger(Number(id))
+  ) {
+    throw new HttpError(
+      400,
+      "INVALID_ID",
+      "El ID debe ser un entero positivo",
+    );
+  }
+
+  const clase = clases.find((item) => item.id === Number(id));
+
+  if (!clase) {
+    throw new HttpError(
+      404,
+      "CLASS_NOT_FOUND",
+      "Clase no encontrada",
+    );
+  }
+
+  return {
+    ...clase,
+    horarios: horarios.filter((horario) => horario.claseId === clase.id),
+  };
 }
