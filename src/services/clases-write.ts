@@ -219,3 +219,30 @@ export function modificarClase(
 
   return modificada;
 }
+
+export function eliminarClase(
+  clases: Clase[],
+  horarios: Horario[],
+  id: unknown,
+): void {
+  const clase = obtenerClasePorId(clases, horarios, id);
+
+  // En esta simulación, el mock representa las inscripciones
+  // activas mediante el contador cuposOcupados.
+  if (clase.cuposOcupados > 0) {
+    throw new HttpError(
+      409,
+      "ACTIVE_ENROLLMENTS",
+      "La clase tiene inscripciones activas",
+    );
+  }
+
+  const indice = clases.findIndex((item) => item.id === clase.id);
+  clases.splice(indice, 1);
+
+  for (let i = horarios.length - 1; i >= 0; i--) {
+    if (horarios[i].claseId === clase.id) {
+      horarios.splice(i, 1);
+    }
+  }
+}
