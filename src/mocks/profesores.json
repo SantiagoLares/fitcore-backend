@@ -1,0 +1,303 @@
+
+[
+  {
+    "id": 1,
+    "usuarioId": 101,
+    "dni": "30124567",
+    "nombre": "Federico",
+    "apellido": "Martínez",
+    "email": "federico.martinez@gmail.com",
+    "telefono": "2915001001",
+    "especialidad": "Musculación"
+  },
+  {
+    "id": 2,
+    "usuarioId": 102,
+    "dni": "32456789",
+    "nombre": "Carolina",
+    "apellido": "Rodríguez",
+    "email": "carolina.rodriguez@gmail.com",
+    "telefono": "2915001002",
+    "especialidad": "Entrenamiento funcional"
+  },
+  {
+    "id": 3,
+    "usuarioId": 103,
+    "dni": "28987654",
+    "nombre": "Matías",
+    "apellido": "López",
+    "email": "matias.lopez@gmail.com",
+    "telefono": "2915001003",
+    "especialidad": "Preparación física"
+  },
+  {
+    "id": 4,
+    "usuarioId": 104,
+    "dni": "35678901",
+    "nombre": "Valentina",
+    "apellido": "Pérez",
+    "email": "valentina.perez@gmail.com",
+    "telefono": "2915001004",
+    "especialidad": "Yoga"
+  },
+  {
+    "id": 5,
+    "usuarioId": 105,
+    "dni": "31234567",
+    "nombre": "Nicolás",
+    "apellido": "García",
+    "email": "nicolas.garcia@gmail.com",
+    "telefono": "2915001005",
+    "especialidad": "Spinning"
+  },
+  {
+    "id": 6,
+    "usuarioId": 106,
+    "dni": "33876543",
+    "nombre": "Florencia",
+    "apellido": "Sánchez",
+    "email": "florencia.sanchez@gmail.com",
+    "telefono": "2915001006",
+    "especialidad": "Pilates"
+  },
+  {
+    "id": 7,
+    "usuarioId": 107,
+    "dni": "29765432",
+    "nombre": "Lucas",
+    "apellido": "Romero",
+    "email": "lucas.romero@gmail.com",
+    "telefono": "2915001007",
+    "especialidad": "Cross training"
+  },
+  {
+    "id": 8,
+    "usuarioId": 108,
+    "dni": "36789012",
+    "nombre": "Camila",
+    "apellido": "Torres",
+    "email": "camila.torres@gmail.com",
+    "telefono": "2915001008",
+    "especialidad": "Entrenamiento funcional"
+  },
+  {
+    "id": 9,
+    "usuarioId": 109,
+    "dni": "30567891",
+    "nombre": "Santiago",
+    "apellido": "Díaz",
+    "email": "santiago.diaz@gmail.com",
+    "telefono": "2915001009",
+    "especialidad": "Musculación"
+  },
+  {
+    "id": 10,
+    "usuarioId": 110,
+    "dni": "34890123",
+    "nombre": "Julieta",
+    "apellido": "Álvarez",
+    "email": "julieta.alvarez@gmail.com",
+    "telefono": "2915001010",
+    "especialidad": "Danza"
+  },
+  {
+    "id": 11,
+    "usuarioId": 111,
+    "dni": "31876543",
+    "nombre": "Tomás",
+    "apellido": "Benítez",
+    "email": "tomas.benitez@gmail.com",
+    "telefono": "2915001011",
+    "especialidad": "Preparación física"
+  },
+  {
+    "id": 12,
+    "usuarioId": 112,
+    "dni": "32987654",
+    "nombre": "Agustina",
+    "apellido": "Herrera",
+    "email": "agustina.herrera@gmail.com",
+    "telefono": "2915001012",
+    "especialidad": "Yoga"
+  },
+  {
+    "id": 13,
+    "usuarioId": 113,
+    "dni": "29654321",
+    "nombre": "Franco",
+    "apellido": "Castro",
+    "email": "franco.castro@gmail.com",
+    "telefono": "2915001013",
+    "especialidad": "Boxeo"
+  },
+  {
+    "id": 14,
+    "usuarioId": 114,
+    "dni": "35901234",
+    "nombre": "Martina",
+    "apellido": "Silva",
+    "email": "martina.silva@gmail.com",
+    "telefono": "2915001014",
+    "especialidad": "Pilates"
+  },
+  {
+    "id": 15,
+    "usuarioId": 115,
+    "dni": "30789012",
+    "nombre": "Gonzalo",
+    "apellido": "Morales",
+    "email": "gonzalo.morales@gmail.com",
+    "telefono": "2915001015",
+    "especialidad": "Musculación"
+  },
+  {
+    "id": 16,
+    "usuarioId": 116,
+    "dni": "34123456",
+    "nombre": "Luciana",
+    "apellido": "Ortiz",
+    "email": "luciana.ortiz@gmail.com",
+    "telefono": "2915001016",
+    "especialidad": "Spinning"
+  },
+  {
+    "id": 17,
+    "usuarioId": 117,
+    "dni": "31543210",
+    "nombre": "Agustín",
+    "apellido": "Núñez",
+    "email": "agustin.nunez@gmail.com",
+    "telefono": "2915001017",
+    "especialidad": "Cross training"
+  },
+  {
+    "id": 18,
+    "usuarioId": 118,
+    "dni": "36234567",
+    "nombre": "Micaela",
+    "apellido": "Acosta",
+    "email": "micaela.acosta@gmail.com",
+    "telefono": "2915001018",
+    "especialidad": "Entrenamiento funcional"
+  },
+  {
+    "id": 19,
+    "usuarioId": 119,
+    "dni": "29876543",
+    "nombre": "Ramiro",
+    "apellido": "Medina",
+    "email": "ramiro.medina@gmail.com",
+    "telefono": "2915001019",
+    "especialidad": "Boxeo"
+  },
+  {
+    "id": 20,
+    "usuarioId": 120,
+    "dni": "33456789",
+    "nombre": "Milagros",
+    "apellido": "Suárez",
+    "email": "milagros.suarez@gmail.com",
+    "telefono": "2915001020",
+    "especialidad": "Yoga"
+  },
+  {
+    "id": 21,
+    "usuarioId": 121,
+    "dni": "30987654",
+    "nombre": "Ezequiel",
+    "apellido": "Gutiérrez",
+    "email": "ezequiel.gutierrez@gmail.com",
+    "telefono": "2915001021",
+    "especialidad": "Musculación"
+  },
+  {
+    "id": 22,
+    "usuarioId": 122,
+    "dni": "35432109",
+    "nombre": "Antonella",
+    "apellido": "Rojas",
+    "email": "antonella.rojas@gmail.com",
+    "telefono": "2915001022",
+    "especialidad": "Danza"
+  },
+  {
+    "id": 23,
+    "usuarioId": 123,
+    "dni": "32109876",
+    "nombre": "Bruno",
+    "apellido": "Navarro",
+    "email": "bruno.navarro@gmail.com",
+    "telefono": "2915001023",
+    "especialidad": "Preparación física"
+  },
+  {
+    "id": 24,
+    "usuarioId": 124,
+    "dni": "34789012",
+    "nombre": "Rocío",
+    "apellido": "Molina",
+    "email": "rocio.molina@gmail.com",
+    "telefono": "2915001024",
+    "especialidad": "Pilates"
+  },
+  {
+    "id": 25,
+    "usuarioId": 125,
+    "dni": "29456789",
+    "nombre": "Joaquín",
+    "apellido": "Cabrera",
+    "email": "joaquin.cabrera@gmail.com",
+    "telefono": "2915001025",
+    "especialidad": "Spinning"
+  },
+  {
+    "id": 26,
+    "usuarioId": 126,
+    "dni": "36890123",
+    "nombre": "Emilia",
+    "apellido": "Vega",
+    "email": "emilia.vega@gmail.com",
+    "telefono": "2915001026",
+    "especialidad": "Entrenamiento funcional"
+  },
+  {
+    "id": 27,
+    "usuarioId": 127,
+    "dni": "31678901",
+    "nombre": "Facundo",
+    "apellido": "Campos",
+    "email": "facundo.campos@gmail.com",
+    "telefono": "2915001027",
+    "especialidad": "Boxeo"
+  },
+  {
+    "id": 28,
+    "usuarioId": 128,
+    "dni": "33210987",
+    "nombre": "Catalina",
+    "apellido": "Ibarra",
+    "email": "catalina.ibarra@gmail.com",
+    "telefono": "2915001028",
+    "especialidad": "Yoga"
+  },
+  {
+    "id": 29,
+    "usuarioId": 129,
+    "dni": "30345678",
+    "nombre": "Thiago",
+    "apellido": "Ferreyra",
+    "email": "thiago.ferreyra@gmail.com",
+    "telefono": "2915001029",
+    "especialidad": "Musculación"
+  },
+  {
+    "id": 30,
+    "usuarioId": 130,
+    "dni": "35123456",
+    "nombre": "Josefina",
+    "apellido": "Ponce",
+    "email": "josefina.ponce@gmail.com",
+    "telefono": "2915001030",
+    "especialidad": "Cross training"
+  }
+]
