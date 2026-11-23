@@ -1,0 +1,392 @@
+[
+  {
+    "id": 1,
+    "nombre": "Funcional inicial mañana",
+    "tipo": "Funcional",
+    "cupoMaximo": 20,
+    "cuposOcupados": 0,
+    "cuposDisponibles": 20,
+    "profesor": {
+      "id": 1,
+      "nombre": "Martín",
+      "apellido": "López"
+    }
+  },
+  {
+    "id": 2,
+    "nombre": "Funcional intermedio mañana",
+    "tipo": "Funcional",
+    "cupoMaximo": 20,
+    "cuposOcupados": 20,
+    "cuposDisponibles": 0,
+    "profesor": {
+      "id": 1,
+      "nombre": "Martín",
+      "apellido": "López"
+    }
+  },
+  {
+    "id": 3,
+    "nombre": "Funcional inicial tarde",
+    "tipo": "Funcional",
+    "cupoMaximo": 20,
+    "cuposOcupados": 10,
+    "cuposDisponibles": 10,
+    "profesor": {
+      "id": 1,
+      "nombre": "Martín",
+      "apellido": "López"
+    }
+  },
+  {
+    "id": 4,
+    "nombre": "Funcional intermedio tarde",
+    "tipo": "Funcional",
+    "cupoMaximo": 20,
+    "cuposOcupados": 19,
+    "cuposDisponibles": 1,
+    "profesor": {
+      "id": 1,
+      "nombre": "Martín",
+      "apellido": "López"
+    }
+  },
+  {
+    "id": 5,
+    "nombre": "Funcional avanzado noche",
+    "tipo": "Funcional",
+    "cupoMaximo": 20,
+    "cuposOcupados": 5,
+    "cuposDisponibles": 15,
+    "profesor": {
+      "id": 1,
+      "nombre": "Martín",
+      "apellido": "López"
+    }
+  },
+  {
+    "id": 6,
+    "nombre": "Yoga inicial mañana",
+    "tipo": "Yoga",
+    "cupoMaximo": 16,
+    "cuposOcupados": 0,
+    "cuposDisponibles": 16,
+    "profesor": {
+      "id": 2,
+      "nombre": "Lucía",
+      "apellido": "Fernández"
+    }
+  },
+  {
+    "id": 7,
+    "nombre": "Yoga intermedio mañana",
+    "tipo": "Yoga",
+    "cupoMaximo": 16,
+    "cuposOcupados": 16,
+    "cuposDisponibles": 0,
+    "profesor": {
+      "id": 2,
+      "nombre": "Lucía",
+      "apellido": "Fernández"
+    }
+  },
+  {
+    "id": 8,
+    "nombre": "Yoga inicial tarde",
+    "tipo": "Yoga",
+    "cupoMaximo": 16,
+    "cuposOcupados": 8,
+    "cuposDisponibles": 8,
+    "profesor": {
+      "id": 2,
+      "nombre": "Lucía",
+      "apellido": "Fernández"
+    }
+  },
+  {
+    "id": 9,
+    "nombre": "Yoga intermedio tarde",
+    "tipo": "Yoga",
+    "cupoMaximo": 16,
+    "cuposOcupados": 15,
+    "cuposDisponibles": 1,
+    "profesor": {
+      "id": 2,
+      "nombre": "Lucía",
+      "apellido": "Fernández"
+    }
+  },
+  {
+    "id": 10,
+    "nombre": "Yoga avanzado noche",
+    "tipo": "Yoga",
+    "cupoMaximo": 16,
+    "cuposOcupados": 6,
+    "cuposDisponibles": 10,
+    "profesor": {
+      "id": 2,
+      "nombre": "Lucía",
+      "apellido": "Fernández"
+    }
+  },
+  {
+    "id": 11,
+    "nombre": "Spinning inicial mañana",
+    "tipo": "Spinning",
+    "cupoMaximo": 18,
+    "cuposOcupados": 0,
+    "cuposDisponibles": 18,
+    "profesor": {
+      "id": 3,
+      "nombre": "Diego",
+      "apellido": "Pérez"
+    }
+  },
+  {
+    "id": 12,
+    "nombre": "Spinning intermedio mañana",
+    "tipo": "Spinning",
+    "cupoMaximo": 18,
+    "cuposOcupados": 18,
+    "cuposDisponibles": 0,
+    "profesor": {
+      "id": 3,
+      "nombre": "Diego",
+      "apellido": "Pérez"
+    }
+  },
+  {
+    "id": 13,
+    "nombre": "Spinning inicial tarde",
+    "tipo": "Spinning",
+    "cupoMaximo": 18,
+    "cuposOcupados": 9,
+    "cuposDisponibles": 9,
+    "profesor": {
+      "id": 3,
+      "nombre": "Diego",
+      "apellido": "Pérez"
+    }
+  },
+  {
+    "id": 14,
+    "nombre": "Spinning intermedio tarde",
+    "tipo": "Spinning",
+    "cupoMaximo": 18,
+    "cuposOcupados": 17,
+    "cuposDisponibles": 1,
+    "profesor": {
+      "id": 3,
+      "nombre": "Diego",
+      "apellido": "Pérez"
+    }
+  },
+  {
+    "id": 15,
+    "nombre": "Spinning avanzado noche",
+    "tipo": "Spinning",
+    "cupoMaximo": 18,
+    "cuposOcupados": 7,
+    "cuposDisponibles": 11,
+    "profesor": {
+      "id": 3,
+      "nombre": "Diego",
+      "apellido": "Pérez"
+    }
+  },
+  {
+    "id": 16,
+    "nombre": "Pilates inicial mañana",
+    "tipo": "Pilates",
+    "cupoMaximo": 12,
+    "cuposOcupados": 0,
+    "cuposDisponibles": 12,
+    "profesor": {
+      "id": 4,
+      "nombre": "Carolina",
+      "apellido": "Gómez"
+    }
+  },
+  {
+    "id": 17,
+    "nombre": "Pilates intermedio mañana",
+    "tipo": "Pilates",
+    "cupoMaximo": 12,
+    "cuposOcupados": 12,
+    "cuposDisponibles": 0,
+    "profesor": {
+      "id": 4,
+      "nombre": "Carolina",
+      "apellido": "Gómez"
+    }
+  },
+  {
+    "id": 18,
+    "nombre": "Pilates inicial tarde",
+    "tipo": "Pilates",
+    "cupoMaximo": 12,
+    "cuposOcupados": 6,
+    "cuposDisponibles": 6,
+    "profesor": {
+      "id": 4,
+      "nombre": "Carolina",
+      "apellido": "Gómez"
+    }
+  },
+  {
+    "id": 19,
+    "nombre": "Pilates intermedio tarde",
+    "tipo": "Pilates",
+    "cupoMaximo": 12,
+    "cuposOcupados": 11,
+    "cuposDisponibles": 1,
+    "profesor": {
+      "id": 4,
+      "nombre": "Carolina",
+      "apellido": "Gómez"
+    }
+  },
+  {
+    "id": 20,
+    "nombre": "Pilates avanzado noche",
+    "tipo": "Pilates",
+    "cupoMaximo": 12,
+    "cuposOcupados": 8,
+    "cuposDisponibles": 4,
+    "profesor": {
+      "id": 4,
+      "nombre": "Carolina",
+      "apellido": "Gómez"
+    }
+  },
+  {
+    "id": 21,
+    "nombre": "Boxeo recreativo inicial mañana",
+    "tipo": "Boxeo recreativo",
+    "cupoMaximo": 16,
+    "cuposOcupados": 0,
+    "cuposDisponibles": 16,
+    "profesor": {
+      "id": 5,
+      "nombre": "Nicolás",
+      "apellido": "Romero"
+    }
+  },
+  {
+    "id": 22,
+    "nombre": "Boxeo recreativo intermedio mañana",
+    "tipo": "Boxeo recreativo",
+    "cupoMaximo": 16,
+    "cuposOcupados": 16,
+    "cuposDisponibles": 0,
+    "profesor": {
+      "id": 5,
+      "nombre": "Nicolás",
+      "apellido": "Romero"
+    }
+  },
+  {
+    "id": 23,
+    "nombre": "Boxeo recreativo inicial tarde",
+    "tipo": "Boxeo recreativo",
+    "cupoMaximo": 16,
+    "cuposOcupados": 8,
+    "cuposDisponibles": 8,
+    "profesor": {
+      "id": 5,
+      "nombre": "Nicolás",
+      "apellido": "Romero"
+    }
+  },
+  {
+    "id": 24,
+    "nombre": "Boxeo recreativo intermedio tarde",
+    "tipo": "Boxeo recreativo",
+    "cupoMaximo": 16,
+    "cuposOcupados": 15,
+    "cuposDisponibles": 1,
+    "profesor": {
+      "id": 5,
+      "nombre": "Nicolás",
+      "apellido": "Romero"
+    }
+  },
+  {
+    "id": 25,
+    "nombre": "Boxeo recreativo avanzado noche",
+    "tipo": "Boxeo recreativo",
+    "cupoMaximo": 16,
+    "cuposOcupados": 9,
+    "cuposDisponibles": 7,
+    "profesor": {
+      "id": 5,
+      "nombre": "Nicolás",
+      "apellido": "Romero"
+    }
+  },
+  {
+    "id": 26,
+    "nombre": "Movilidad inicial mañana",
+    "tipo": "Movilidad",
+    "cupoMaximo": 20,
+    "cuposOcupados": 0,
+    "cuposDisponibles": 20,
+    "profesor": {
+      "id": 6,
+      "nombre": "Sofía",
+      "apellido": "Torres"
+    }
+  },
+  {
+    "id": 27,
+    "nombre": "Movilidad intermedio mañana",
+    "tipo": "Movilidad",
+    "cupoMaximo": 20,
+    "cuposOcupados": 20,
+    "cuposDisponibles": 0,
+    "profesor": {
+      "id": 6,
+      "nombre": "Sofía",
+      "apellido": "Torres"
+    }
+  },
+  {
+    "id": 28,
+    "nombre": "Movilidad inicial tarde",
+    "tipo": "Movilidad",
+    "cupoMaximo": 20,
+    "cuposOcupados": 10,
+    "cuposDisponibles": 10,
+    "profesor": {
+      "id": 6,
+      "nombre": "Sofía",
+      "apellido": "Torres"
+    }
+  },
+  {
+    "id": 29,
+    "nombre": "Movilidad intermedio tarde",
+    "tipo": "Movilidad",
+    "cupoMaximo": 20,
+    "cuposOcupados": 19,
+    "cuposDisponibles": 1,
+    "profesor": {
+      "id": 6,
+      "nombre": "Sofía",
+      "apellido": "Torres"
+    }
+  },
+  {
+    "id": 30,
+    "nombre": "Movilidad avanzado noche",
+    "tipo": "Movilidad",
+    "cupoMaximo": 20,
+    "cuposOcupados": 10,
+    "cuposDisponibles": 10,
+    "profesor": {
+      "id": 6,
+      "nombre": "Sofía",
+      "apellido": "Torres"
+    }
+  }
+]
