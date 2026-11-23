@@ -1,6 +1,7 @@
 import { HttpError } from "../http/error-handler.js";
 import type { Clase, ClaseProfesor, ClaseDetalle } from "../models/clase.js";
 import type { Horario } from "../models/horario.js";
+import { obtenerClasePorId } from "./clases.js";
 
 const dias = [
   "lunes",
@@ -165,4 +166,56 @@ export function crearClase(
     ...nuevaClase,
     horarios: nuevosHorarios,
   };
+}
+
+export function modificarClase(
+  clases: Clase[],
+  profesores: readonly ClaseProfesor[],
+  id: unknown,
+  body: unknown,
+): Clase {
+  const actual = obtenerClasePorId(clases, [], id);
+  const entrada = objeto(body);
+
+  const nombre = textoObligatorio(entrada.nombre, "nombre");
+  const tipo = textoObligatorio(entrada.tipo, "tipo");
+  const cupoMaximo = enteroPositivo(entrada.cupoMaximo, "cupoMaximo");
+  const profesorId = enteroPositivo(entrada.profesorId, "profesorId");
+
+  const profesor = profesores.find((item) => item.id === profesorId);
+
+  if (!profesor) {
+    throw new HttpError(
+      400,
+      "INVALID_PROFESOR",
+      "El profesor indicado no existe",
+    );
+  }
+
+  if (cupoMaximo < actual.cuposOcupados) {
+    throw new HttpError(
+      409,
+      "CAPACITY_CONFLICT",
+      "El cupo máximo no puede ser menor que los cupos ocupados",
+    );
+  }
+
+  const modificada: Clase = {
+    id: actual.id,
+    nombre,
+    tipo,
+    cupoMaximo,
+    cuposOcupados: actual.cuposOcupados,
+    cuposDisponibles: cupoMaximo - actual.cuposOcupados,
+    profesor: {
+      id: profesor.id,
+      nombre: profesor.nombre,
+      apellido: profesor.apellido,
+    },
+  };
+
+  const indice = clases.findIndex((clase) => clase.id === actual.id);
+  clases[indice] = modificada;
+
+  return modificada;
 }
