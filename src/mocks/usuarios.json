@@ -1,0 +1,443 @@
+[
+  {
+    "id": 1,
+    "nombre": "Ana Pérez",
+    "email": "admin@fitcore.com",
+    "perfil": "Administración",
+    "activo": true
+  },
+  {
+    "id": 11,
+    "nombre": "Lucía Gómez",
+    "email": "lucia.gomez88@gmail.com",
+    "perfil": "Alumno",
+    "activo": true
+  },
+  {
+    "id": 12,
+    "nombre": "Martín Fernández",
+    "email": "fernandez.martin@gmail.com",
+    "perfil": "Alumno",
+    "activo": true
+  },
+  {
+    "id": 13,
+    "nombre": "Sofía Rodríguez",
+    "email": "sofiarodriguez@hotmail.com",
+    "perfil": "Alumno",
+    "activo": false
+  },
+  {
+    "id": 14,
+    "nombre": "Mateo González",
+    "email": "mateo.gonzalez@gmail.com",
+    "perfil": "Alumno",
+    "activo": true
+  },
+  {
+    "id": 15,
+    "nombre": "Valentina Pérez",
+    "email": "valentinaperez78@outlook.com",
+    "perfil": "Alumno",
+    "activo": true
+  },
+  {
+    "id": 16,
+    "nombre": "Santiago Sánchez",
+    "email": "santiagosanchez@gmail.com",
+    "perfil": "Alumno",
+    "activo": true
+  },
+  {
+    "id": 17,
+    "nombre": "Camila Romero",
+    "email": "cromero@gmail.com",
+    "perfil": "Alumno",
+    "activo": true
+  },
+  {
+    "id": 18,
+    "nombre": "Joaquín Díaz",
+    "email": "jdiaz@gmail.com",
+    "perfil": "Alumno",
+    "activo": false
+  },
+  {
+    "id": 19,
+    "nombre": "Julieta Álvarez",
+    "email": "alvarez.julieta@gmail.com",
+    "perfil": "Alumno",
+    "activo": true
+  },
+  {
+    "id": 20,
+    "nombre": "Tomás Torres",
+    "email": "ttorres@gmail.com",
+    "perfil": "Alumno",
+    "activo": true
+  },
+  {
+    "id": 21,
+    "nombre": "Agustina Ruiz",
+    "email": "ruiz.agustina@gmail.com",
+    "perfil": "Alumno",
+    "activo": true
+  },
+  {
+    "id": 22,
+    "nombre": "Facundo Gómez",
+    "email": "facundo.gomez@hotmail.com",
+    "perfil": "Alumno",
+    "activo": true
+  },
+  {
+    "id": 23,
+    "nombre": "Florencia Benítez",
+    "email": "florencia.benitez@hotmail.com",
+    "perfil": "Alumno",
+    "activo": true
+  },
+  {
+    "id": 24,
+    "nombre": "Nicolás Fernández",
+    "email": "nicolasfernandez95@yahoo.com.ar",
+    "perfil": "Alumno",
+    "activo": false
+  },
+  {
+    "id": 25,
+    "nombre": "Micaela Herrera",
+    "email": "mherrera@gmail.com",
+    "perfil": "Alumno",
+    "activo": true
+  },
+  {
+    "id": 26,
+    "nombre": "Lautaro Suárez",
+    "email": "lautarosuarez67@gmail.com",
+    "perfil": "Alumno",
+    "activo": true
+  },
+  {
+    "id": 27,
+    "nombre": "Candela Aguirre",
+    "email": "candela.aguirre95@yahoo.com.ar",
+    "perfil": "Alumno",
+    "activo": true
+  },
+  {
+    "id": 28,
+    "nombre": "Bruno Giménez",
+    "email": "gimenez.bruno@gmail.com",
+    "perfil": "Alumno",
+    "activo": true
+  },
+  {
+    "id": 29,
+    "nombre": "Milagros Castro",
+    "email": "mcastro@hotmail.com",
+    "perfil": "Alumno",
+    "activo": false
+  },
+  {
+    "id": 30,
+    "nombre": "Franco González",
+    "email": "franco.gonzalez98@gmail.com",
+    "perfil": "Alumno",
+    "activo": true
+  },
+  {
+    "id": 31,
+    "nombre": "Rocío Flores",
+    "email": "rocioflores@gmail.com",
+    "perfil": "Alumno",
+    "activo": true
+  },
+  {
+    "id": 32,
+    "nombre": "Ignacio Morales",
+    "email": "morales.ignacio@gmail.com",
+    "perfil": "Alumno",
+    "activo": true
+  },
+  {
+    "id": 33,
+    "nombre": "Brenda Ortiz",
+    "email": "brenda.ortiz@outlook.com",
+    "perfil": "Alumno",
+    "activo": true
+  },
+  {
+    "id": 34,
+    "nombre": "Gonzalo Silva",
+    "email": "silva.gonzalo@hotmail.com",
+    "perfil": "Alumno",
+    "activo": true
+  },
+  {
+    "id": 35,
+    "nombre": "Antonella Núñez",
+    "email": "antonellanunez@gmail.com",
+    "perfil": "Alumno",
+    "activo": true
+  },
+  {
+    "id": 36,
+    "nombre": "Ezequiel Muñoz",
+    "email": "emunoz@hotmail.com",
+    "perfil": "Alumno",
+    "activo": false
+  },
+  {
+    "id": 37,
+    "nombre": "Luciana Peña",
+    "email": "lucianapena9@hotmail.com",
+    "perfil": "Alumno",
+    "activo": true
+  },
+  {
+    "id": 38,
+    "nombre": "Maximiliano Ibáñez",
+    "email": "maximiliano.ibanez80@gmail.com",
+    "perfil": "Alumno",
+    "activo": true
+  },
+  {
+    "id": 39,
+    "nombre": "Paula Domínguez",
+    "email": "pauladominguez@yahoo.com.ar",
+    "perfil": "Alumno",
+    "activo": true
+  },
+  {
+    "id": 40,
+    "nombre": "Matías Cabrera",
+    "email": "matias.cabrera94@outlook.com",
+    "perfil": "Alumno",
+    "activo": true
+  },
+  {
+    "id": 41,
+    "nombre": "Lucía Vega",
+    "email": "lvega@hotmail.com",
+    "perfil": "Alumno",
+    "activo": true
+  },
+  {
+    "id": 42,
+    "nombre": "Sebastián Molina",
+    "email": "sebastian.molina@gmail.com",
+    "perfil": "Alumno",
+    "activo": true
+  },
+  {
+    "id": 101,
+    "nombre": "Federico Martínez",
+    "email": "federico.martinez@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 102,
+    "nombre": "Carolina Rodríguez",
+    "email": "carolina.rodriguez@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 103,
+    "nombre": "Matías López",
+    "email": "matias.lopez@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 104,
+    "nombre": "Valentina Pérez",
+    "email": "valentina.perez@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 105,
+    "nombre": "Nicolás García",
+    "email": "nicolas.garcia@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 106,
+    "nombre": "Florencia Sánchez",
+    "email": "florencia.sanchez@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 107,
+    "nombre": "Lucas Romero",
+    "email": "lucas.romero@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 108,
+    "nombre": "Camila Torres",
+    "email": "camila.torres@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 109,
+    "nombre": "Santiago Díaz",
+    "email": "santiago.diaz@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 110,
+    "nombre": "Julieta Álvarez",
+    "email": "julieta.alvarez@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 111,
+    "nombre": "Tomás Benítez",
+    "email": "tomas.benitez@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 112,
+    "nombre": "Agustina Herrera",
+    "email": "agustina.herrera@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 113,
+    "nombre": "Franco Castro",
+    "email": "franco.castro@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 114,
+    "nombre": "Martina Silva",
+    "email": "martina.silva@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 115,
+    "nombre": "Gonzalo Morales",
+    "email": "gonzalo.morales@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 116,
+    "nombre": "Luciana Ortiz",
+    "email": "luciana.ortiz@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 117,
+    "nombre": "Agustín Núñez",
+    "email": "agustin.nunez@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 118,
+    "nombre": "Micaela Acosta",
+    "email": "micaela.acosta@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 119,
+    "nombre": "Ramiro Medina",
+    "email": "ramiro.medina@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 120,
+    "nombre": "Milagros Suárez",
+    "email": "milagros.suarez@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 121,
+    "nombre": "Ezequiel Gutiérrez",
+    "email": "ezequiel.gutierrez@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 122,
+    "nombre": "Antonella Rojas",
+    "email": "antonella.rojas@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 123,
+    "nombre": "Bruno Navarro",
+    "email": "bruno.navarro@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 124,
+    "nombre": "Rocío Molina",
+    "email": "rocio.molina@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 125,
+    "nombre": "Joaquín Cabrera",
+    "email": "joaquin.cabrera@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 126,
+    "nombre": "Emilia Vega",
+    "email": "emilia.vega@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 127,
+    "nombre": "Facundo Campos",
+    "email": "facundo.campos@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 128,
+    "nombre": "Catalina Ibarra",
+    "email": "catalina.ibarra@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 129,
+    "nombre": "Thiago Ferreyra",
+    "email": "thiago.ferreyra@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  },
+  {
+    "id": 130,
+    "nombre": "Josefina Ponce",
+    "email": "josefina.ponce@gmail.com",
+    "perfil": "Profesor",
+    "activo": true
+  }
+]
