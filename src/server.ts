@@ -6,6 +6,10 @@ if (!Number.isInteger(port) || port < 1 || port > 65535) {
   throw new Error('PORT debe ser un número entero entre 1 y 65535');
 }
 
+if (!process.env.JWT_SECRET) {
+  throw new Error('JWT_SECRET es obligatorio para firmar los tokens');
+}
+
 app.listen(port, () => {
   console.log(`Fitcore API disponible en http://localhost:${port}`);
 });
