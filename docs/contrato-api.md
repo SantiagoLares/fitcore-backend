@@ -23,7 +23,7 @@ Este documento define los endpoints de la API de Fit_Core, sus parámetros y el 
 - Formato: JSON. Los campos usan camelCase (`fechaAlta`), aunque en la base de datos estén en snake_case (`fecha_alta`).
 - Fechas: `AAAA-MM-DD`. Horas: `HH:MM` (24 horas). Períodos de cuota: `AAAA-MM`.
 - Montos: número con hasta dos decimales (por ejemplo, `15000.50`).
-- Todas las rutas, salvo `POST /auth/login`, requieren el encabezado `Authorization: Bearer <token>`.
+- Todas las rutas, salvo `POST /auth/login`, `POST /auth/register` y `POST /auth/forgot-password`, requieren el encabezado `Authorization: Bearer <token>`.
 
 ### Formato de respuesta
 
@@ -102,6 +102,8 @@ Si una sesión intenta algo fuera de su perfil, la API responde `403`.
 | Método | Ruta | Descripción | Códigos |
 | ------ | ---- | ----------- | ------- |
 | POST | `/api/v1/auth/login` | Inicia sesión | 200, 400, 401 |
+| POST | `/api/v1/auth/register` | Registra un usuario nuevo | 201, 400, 409 |
+| POST | `/api/v1/auth/forgot-password` | Solicita recuperar la contraseña | 200, 400 |
 | GET | `/api/v1/auth/me` | Datos del usuario de la sesión | 200, 401 |
 
 ### POST /auth/login
@@ -131,6 +133,53 @@ Respuesta `200`:
 
 - Email o contraseña incorrectos → `401`, con un mensaje que no aclara cuál de los dos falló.
 - Usuario con `activo: false` → `401`.
+
+### POST /auth/register
+
+Cuerpo:
+
+```json
+{ "nombre": "Juan Gómez", "email": "juan@mail.com", "password": "secreto123" }
+```
+
+Respuesta `201`, con la misma forma que el login:
+
+```json
+{
+  "data": {
+    "token": "eyJhbGciOi...",
+    "usuario": {
+      "id": 131,
+      "nombre": "Juan Gómez",
+      "email": "juan@mail.com",
+      "perfil": "Alumno",
+      "activo": true
+    }
+  }
+}
+```
+
+- Todos los campos son obligatorios. La contraseña debe tener al menos 8 caracteres.
+- El usuario se crea con perfil `Alumno` y `activo: true`.
+- Email ya existente → `409`.
+
+### POST /auth/forgot-password
+
+Cuerpo:
+
+```json
+{ "email": "juan@mail.com" }
+```
+
+Respuesta `200`:
+
+```json
+{ "data": { "mensaje": "Si el email está registrado, vas a recibir las instrucciones para recuperar la contraseña." } }
+```
+
+- Responde lo mismo exista o no el email, para no revelar qué emails están registrados.
+- En el prototipo no se envía ningún correo.
+- Email vacío o con formato inválido → `400`.
 
 ### GET /auth/me
 
