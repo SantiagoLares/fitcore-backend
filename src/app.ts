@@ -4,6 +4,7 @@ import cors from "cors";
 import { sendSuccess } from "./http/response.js";
 import { errorHandler, notFound } from "./http/error-handler.js";
 import clasesRouter from "./routes/clases.js";
+import authRouter from "./routes/auth.js";
 
 const app = express();
 
@@ -24,6 +25,7 @@ apiRouter.get("/health", (_req, res) => {
   });
 });
 
+apiRouter.use("/auth", authRouter);
 apiRouter.use("/clases", clasesRouter);
 
 app.use("/api/v1", apiRouter);
