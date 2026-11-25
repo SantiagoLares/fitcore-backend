@@ -17,6 +17,18 @@ const MENSAJE_RECUPERACION =
 // Contraseñas cifradas, guardadas aparte del usuario para no devolverlas nunca.
 export type Credenciales = Map<number, string>;
 
+// Usuario de la sesión, con el id de su perfil de alumno o profesor si lo tiene.
+export interface UsuarioSesion extends Usuario {
+  alumnoId?: number;
+  profesorId?: number;
+}
+
+// Relación usuario → perfil, tomada de los mocks de alumnos y profesores.
+export interface PerfilesAsociados {
+  alumnos: { id: number; usuarioId: number }[];
+  profesores: { id: number; usuarioId: number }[];
+}
+
 export interface Sesion {
   token: string;
   usuario: Usuario;
@@ -54,6 +66,21 @@ function passwordObligatoria(valor: unknown): string {
   }
 
   return valor;
+}
+
+// Contraseña que se va a guardar: además de obligatoria, con un largo mínimo.
+function passwordNueva(valor: unknown): string {
+  const password = passwordObligatoria(valor);
+
+  if (password.length < LARGO_MINIMO_PASSWORD) {
+    throw new HttpError(
+      400,
+      'INVALID_PASSWORD',
+      `password debe tener al menos ${LARGO_MINIMO_PASSWORD} caracteres`,
+    );
+  }
+
+  return password;
 }
 
 export function cifrarPassword(password: string): string {
@@ -126,15 +153,7 @@ export function registrarUsuario(
   const entrada = objeto(body);
   const nombre = textoObligatorio(entrada.nombre, 'nombre');
   const email = emailValido(entrada.email);
-  const password = passwordObligatoria(entrada.password);
-
-  if (password.length < LARGO_MINIMO_PASSWORD) {
-    throw new HttpError(
-      400,
-      'INVALID_PASSWORD',
-      `password debe tener al menos ${LARGO_MINIMO_PASSWORD} caracteres`,
-    );
-  }
+  const password = passwordNueva(entrada.password);
 
   if (buscarPorEmail(usuarios, email)) {
     throw new HttpError(409, 'EMAIL_TAKEN', 'Ya existe un usuario con ese email');
@@ -160,4 +179,64 @@ export function solicitarRecuperacion(body: unknown): { mensaje: string } {
   emailValido(entrada.email);
 
   return { mensaje: MENSAJE_RECUPERACION };
+}
+
+function usuarioDeSesion(usuarios: Usuario[], usuarioId: number): Usuario {
+  const usuario = usuarios.find((u) => u.id === usuarioId);
+
+  // Si el usuario ya no existe o se dio de baja, el token deja de servir.
+  if (!usuario || !usuario.activo) {
+    throw new HttpError(401, 'INVALID_TOKEN', 'La sesión es inválida o venció');
+  }
+
+  return usuario;
+}
+
+function conPerfilAsociado(usuario: Usuario, perfiles: PerfilesAsociados): UsuarioSesion {
+  const resultado: UsuarioSesion = { ...usuario };
+  const alumno = perfiles.alumnos.find((a) => a.usuarioId === usuario.id);
+  const profesor = perfiles.profesores.find((p) => p.usuarioId === usuario.id);
+
+  if (alumno) resultado.alumnoId = alumno.id;
+  if (profesor) resultado.profesorId = profesor.id;
+
+  return resultado;
+}
+
+export function obtenerPerfil(
+  usuarios: Usuario[],
+  perfiles: PerfilesAsociados,
+  usuarioId: number,
+): UsuarioSesion {
+  return conPerfilAsociado(usuarioDeSesion(usuarios, usuarioId), perfiles);
+}
+
+// Solo se pueden cambiar nombre, email y password: perfil y activo se ignoran.
+export function modificarPerfil(
+  usuarios: Usuario[],
+  credenciales: Credenciales,
+  perfiles: PerfilesAsociados,
+  usuarioId: number,
+  body: unknown,
+): UsuarioSesion {
+  const usuario = usuarioDeSesion(usuarios, usuarioId);
+  const entrada = objeto(body);
+  const nombre = textoObligatorio(entrada.nombre, 'nombre');
+  const email = emailValido(entrada.email);
+  const password = entrada.password === undefined ? undefined : passwordNueva(entrada.password);
+
+  const otro = buscarPorEmail(usuarios, email);
+
+  if (otro && otro.id !== usuario.id) {
+    throw new HttpError(409, 'EMAIL_TAKEN', 'Ya existe un usuario con ese email');
+  }
+
+  usuario.nombre = nombre;
+  usuario.email = email;
+
+  if (password !== undefined) {
+    credenciales.set(usuario.id, cifrarPassword(password));
+  }
+
+  return conPerfilAsociado(usuario, perfiles);
 }

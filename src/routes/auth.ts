@@ -1,17 +1,24 @@
 import { Router } from 'express';
 import usuariosMock from '../mocks/usuarios.json';
+import alumnosMock from '../mocks/alumnos.json';
+import profesoresMock from '../mocks/profesores.json';
 import { sendSuccess } from '../http/response.js';
+import { requerirSesion } from '../http/auth.js';
 import {
   crearCredenciales,
   iniciarSesion,
+  modificarPerfil,
+  obtenerPerfil,
   registrarUsuario,
   solicitarRecuperacion,
 } from '../services/auth.js';
+import type { PerfilesAsociados } from '../services/auth.js';
 import type { Usuario } from '../models/usuario.js';
 
 // Estado en memoria: los cambios se reinician al reiniciar el servidor.
 const usuarios: Usuario[] = structuredClone(usuariosMock) as Usuario[];
 const credenciales = crearCredenciales(usuarios);
+const perfiles: PerfilesAsociados = { alumnos: alumnosMock, profesores: profesoresMock };
 
 const authRouter = Router();
 
@@ -31,6 +38,18 @@ authRouter.post('/forgot-password', (req, res) => {
   const resultado = solicitarRecuperacion(req.body);
 
   return sendSuccess(res, resultado);
+});
+
+authRouter.get('/me', requerirSesion, (_req, res) => {
+  const usuario = obtenerPerfil(usuarios, perfiles, res.locals.usuarioId);
+
+  return sendSuccess(res, usuario);
+});
+
+authRouter.put('/me', requerirSesion, (req, res) => {
+  const usuario = modificarPerfil(usuarios, credenciales, perfiles, res.locals.usuarioId, req.body);
+
+  return sendSuccess(res, usuario);
 });
 
 export default authRouter;
