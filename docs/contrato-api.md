@@ -105,6 +105,7 @@ Si una sesión intenta algo fuera de su perfil, la API responde `403`.
 | POST | `/api/v1/auth/register` | Registra un usuario nuevo | 201, 400, 409 |
 | POST | `/api/v1/auth/forgot-password` | Solicita recuperar la contraseña | 200, 400 |
 | GET | `/api/v1/auth/me` | Datos del usuario de la sesión | 200, 401 |
+| PUT | `/api/v1/auth/me` | Modifica los datos del usuario de la sesión | 200, 400, 401, 409 |
 
 ### POST /auth/login
 
@@ -184,6 +185,33 @@ Respuesta `200`:
 ### GET /auth/me
 
 Devuelve `{ "data": usuario }` del usuario de la sesión, con la misma forma que en Usuarios, más el perfil asociado si lo tiene (`alumnoId` o `profesorId`).
+
+### PUT /auth/me
+
+Cuerpo:
+
+```json
+{ "nombre": "Lucía Gómez", "email": "lucia.gomez@mail.com", "password": "nueva1234" }
+```
+
+Respuesta `200`, con la misma forma que `GET /auth/me`:
+
+```json
+{
+  "data": {
+    "id": 11,
+    "nombre": "Lucía Gómez",
+    "email": "lucia.gomez@mail.com",
+    "perfil": "Alumno",
+    "activo": true,
+    "alumnoId": 1
+  }
+}
+```
+
+- `nombre` y `email` son obligatorios. `password` es opcional: si no se envía, no cambia; si se envía, debe tener al menos 8 caracteres.
+- `perfil` y `activo` no se pueden modificar desde esta ruta: si se envían, se ignoran.
+- Email ya usado por otro usuario → `409`.
 
 ---
 
