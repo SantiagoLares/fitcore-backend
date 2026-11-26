@@ -181,3 +181,43 @@ export function crearProfesor(
 
   return profesor;
 }
+
+export function modificarProfesor(
+  profesores: Profesor[],
+  usuarios: readonly Usuario[],
+  id: unknown,
+  body: unknown,
+): Profesor {
+  if (typeof id !== 'string' || !/^[1-9]\d*$/.test(id) || !Number.isSafeInteger(Number(id))) {
+    throw new HttpError(400, 'INVALID_ID', 'El ID debe ser un entero positivo');
+  }
+
+  const indice = profesores.findIndex((profesor) => profesor.id === Number(id));
+
+  if (indice === -1) {
+    throw new HttpError(404, 'PROFESSOR_NOT_FOUND', 'Profesor no encontrado');
+  }
+
+  const datos = validarDatosProfesor(body, usuarios);
+
+  if (profesores.some((profesor) => profesor.id !== Number(id) && profesor.dni === datos.dni)) {
+    throw new HttpError(409, 'DUPLICATE_DNI', 'El DNI ya está registrado');
+  }
+
+  if (
+    profesores.some(
+      (profesor) => profesor.id !== Number(id) && profesor.usuarioId === datos.usuarioId,
+    )
+  ) {
+    throw new HttpError(409, 'DUPLICATE_USER', 'El usuario ya tiene un profesor asociado');
+  }
+
+  const profesorActualizado: Profesor = {
+    id: Number(id),
+    ...datos,
+  };
+
+  profesores[indice] = profesorActualizado;
+
+  return profesorActualizado;
+}
