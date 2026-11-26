@@ -2,6 +2,7 @@ import { HttpError } from '../http/error-handler.js';
 import { queryList, readPagination } from '../http/list-query.js';
 import type { Profesor, ProfesorDetalle } from '../models/profesor.js';
 import type { Clase } from '../models/clase.js';
+import type { Usuario } from '../models/usuario.js';
 
 type Query = Record<string, unknown>;
 
@@ -98,4 +99,85 @@ export function obtenerProfesorPorId(
         nombre: clase.nombre,
       })),
   };
+}
+
+function validarTexto(valor: unknown, campo: string): string {
+  if (typeof valor !== 'string' || valor.trim() === '') {
+    throw new HttpError(400, 'INVALID_FIELD', `${campo} es obligatorio y debe ser un texto válido`);
+  }
+
+  return valor.trim();
+}
+
+function validarDatosProfesor(body: unknown, usuarios: readonly Usuario[]): Omit<Profesor, 'id'> {
+  if (typeof body !== 'object' || body === null || Array.isArray(body)) {
+    throw new HttpError(400, 'INVALID_BODY', 'Datos del profesor inválidos');
+  }
+
+  const datos = body as Record<string, unknown>;
+
+  const usuarioId = datos.usuarioId;
+
+  if (typeof usuarioId !== 'number' || !Number.isSafeInteger(usuarioId) || usuarioId <= 0) {
+    throw new HttpError(400, 'INVALID_USER_ID', 'usuarioId debe ser un entero positivo');
+  }
+
+  const dni = validarTexto(datos.dni, 'dni');
+  const nombre = validarTexto(datos.nombre, 'nombre');
+  const apellido = validarTexto(datos.apellido, 'apellido');
+  const email = validarTexto(datos.email, 'email');
+  const especialidad = validarTexto(datos.especialidad, 'especialidad');
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    throw new HttpError(400, 'INVALID_EMAIL', 'El email no es válido');
+  }
+
+  if (datos.telefono !== undefined && typeof datos.telefono !== 'string') {
+    throw new HttpError(400, 'INVALID_PHONE', 'El teléfono debe ser un texto');
+  }
+
+  const telefono = typeof datos.telefono === 'string' ? datos.telefono.trim() : '';
+
+  const usuario = usuarios.find((item) => item.id === usuarioId);
+
+  if (!usuario || usuario.perfil !== 'Profesor') {
+    throw new HttpError(400, 'INVALID_USER', 'El usuario debe existir y tener perfil Profesor');
+  }
+
+  return {
+    usuarioId,
+    dni,
+    nombre,
+    apellido,
+    email,
+    telefono,
+    especialidad,
+  };
+}
+
+export function crearProfesor(
+  profesores: Profesor[],
+  usuarios: readonly Usuario[],
+  body: unknown,
+): Profesor {
+  const datos = validarDatosProfesor(body, usuarios);
+
+  if (profesores.some((profesor) => profesor.dni === datos.dni)) {
+    throw new HttpError(409, 'DUPLICATE_DNI', 'El DNI ya está registrado');
+  }
+
+  if (profesores.some((profesor) => profesor.usuarioId === datos.usuarioId)) {
+    throw new HttpError(409, 'DUPLICATE_USER', 'El usuario ya tiene un profesor asociado');
+  }
+
+  const id = Math.max(0, ...profesores.map((profesor) => profesor.id)) + 1;
+
+  const profesor: Profesor = {
+    id,
+    ...datos,
+  };
+
+  profesores.push(profesor);
+
+  return profesor;
 }
