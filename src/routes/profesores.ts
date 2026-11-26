@@ -1,7 +1,12 @@
 import { Router } from 'express';
 import profesoresMock from '../mocks/profesores.json';
 import { sendPaginated, sendSuccess } from '../http/response.js';
-import { listarProfesores, obtenerProfesorPorId, crearProfesor } from '../services/profesores.js';
+import {
+  listarProfesores,
+  obtenerProfesorPorId,
+  crearProfesor,
+  modificarProfesor,
+} from '../services/profesores.js';
 import type { Profesor } from '../models/profesor.js';
 import clasesMock from '../mocks/clases.json';
 import usuariosMock from '../mocks/usuarios.json';
@@ -30,6 +35,12 @@ profesoresRouter.post('/', (req, res) => {
   res.location(`/api/v1/profesores/${profesor.id}`);
 
   return sendSuccess(res, profesor, 201);
+});
+
+profesoresRouter.put('/:id', (req, res) => {
+  const profesor = modificarProfesor(profesores, usuarios, req.params.id, req.body);
+
+  return sendSuccess(res, profesor);
 });
 
 export default profesoresRouter;
