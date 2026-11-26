@@ -2,9 +2,11 @@ const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 
-const { listarProfesores } = require('../dist/services/profesores.js');
+const { listarProfesores, obtenerProfesorPorId } = require('../dist/services/profesores.js');
 
 const profesores = JSON.parse(fs.readFileSync('src/mocks/profesores.json', 'utf8'));
+
+const clases = JSON.parse(fs.readFileSync('src/mocks/clases.json', 'utf8'));
 
 test('pagina y ordena por apellido ascendente por defecto', () => {
   const result = listarProfesores(profesores, {
@@ -113,5 +115,50 @@ test('rechaza parámetros inválidos con HTTP 400', () => {
     { especialidad: ['Yoga', 'Pilates'] },
   ]) {
     assert.throws(() => listarProfesores(profesores, query), { status: 400 });
+  }
+});
+
+test('devuelve el detalle de un profesor con sus clases', () => {
+  const profesor = profesores.find((item) => clases.some((clase) => clase.profesor.id === item.id));
+
+  assert.ok(profesor, 'Debe existir un profesor con clases asignadas');
+
+  const result = obtenerProfesorPorId(profesores, clases, String(profesor.id));
+
+  const clasesEsperadas = clases
+    .filter((clase) => clase.profesor.id === profesor.id)
+    .map((clase) => ({
+      id: clase.id,
+      nombre: clase.nombre,
+    }));
+
+  assert.deepEqual(result, {
+    ...profesor,
+    clases: clasesEsperadas,
+  });
+});
+
+test('devuelve un array vacío si el profesor no tiene clases', () => {
+  const profesor = profesores[0];
+
+  const result = obtenerProfesorPorId(profesores, [], String(profesor.id));
+
+  assert.deepEqual(result, {
+    ...profesor,
+    clases: [],
+  });
+});
+
+test('devuelve HTTP 404 si el profesor no existe', () => {
+  const idInexistente = Math.max(...profesores.map((profesor) => profesor.id)) + 1;
+
+  assert.throws(() => obtenerProfesorPorId(profesores, clases, String(idInexistente)), {
+    status: 404,
+  });
+});
+
+test('rechaza IDs inválidos con HTTP 400', () => {
+  for (const id of ['abc', '0', '-1', '1.5', '', '1e2', '9007199254740992']) {
+    assert.throws(() => obtenerProfesorPorId(profesores, clases, id), { status: 400 });
   }
 });
