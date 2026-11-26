@@ -6,6 +6,7 @@ const fs = require('node:fs');
 const app = require('../dist/app.js').default;
 
 const profesores = JSON.parse(fs.readFileSync('src/mocks/profesores.json', 'utf8'));
+const clases = JSON.parse(fs.readFileSync('src/mocks/clases.json', 'utf8'));
 
 test('GET /api/v1/profesores respeta el contrato de la API', async () => {
   const servidor = app.listen(0);
@@ -91,6 +92,71 @@ test('GET /api/v1/profesores respeta el contrato de la API', async () => {
 
       assert.equal(res.status, 400);
       assert.equal(typeof body.error, 'string');
+    }
+  } finally {
+    servidor.close();
+  }
+});
+
+test('GET /api/v1/profesores/:id devuelve el detalle del profesor', async () => {
+  const servidor = app.listen(0);
+  const base = `http://localhost:${servidor.address().port}/api/v1/profesores`;
+
+  try {
+    const profesor = profesores.find((item) =>
+      clases.some((clase) => clase.profesor.id === item.id),
+    );
+
+    assert.ok(profesor, 'Debe existir un profesor con clases asignadas');
+
+    const res = await fetch(`${base}/${profesor.id}`);
+    const body = await res.json();
+
+    const clasesEsperadas = clases
+      .filter((clase) => clase.profesor.id === profesor.id)
+      .map((clase) => ({
+        id: clase.id,
+        nombre: clase.nombre,
+      }));
+
+    assert.equal(res.status, 200);
+    assert.deepEqual(body.data, {
+      ...profesor,
+      clases: clasesEsperadas,
+    });
+  } finally {
+    servidor.close();
+  }
+});
+
+test('GET /api/v1/profesores/:id devuelve 404 si no existe', async () => {
+  const servidor = app.listen(0);
+  const base = `http://localhost:${servidor.address().port}/api/v1/profesores`;
+
+  try {
+    const idInexistente = Math.max(...profesores.map((profesor) => profesor.id)) + 1;
+
+    const res = await fetch(`${base}/${idInexistente}`);
+    const body = await res.json();
+
+    assert.equal(res.status, 404);
+    assert.equal(body.error, 'Profesor no encontrado');
+  } finally {
+    servidor.close();
+  }
+});
+
+test('GET /api/v1/profesores/:id rechaza IDs inválidos', async () => {
+  const servidor = app.listen(0);
+  const base = `http://localhost:${servidor.address().port}/api/v1/profesores`;
+
+  try {
+    for (const id of ['abc', '0', '-1', '1.5', '1e2', '9007199254740992']) {
+      const res = await fetch(`${base}/${id}`);
+      const body = await res.json();
+
+      assert.equal(res.status, 400);
+      assert.equal(body.error, 'El ID debe ser un entero positivo');
     }
   } finally {
     servidor.close();
