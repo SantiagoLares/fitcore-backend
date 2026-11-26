@@ -7,6 +7,7 @@ const {
   obtenerProfesorPorId,
   crearProfesor,
   modificarProfesor,
+  eliminarProfesor,
 } = require('../dist/services/profesores.js');
 
 const profesores = JSON.parse(fs.readFileSync('src/mocks/profesores.json', 'utf8'));
@@ -520,4 +521,99 @@ test('permite modificar el usuario asociado por otro disponible', () => {
     contexto.profesores.find((profesor) => profesor.id === Number(contexto.id)),
     resultado,
   );
+});
+
+test('elimina un profesor sin clases asignadas', () => {
+  const copiaProfesores = structuredClone(profesores);
+
+  const profesor = copiaProfesores.find(
+    (item) => !clases.some((clase) => clase.profesor.id === item.id),
+  );
+
+  assert.ok(profesor);
+
+  const esperados = copiaProfesores.filter((item) => item.id !== profesor.id);
+
+  eliminarProfesor(copiaProfesores, clases, String(profesor.id));
+
+  assert.deepEqual(copiaProfesores, esperados);
+
+  assert.equal(
+    copiaProfesores.some((item) => item.id === profesor.id),
+    false,
+  );
+});
+
+test('rechaza eliminar un profesor con un ID inválido', () => {
+  const copiaProfesores = structuredClone(profesores);
+  const originales = structuredClone(copiaProfesores);
+
+  for (const id of ['abc', '0', '-1', '1.5', '1e2', '9007199254740992']) {
+    assert.throws(() => eliminarProfesor(copiaProfesores, clases, id), { status: 400 });
+  }
+
+  assert.deepEqual(copiaProfesores, originales);
+});
+
+test('rechaza eliminar un profesor inexistente', () => {
+  const copiaProfesores = structuredClone(profesores);
+  const originales = structuredClone(copiaProfesores);
+
+  assert.throws(() => eliminarProfesor(copiaProfesores, clases, '9999'), { status: 404 });
+
+  assert.deepEqual(copiaProfesores, originales);
+});
+
+test('rechaza eliminar un profesor con clases asignadas', () => {
+  const copiaProfesores = structuredClone(profesores);
+  const originales = structuredClone(copiaProfesores);
+
+  const profesor = copiaProfesores.find((item) =>
+    clases.some((clase) => clase.profesor.id === item.id),
+  );
+
+  assert.ok(profesor);
+
+  assert.throws(() => eliminarProfesor(copiaProfesores, clases, String(profesor.id)), {
+    status: 409,
+    message: 'El profesor tiene clases asignadas. Reasigná o eliminá esas clases primero',
+  });
+
+  assert.deepEqual(copiaProfesores, originales);
+});
+
+test('devuelve HTTP 404 al consultar un profesor eliminado', () => {
+  const copiaProfesores = structuredClone(profesores);
+
+  const profesor = copiaProfesores.find(
+    (item) => !clases.some((clase) => clase.profesor.id === item.id),
+  );
+
+  assert.ok(profesor);
+
+  const id = String(profesor.id);
+
+  eliminarProfesor(copiaProfesores, clases, id);
+
+  assert.throws(() => obtenerProfesorPorId(copiaProfesores, clases, id), { status: 404 });
+});
+
+test('permite reutilizar el usuario y DNI de un profesor eliminado', () => {
+  const copiaProfesores = structuredClone(profesores);
+
+  const profesor = copiaProfesores.find(
+    (item) => !clases.some((clase) => clase.profesor.id === item.id),
+  );
+
+  assert.ok(profesor);
+
+  const { id, ...datos } = profesor;
+
+  eliminarProfesor(copiaProfesores, clases, String(id));
+
+  const nuevoProfesor = crearProfesor(copiaProfesores, usuarios, datos);
+
+  assert.equal(nuevoProfesor.usuarioId, profesor.usuarioId);
+  assert.equal(nuevoProfesor.dni, profesor.dni);
+  assert.equal(copiaProfesores.length, profesores.length);
 });
