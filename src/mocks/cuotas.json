@@ -1,0 +1,16 @@
+{
+    "id": 2,
+    "alumno": {
+        "id": 2,
+        "nombre": "Martín",
+        "apellido": "Fernández"
+    },
+    "periodo": "2026-08",
+    "monto": 30000,
+    "fechaVencimiento": "2026-08-10",
+    "pago": {
+        "id": 1,
+        "fechaPago": "2026-08-03",
+        "medioPago": "debito"
+    }
+}
