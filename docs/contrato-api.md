@@ -241,7 +241,7 @@ La contraseña nunca se devuelve en ninguna respuesta.
 
 ### Listado
 
-- `sortBy` permitido: `nombre` (por defecto), `email`.
+- `sortBy` permitido: `nombre` (por defecto), `email`, `id`.
 - Filtros: `search` (nombre o email), `perfil`, `activo` (`true` o `false`).
 
 ### POST
