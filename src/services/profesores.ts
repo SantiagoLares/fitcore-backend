@@ -221,3 +221,31 @@ export function modificarProfesor(
 
   return profesorActualizado;
 }
+
+export function eliminarProfesor(
+  profesores: Profesor[],
+  clases: readonly Clase[],
+  id: unknown,
+): void {
+  if (typeof id !== 'string' || !/^[1-9]\d*$/.test(id) || !Number.isSafeInteger(Number(id))) {
+    throw new HttpError(400, 'INVALID_ID', 'El ID debe ser un entero positivo');
+  }
+
+  const indice = profesores.findIndex((profesor) => profesor.id === Number(id));
+
+  if (indice === -1) {
+    throw new HttpError(404, 'PROFESSOR_NOT_FOUND', 'Profesor no encontrado');
+  }
+
+  const tieneClases = clases.some((clase) => clase.profesor.id === Number(id));
+
+  if (tieneClases) {
+    throw new HttpError(
+      409,
+      'PROFESSOR_HAS_CLASSES',
+      'El profesor tiene clases asignadas. Reasigná o eliminá esas clases primero',
+    );
+  }
+
+  profesores.splice(indice, 1);
+}
