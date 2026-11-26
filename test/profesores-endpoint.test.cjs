@@ -3,6 +3,16 @@ process.env.JWT_SECRET = 'clave-de-prueba';
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
+const usuariosMock = require('../dist/mocks/usuarios.json');
+
+usuariosMock.push({
+  id: 999,
+  nombre: 'Martín López',
+  email: 'martin@example.com',
+  perfil: 'Profesor',
+  activo: true,
+});
+
 const app = require('../dist/app.js').default;
 
 const profesores = JSON.parse(fs.readFileSync('src/mocks/profesores.json', 'utf8'));
@@ -158,6 +168,222 @@ test('GET /api/v1/profesores/:id rechaza IDs inválidos', async () => {
       assert.equal(res.status, 400);
       assert.equal(body.error, 'El ID debe ser un entero positivo');
     }
+  } finally {
+    servidor.close();
+  }
+});
+
+const profesorNuevo = {
+  usuarioId: 999,
+  dni: '99999999',
+  nombre: 'Martín',
+  apellido: 'López',
+  email: 'martin@example.com',
+  telefono: '2915559876',
+  especialidad: 'Funcional',
+};
+
+test('POST /api/v1/profesores crea un profesor correctamente', async () => {
+  const servidor = app.listen(0);
+  const base = `http://localhost:${servidor.address().port}/api/v1/profesores`;
+
+  try {
+    const res = await fetch(base, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(profesorNuevo),
+    });
+
+    const body = await res.json();
+
+    assert.equal(res.status, 201);
+
+    const idEsperado = Math.max(...profesores.map((profesor) => profesor.id)) + 1;
+
+    assert.deepEqual(body.data, {
+      id: idEsperado,
+      ...profesorNuevo,
+    });
+
+    assert.equal(res.headers.get('location'), `/api/v1/profesores/${idEsperado}`);
+
+    // Comprobar que el profesor quedó almacenado.
+    const resDetalle = await fetch(`${base}/${idEsperado}`);
+    const detalle = await resDetalle.json();
+
+    assert.equal(resDetalle.status, 200);
+    assert.deepEqual(detalle.data, {
+      id: idEsperado,
+      ...profesorNuevo,
+      clases: [],
+    });
+  } finally {
+    servidor.close();
+  }
+});
+
+test('POST /api/v1/profesores rechaza campos obligatorios ausentes', async () => {
+  const servidor = app.listen(0);
+  const base = `http://localhost:${servidor.address().port}/api/v1/profesores`;
+
+  try {
+    const campos = ['usuarioId', 'dni', 'nombre', 'apellido', 'email', 'especialidad'];
+
+    for (const campo of campos) {
+      const datos = { ...profesorNuevo };
+      delete datos[campo];
+
+      const res = await fetch(base, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(datos),
+      });
+
+      const body = await res.json();
+
+      assert.equal(res.status, 400);
+      assert.equal(typeof body.error, 'string');
+    }
+  } finally {
+    servidor.close();
+  }
+});
+
+test('POST /api/v1/profesores rechaza datos inválidos', async () => {
+  const servidor = app.listen(0);
+  const base = `http://localhost:${servidor.address().port}/api/v1/profesores`;
+
+  try {
+    const casos = [
+      { usuarioId: 0 },
+      { usuarioId: '999' },
+      { dni: '' },
+      { nombre: '   ' },
+      { apellido: '' },
+      { email: 'correo-invalido' },
+      { especialidad: '' },
+      { telefono: 123456 },
+    ];
+
+    for (const caso of casos) {
+      const res = await fetch(base, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...profesorNuevo,
+          ...caso,
+        }),
+      });
+
+      assert.equal(res.status, 400);
+    }
+  } finally {
+    servidor.close();
+  }
+});
+
+test('POST /api/v1/profesores rechaza un usuario inexistente', async () => {
+  const servidor = app.listen(0);
+  const base = `http://localhost:${servidor.address().port}/api/v1/profesores`;
+
+  try {
+    const res = await fetch(base, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...profesorNuevo,
+        usuarioId: 9999,
+      }),
+    });
+
+    assert.equal(res.status, 400);
+  } finally {
+    servidor.close();
+  }
+});
+
+test('POST /api/v1/profesores rechaza usuarios que no son profesores', async () => {
+  const servidor = app.listen(0);
+  const base = `http://localhost:${servidor.address().port}/api/v1/profesores`;
+
+  try {
+    for (const perfil of ['Alumno', 'Administración']) {
+      const usuario = usuariosMock.find((item) => item.perfil === perfil);
+
+      assert.ok(usuario);
+
+      const res = await fetch(base, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...profesorNuevo,
+          usuarioId: usuario.id,
+        }),
+      });
+
+      assert.equal(res.status, 400);
+    }
+  } finally {
+    servidor.close();
+  }
+});
+
+test('POST /api/v1/profesores rechaza un DNI duplicado', async () => {
+  const servidor = app.listen(0);
+  const base = `http://localhost:${servidor.address().port}/api/v1/profesores`;
+
+  try {
+    const res = await fetch(base, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...profesorNuevo,
+        dni: profesores[0].dni,
+      }),
+    });
+
+    assert.equal(res.status, 409);
+
+    const body = await res.json();
+    assert.equal(body.error, 'El DNI ya está registrado');
+  } finally {
+    servidor.close();
+  }
+});
+
+test('POST /api/v1/profesores rechaza un usuario ya asociado', async () => {
+  const servidor = app.listen(0);
+  const base = `http://localhost:${servidor.address().port}/api/v1/profesores`;
+
+  try {
+    const res = await fetch(base, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...profesorNuevo,
+        usuarioId: profesores[0].usuarioId,
+        dni: '99999998',
+      }),
+    });
+
+    assert.equal(res.status, 409);
+
+    const body = await res.json();
+    assert.equal(body.error, 'El usuario ya tiene un profesor asociado');
   } finally {
     servidor.close();
   }
