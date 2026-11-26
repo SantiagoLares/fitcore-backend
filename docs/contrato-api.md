@@ -601,7 +601,7 @@ El estado se calcula, no se guarda:
 
 ### Listado
 
-- `sortBy` permitido: `fechaVencimiento` (por defecto), `periodo`, `monto`.
+- `sortBy` permitido: `id`, `fechaVencimiento` (por defecto), `periodo`, `monto`.
 - Filtros: `alumnoId`, `estado`, `periodo`.
 
 Ejemplo, cuotas vencidas: `GET /api/v1/cuotas?estado=vencida`
