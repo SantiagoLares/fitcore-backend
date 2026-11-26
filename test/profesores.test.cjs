@@ -2,13 +2,16 @@ const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 
-const { listarProfesores, obtenerProfesorPorId, crearProfesor } = require('../dist/services/profesores.js');
+const {
+  listarProfesores,
+  obtenerProfesorPorId,
+  crearProfesor,
+  modificarProfesor,
+} = require('../dist/services/profesores.js');
 
 const profesores = JSON.parse(fs.readFileSync('src/mocks/profesores.json', 'utf8'));
 
-const usuarios = JSON.parse(
-  fs.readFileSync('src/mocks/usuarios.json', 'utf8'),
-);
+const usuarios = JSON.parse(fs.readFileSync('src/mocks/usuarios.json', 'utf8'));
 
 const clases = JSON.parse(fs.readFileSync('src/mocks/clases.json', 'utf8'));
 
@@ -198,16 +201,11 @@ function prepararAltaProfesor() {
 test('crea un profesor con un ID generado y lo almacena', () => {
   const contexto = prepararAltaProfesor();
 
-  const idEsperado =
-    Math.max(...contexto.profesores.map((profesor) => profesor.id)) + 1;
+  const idEsperado = Math.max(...contexto.profesores.map((profesor) => profesor.id)) + 1;
 
   const cantidadInicial = contexto.profesores.length;
 
-  const resultado = crearProfesor(
-    contexto.profesores,
-    contexto.usuarios,
-    contexto.datos,
-  );
+  const resultado = crearProfesor(contexto.profesores, contexto.usuarios, contexto.datos);
 
   assert.deepEqual(resultado, {
     id: idEsperado,
@@ -219,29 +217,16 @@ test('crea un profesor con un ID generado y lo almacena', () => {
 });
 
 test('rechaza campos obligatorios ausentes sin guardar datos', () => {
-  const campos = [
-    'usuarioId',
-    'dni',
-    'nombre',
-    'apellido',
-    'email',
-    'especialidad',
-  ];
+  const campos = ['usuarioId', 'dni', 'nombre', 'apellido', 'email', 'especialidad'];
 
   for (const campo of campos) {
     const contexto = prepararAltaProfesor();
 
     delete contexto.datos[campo];
 
-    assert.throws(
-      () =>
-        crearProfesor(
-          contexto.profesores,
-          contexto.usuarios,
-          contexto.datos,
-        ),
-      { status: 400 },
-    );
+    assert.throws(() => crearProfesor(contexto.profesores, contexto.usuarios, contexto.datos), {
+      status: 400,
+    });
 
     assert.deepEqual(contexto.profesores, profesores);
   }
@@ -264,11 +249,7 @@ test('rechaza datos inválidos sin guardar el profesor', () => {
 
     assert.throws(
       () =>
-        crearProfesor(
-          contexto.profesores,
-          contexto.usuarios,
-          { ...contexto.datos, ...cambios },
-        ),
+        crearProfesor(contexto.profesores, contexto.usuarios, { ...contexto.datos, ...cambios }),
       { status: 400 },
     );
 
@@ -281,15 +262,9 @@ test('rechaza crear un profesor con un usuario inexistente', () => {
 
   contexto.datos.usuarioId = 9999;
 
-  assert.throws(
-    () =>
-      crearProfesor(
-        contexto.profesores,
-        contexto.usuarios,
-        contexto.datos,
-      ),
-    { status: 400 },
-  );
+  assert.throws(() => crearProfesor(contexto.profesores, contexto.usuarios, contexto.datos), {
+    status: 400,
+  });
 
   assert.deepEqual(contexto.profesores, profesores);
 });
@@ -298,23 +273,15 @@ test('rechaza un usuario cuyo perfil no es Profesor', () => {
   const contexto = prepararAltaProfesor();
 
   for (const perfil of ['Alumno', 'Administración']) {
-    const usuario = contexto.usuarios.find(
-      (item) => item.perfil === perfil,
-    );
+    const usuario = contexto.usuarios.find((item) => item.perfil === perfil);
 
     assert.ok(usuario);
 
     contexto.datos.usuarioId = usuario.id;
 
-    assert.throws(
-      () =>
-        crearProfesor(
-          contexto.profesores,
-          contexto.usuarios,
-          contexto.datos,
-        ),
-      { status: 400 },
-    );
+    assert.throws(() => crearProfesor(contexto.profesores, contexto.usuarios, contexto.datos), {
+      status: 400,
+    });
 
     assert.deepEqual(contexto.profesores, profesores);
   }
@@ -325,15 +292,9 @@ test('rechaza crear un profesor con un DNI duplicado', () => {
 
   contexto.datos.dni = contexto.profesores[0].dni;
 
-  assert.throws(
-    () =>
-      crearProfesor(
-        contexto.profesores,
-        contexto.usuarios,
-        contexto.datos,
-      ),
-    { status: 409 },
-  );
+  assert.throws(() => crearProfesor(contexto.profesores, contexto.usuarios, contexto.datos), {
+    status: 409,
+  });
 
   assert.deepEqual(contexto.profesores, profesores);
 });
@@ -343,15 +304,220 @@ test('rechaza un usuario que ya tiene un profesor asociado', () => {
 
   contexto.datos.usuarioId = contexto.profesores[0].usuarioId;
 
+  assert.throws(() => crearProfesor(contexto.profesores, contexto.usuarios, contexto.datos), {
+    status: 409,
+  });
+
+  assert.deepEqual(contexto.profesores, profesores);
+});
+
+function prepararModificacionProfesor() {
+  const copiaProfesores = structuredClone(profesores);
+  const profesor = copiaProfesores[0];
+  const { id, ...datos } = profesor;
+
+  return {
+    profesores: copiaProfesores,
+    usuarios: structuredClone(usuarios),
+    id: String(id),
+    datos: {
+      ...datos,
+      nombre: 'Martín',
+      apellido: 'López',
+      especialidad: 'Funcional',
+    },
+  };
+}
+
+test('modifica un profesor existente conservando su ID', () => {
+  const contexto = prepararModificacionProfesor();
+  const cantidadInicial = contexto.profesores.length;
+
+  const resultado = modificarProfesor(
+    contexto.profesores,
+    contexto.usuarios,
+    contexto.id,
+    contexto.datos,
+  );
+
+  assert.deepEqual(resultado, {
+    id: Number(contexto.id),
+    ...contexto.datos,
+  });
+
+  assert.equal(contexto.profesores.length, cantidadInicial);
+
+  assert.deepEqual(
+    contexto.profesores.find((profesor) => profesor.id === Number(contexto.id)),
+    resultado,
+  );
+});
+
+test('rechaza modificar un profesor con un ID inválido', () => {
+  const contexto = prepararModificacionProfesor();
+  const originales = structuredClone(contexto.profesores);
+
+  for (const id of ['abc', '0', '-1', '1.5', '1e2', '9007199254740992']) {
+    assert.throws(
+      () => modificarProfesor(contexto.profesores, contexto.usuarios, id, contexto.datos),
+      { status: 400 },
+    );
+  }
+
+  assert.deepEqual(contexto.profesores, originales);
+});
+
+test('rechaza modificar un profesor inexistente', () => {
+  const contexto = prepararModificacionProfesor();
+  const originales = structuredClone(contexto.profesores);
+
+  assert.throws(
+    () => modificarProfesor(contexto.profesores, contexto.usuarios, '9999', contexto.datos),
+    { status: 404 },
+  );
+
+  assert.deepEqual(contexto.profesores, originales);
+});
+
+test('rechaza modificar un profesor sin campos obligatorios', () => {
+  const contexto = prepararModificacionProfesor();
+  const originales = structuredClone(contexto.profesores);
+
+  const campos = ['usuarioId', 'dni', 'nombre', 'apellido', 'email', 'especialidad'];
+
+  for (const campo of campos) {
+    const datos = { ...contexto.datos };
+    delete datos[campo];
+
+    assert.throws(
+      () => modificarProfesor(contexto.profesores, contexto.usuarios, contexto.id, datos),
+      { status: 400 },
+    );
+  }
+
+  assert.deepEqual(contexto.profesores, originales);
+});
+
+test('rechaza modificar un profesor con datos inválidos', () => {
+  const contexto = prepararModificacionProfesor();
+  const originales = structuredClone(contexto.profesores);
+
+  const casos = [
+    { usuarioId: 0 },
+    { usuarioId: '101' },
+    { dni: '' },
+    { nombre: '   ' },
+    { apellido: '' },
+    { email: 'correo-invalido' },
+    { especialidad: '' },
+    { telefono: 123456 },
+  ];
+
+  for (const caso of casos) {
+    assert.throws(
+      () =>
+        modificarProfesor(contexto.profesores, contexto.usuarios, contexto.id, {
+          ...contexto.datos,
+          ...caso,
+        }),
+      { status: 400 },
+    );
+  }
+
+  assert.deepEqual(contexto.profesores, originales);
+});
+
+test('rechaza modificar un profesor con un usuario inexistente', () => {
+  const contexto = prepararModificacionProfesor();
+  const originales = structuredClone(contexto.profesores);
+
   assert.throws(
     () =>
-      crearProfesor(
-        contexto.profesores,
-        contexto.usuarios,
-        contexto.datos,
-      ),
+      modificarProfesor(contexto.profesores, contexto.usuarios, contexto.id, {
+        ...contexto.datos,
+        usuarioId: 9999,
+      }),
+    { status: 400 },
+  );
+
+  assert.deepEqual(contexto.profesores, originales);
+});
+
+test('rechaza asociar un profesor a un usuario con perfil incorrecto', () => {
+  const contexto = prepararModificacionProfesor();
+  const originales = structuredClone(contexto.profesores);
+
+  for (const perfil of ['Alumno', 'Administración']) {
+    const usuario = contexto.usuarios.find((item) => item.perfil === perfil);
+
+    assert.ok(usuario);
+
+    assert.throws(
+      () =>
+        modificarProfesor(contexto.profesores, contexto.usuarios, contexto.id, {
+          ...contexto.datos,
+          usuarioId: usuario.id,
+        }),
+      { status: 400 },
+    );
+  }
+
+  assert.deepEqual(contexto.profesores, originales);
+});
+
+test('rechaza modificar un profesor con el DNI de otro profesor', () => {
+  const contexto = prepararModificacionProfesor();
+  const originales = structuredClone(contexto.profesores);
+
+  const otroProfesor = contexto.profesores[1];
+
+  assert.throws(
+    () =>
+      modificarProfesor(contexto.profesores, contexto.usuarios, contexto.id, {
+        ...contexto.datos,
+        dni: otroProfesor.dni,
+      }),
     { status: 409 },
   );
 
-  assert.deepEqual(contexto.profesores, profesores);
+  assert.deepEqual(contexto.profesores, originales);
+});
+
+test('rechaza asociar un usuario que pertenece a otro profesor', () => {
+  const contexto = prepararModificacionProfesor();
+  const originales = structuredClone(contexto.profesores);
+
+  const otroProfesor = contexto.profesores[1];
+
+  assert.throws(
+    () =>
+      modificarProfesor(contexto.profesores, contexto.usuarios, contexto.id, {
+        ...contexto.datos,
+        usuarioId: otroProfesor.usuarioId,
+      }),
+    { status: 409 },
+  );
+
+  assert.deepEqual(contexto.profesores, originales);
+});
+
+test('permite modificar el usuario asociado por otro disponible', () => {
+  const contexto = prepararModificacionProfesor();
+
+  contexto.usuarios.push({
+    ...usuarioNuevo,
+  });
+
+  const resultado = modificarProfesor(contexto.profesores, contexto.usuarios, contexto.id, {
+    ...contexto.datos,
+    usuarioId: usuarioNuevo.id,
+  });
+
+  assert.equal(resultado.id, Number(contexto.id));
+  assert.equal(resultado.usuarioId, usuarioNuevo.id);
+
+  assert.deepEqual(
+    contexto.profesores.find((profesor) => profesor.id === Number(contexto.id)),
+    resultado,
+  );
 });
