@@ -22,3 +22,6 @@ export interface Cuota {
   estado: CuotaEstado // lo calcula el back
   pago: CuotaPago | null
 }
+
+// Cuota tal como se guarda: el estado no se guarda, se calcula al consultar.
+export type CuotaRegistro = Omit<Cuota, 'estado'>

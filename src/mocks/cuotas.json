@@ -1,0 +1,2038 @@
+[
+    {
+        "id": 1,
+        "alumno": {
+            "id": 1,
+            "nombre": "Lucía",
+            "apellido": "Gómez"
+        },
+        "periodo": "2026-08",
+        "monto": 25000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": null
+    },
+    {
+        "id": 2,
+        "alumno": {
+            "id": 2,
+            "nombre": "Martín",
+            "apellido": "Fernández"
+        },
+        "periodo": "2026-08",
+        "monto": 30000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": {
+            "id": 1,
+            "fechaPago": "2026-08-03",
+            "medioPago": "debito"
+        }
+    },
+    {
+        "id": 3,
+        "alumno": {
+            "id": 3,
+            "nombre": "Sofía",
+            "apellido": "Rodríguez"
+        },
+        "periodo": "2026-08",
+        "monto": 25000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": {
+            "id": 2,
+            "fechaPago": "2026-08-05",
+            "medioPago": "transferencia"
+        }
+    },
+    {
+        "id": 4,
+        "alumno": {
+            "id": 4,
+            "nombre": "Mateo",
+            "apellido": "González"
+        },
+        "periodo": "2026-08",
+        "monto": 30000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": {
+            "id": 3,
+            "fechaPago": "2026-08-06",
+            "medioPago": "credito"
+        }
+    },
+    {
+        "id": 5,
+        "alumno": {
+            "id": 5,
+            "nombre": "Valentina",
+            "apellido": "Pérez"
+        },
+        "periodo": "2026-08",
+        "monto": 25000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": {
+            "id": 4,
+            "fechaPago": "2026-08-10",
+            "medioPago": "credito"
+        }
+    },
+    {
+        "id": 6,
+        "alumno": {
+            "id": 6,
+            "nombre": "Santiago",
+            "apellido": "Sánchez"
+        },
+        "periodo": "2026-08",
+        "monto": 30000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": {
+            "id": 5,
+            "fechaPago": "2026-08-08",
+            "medioPago": "efectivo"
+        }
+    },
+    {
+        "id": 7,
+        "alumno": {
+            "id": 7,
+            "nombre": "Camila",
+            "apellido": "Romero"
+        },
+        "periodo": "2026-08",
+        "monto": 25000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": {
+            "id": 6,
+            "fechaPago": "2026-08-06",
+            "medioPago": "efectivo"
+        }
+    },
+    {
+        "id": 8,
+        "alumno": {
+            "id": 8,
+            "nombre": "Joaquín",
+            "apellido": "Díaz"
+        },
+        "periodo": "2026-08",
+        "monto": 30000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": {
+            "id": 7,
+            "fechaPago": "2026-08-02",
+            "medioPago": "credito"
+        }
+    },
+    {
+        "id": 9,
+        "alumno": {
+            "id": 9,
+            "nombre": "Julieta",
+            "apellido": "Álvarez"
+        },
+        "periodo": "2026-08",
+        "monto": 25000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": {
+            "id": 8,
+            "fechaPago": "2026-08-06",
+            "medioPago": "debito"
+        }
+    },
+    {
+        "id": 10,
+        "alumno": {
+            "id": 10,
+            "nombre": "Tomás",
+            "apellido": "Torres"
+        },
+        "periodo": "2026-08",
+        "monto": 30000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": {
+            "id": 9,
+            "fechaPago": "2026-08-05",
+            "medioPago": "transferencia"
+        }
+    },
+    {
+        "id": 11,
+        "alumno": {
+            "id": 11,
+            "nombre": "Agustina",
+            "apellido": "Ruiz"
+        },
+        "periodo": "2026-08",
+        "monto": 25000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": {
+            "id": 10,
+            "fechaPago": "2026-08-07",
+            "medioPago": "debito"
+        }
+    },
+    {
+        "id": 12,
+        "alumno": {
+            "id": 12,
+            "nombre": "Facundo",
+            "apellido": "Gómez"
+        },
+        "periodo": "2026-08",
+        "monto": 30000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": {
+            "id": 11,
+            "fechaPago": "2026-08-02",
+            "medioPago": "efectivo"
+        }
+    },
+    {
+        "id": 13,
+        "alumno": {
+            "id": 13,
+            "nombre": "Florencia",
+            "apellido": "Benítez"
+        },
+        "periodo": "2026-08",
+        "monto": 25000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": {
+            "id": 12,
+            "fechaPago": "2026-08-08",
+            "medioPago": "debito"
+        }
+    },
+    {
+        "id": 14,
+        "alumno": {
+            "id": 14,
+            "nombre": "Nicolás",
+            "apellido": "Fernández"
+        },
+        "periodo": "2026-08",
+        "monto": 30000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": {
+            "id": 13,
+            "fechaPago": "2026-08-02",
+            "medioPago": "credito"
+        }
+    },
+    {
+        "id": 15,
+        "alumno": {
+            "id": 15,
+            "nombre": "Micaela",
+            "apellido": "Herrera"
+        },
+        "periodo": "2026-08",
+        "monto": 25000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": {
+            "id": 14,
+            "fechaPago": "2026-08-09",
+            "medioPago": "efectivo"
+        }
+    },
+    {
+        "id": 16,
+        "alumno": {
+            "id": 16,
+            "nombre": "Lautaro",
+            "apellido": "Suárez"
+        },
+        "periodo": "2026-08",
+        "monto": 30000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": {
+            "id": 15,
+            "fechaPago": "2026-08-10",
+            "medioPago": "credito"
+        }
+    },
+    {
+        "id": 17,
+        "alumno": {
+            "id": 17,
+            "nombre": "Candela",
+            "apellido": "Aguirre"
+        },
+        "periodo": "2026-08",
+        "monto": 25000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": {
+            "id": 16,
+            "fechaPago": "2026-08-10",
+            "medioPago": "debito"
+        }
+    },
+    {
+        "id": 18,
+        "alumno": {
+            "id": 18,
+            "nombre": "Bruno",
+            "apellido": "Giménez"
+        },
+        "periodo": "2026-08",
+        "monto": 30000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": {
+            "id": 17,
+            "fechaPago": "2026-08-04",
+            "medioPago": "debito"
+        }
+    },
+    {
+        "id": 19,
+        "alumno": {
+            "id": 19,
+            "nombre": "Milagros",
+            "apellido": "Castro"
+        },
+        "periodo": "2026-08",
+        "monto": 25000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": {
+            "id": 18,
+            "fechaPago": "2026-08-02",
+            "medioPago": "efectivo"
+        }
+    },
+    {
+        "id": 20,
+        "alumno": {
+            "id": 20,
+            "nombre": "Franco",
+            "apellido": "González"
+        },
+        "periodo": "2026-08",
+        "monto": 30000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": {
+            "id": 19,
+            "fechaPago": "2026-08-06",
+            "medioPago": "transferencia"
+        }
+    },
+    {
+        "id": 21,
+        "alumno": {
+            "id": 21,
+            "nombre": "Rocío",
+            "apellido": "Flores"
+        },
+        "periodo": "2026-08",
+        "monto": 25000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": {
+            "id": 20,
+            "fechaPago": "2026-08-04",
+            "medioPago": "credito"
+        }
+    },
+    {
+        "id": 22,
+        "alumno": {
+            "id": 22,
+            "nombre": "Ignacio",
+            "apellido": "Morales"
+        },
+        "periodo": "2026-08",
+        "monto": 30000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": {
+            "id": 21,
+            "fechaPago": "2026-08-10",
+            "medioPago": "transferencia"
+        }
+    },
+    {
+        "id": 23,
+        "alumno": {
+            "id": 23,
+            "nombre": "Brenda",
+            "apellido": "Ortiz"
+        },
+        "periodo": "2026-08",
+        "monto": 25000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": {
+            "id": 22,
+            "fechaPago": "2026-08-10",
+            "medioPago": "transferencia"
+        }
+    },
+    {
+        "id": 24,
+        "alumno": {
+            "id": 24,
+            "nombre": "Gonzalo",
+            "apellido": "Silva"
+        },
+        "periodo": "2026-08",
+        "monto": 30000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": {
+            "id": 23,
+            "fechaPago": "2026-08-02",
+            "medioPago": "debito"
+        }
+    },
+    {
+        "id": 25,
+        "alumno": {
+            "id": 25,
+            "nombre": "Antonella",
+            "apellido": "Núñez"
+        },
+        "periodo": "2026-08",
+        "monto": 25000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": {
+            "id": 24,
+            "fechaPago": "2026-08-07",
+            "medioPago": "transferencia"
+        }
+    },
+    {
+        "id": 26,
+        "alumno": {
+            "id": 26,
+            "nombre": "Ezequiel",
+            "apellido": "Muñoz"
+        },
+        "periodo": "2026-08",
+        "monto": 30000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": {
+            "id": 25,
+            "fechaPago": "2026-08-09",
+            "medioPago": "debito"
+        }
+    },
+    {
+        "id": 27,
+        "alumno": {
+            "id": 27,
+            "nombre": "Luciana",
+            "apellido": "Peña"
+        },
+        "periodo": "2026-08",
+        "monto": 25000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": null
+    },
+    {
+        "id": 28,
+        "alumno": {
+            "id": 28,
+            "nombre": "Maximiliano",
+            "apellido": "Ibáñez"
+        },
+        "periodo": "2026-08",
+        "monto": 30000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": {
+            "id": 26,
+            "fechaPago": "2026-08-10",
+            "medioPago": "efectivo"
+        }
+    },
+    {
+        "id": 29,
+        "alumno": {
+            "id": 29,
+            "nombre": "Paula",
+            "apellido": "Domínguez"
+        },
+        "periodo": "2026-08",
+        "monto": 25000,
+        "fechaVencimiento": "2026-08-10",
+        "pago": {
+            "id": 27,
+            "fechaPago": "2026-08-10",
+            "medioPago": "debito"
+        }
+    },
+    {
+        "id": 30,
+        "alumno": {
+            "id": 1,
+            "nombre": "Lucía",
+            "apellido": "Gómez"
+        },
+        "periodo": "2026-09",
+        "monto": 25000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": null
+    },
+    {
+        "id": 31,
+        "alumno": {
+            "id": 2,
+            "nombre": "Martín",
+            "apellido": "Fernández"
+        },
+        "periodo": "2026-09",
+        "monto": 30000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": {
+            "id": 28,
+            "fechaPago": "2026-09-07",
+            "medioPago": "efectivo"
+        }
+    },
+    {
+        "id": 32,
+        "alumno": {
+            "id": 3,
+            "nombre": "Sofía",
+            "apellido": "Rodríguez"
+        },
+        "periodo": "2026-09",
+        "monto": 25000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": null
+    },
+    {
+        "id": 33,
+        "alumno": {
+            "id": 4,
+            "nombre": "Mateo",
+            "apellido": "González"
+        },
+        "periodo": "2026-09",
+        "monto": 30000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": {
+            "id": 29,
+            "fechaPago": "2026-09-02",
+            "medioPago": "credito"
+        }
+    },
+    {
+        "id": 34,
+        "alumno": {
+            "id": 5,
+            "nombre": "Valentina",
+            "apellido": "Pérez"
+        },
+        "periodo": "2026-09",
+        "monto": 25000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": {
+            "id": 30,
+            "fechaPago": "2026-09-07",
+            "medioPago": "credito"
+        }
+    },
+    {
+        "id": 35,
+        "alumno": {
+            "id": 6,
+            "nombre": "Santiago",
+            "apellido": "Sánchez"
+        },
+        "periodo": "2026-09",
+        "monto": 30000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": {
+            "id": 31,
+            "fechaPago": "2026-09-05",
+            "medioPago": "transferencia"
+        }
+    },
+    {
+        "id": 36,
+        "alumno": {
+            "id": 7,
+            "nombre": "Camila",
+            "apellido": "Romero"
+        },
+        "periodo": "2026-09",
+        "monto": 25000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": {
+            "id": 32,
+            "fechaPago": "2026-09-06",
+            "medioPago": "efectivo"
+        }
+    },
+    {
+        "id": 37,
+        "alumno": {
+            "id": 8,
+            "nombre": "Joaquín",
+            "apellido": "Díaz"
+        },
+        "periodo": "2026-09",
+        "monto": 30000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": {
+            "id": 33,
+            "fechaPago": "2026-09-10",
+            "medioPago": "transferencia"
+        }
+    },
+    {
+        "id": 38,
+        "alumno": {
+            "id": 9,
+            "nombre": "Julieta",
+            "apellido": "Álvarez"
+        },
+        "periodo": "2026-09",
+        "monto": 25000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": {
+            "id": 34,
+            "fechaPago": "2026-09-08",
+            "medioPago": "debito"
+        }
+    },
+    {
+        "id": 39,
+        "alumno": {
+            "id": 10,
+            "nombre": "Tomás",
+            "apellido": "Torres"
+        },
+        "periodo": "2026-09",
+        "monto": 30000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": {
+            "id": 35,
+            "fechaPago": "2026-09-10",
+            "medioPago": "efectivo"
+        }
+    },
+    {
+        "id": 40,
+        "alumno": {
+            "id": 11,
+            "nombre": "Agustina",
+            "apellido": "Ruiz"
+        },
+        "periodo": "2026-09",
+        "monto": 25000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": {
+            "id": 36,
+            "fechaPago": "2026-09-09",
+            "medioPago": "credito"
+        }
+    },
+    {
+        "id": 41,
+        "alumno": {
+            "id": 12,
+            "nombre": "Facundo",
+            "apellido": "Gómez"
+        },
+        "periodo": "2026-09",
+        "monto": 30000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": {
+            "id": 37,
+            "fechaPago": "2026-09-06",
+            "medioPago": "credito"
+        }
+    },
+    {
+        "id": 42,
+        "alumno": {
+            "id": 13,
+            "nombre": "Florencia",
+            "apellido": "Benítez"
+        },
+        "periodo": "2026-09",
+        "monto": 25000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": {
+            "id": 38,
+            "fechaPago": "2026-09-10",
+            "medioPago": "efectivo"
+        }
+    },
+    {
+        "id": 43,
+        "alumno": {
+            "id": 14,
+            "nombre": "Nicolás",
+            "apellido": "Fernández"
+        },
+        "periodo": "2026-09",
+        "monto": 30000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": {
+            "id": 39,
+            "fechaPago": "2026-09-10",
+            "medioPago": "debito"
+        }
+    },
+    {
+        "id": 44,
+        "alumno": {
+            "id": 15,
+            "nombre": "Micaela",
+            "apellido": "Herrera"
+        },
+        "periodo": "2026-09",
+        "monto": 25000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": {
+            "id": 40,
+            "fechaPago": "2026-09-07",
+            "medioPago": "efectivo"
+        }
+    },
+    {
+        "id": 45,
+        "alumno": {
+            "id": 16,
+            "nombre": "Lautaro",
+            "apellido": "Suárez"
+        },
+        "periodo": "2026-09",
+        "monto": 30000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": {
+            "id": 41,
+            "fechaPago": "2026-09-05",
+            "medioPago": "efectivo"
+        }
+    },
+    {
+        "id": 46,
+        "alumno": {
+            "id": 17,
+            "nombre": "Candela",
+            "apellido": "Aguirre"
+        },
+        "periodo": "2026-09",
+        "monto": 25000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": {
+            "id": 42,
+            "fechaPago": "2026-09-03",
+            "medioPago": "credito"
+        }
+    },
+    {
+        "id": 47,
+        "alumno": {
+            "id": 18,
+            "nombre": "Bruno",
+            "apellido": "Giménez"
+        },
+        "periodo": "2026-09",
+        "monto": 30000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": {
+            "id": 43,
+            "fechaPago": "2026-09-03",
+            "medioPago": "credito"
+        }
+    },
+    {
+        "id": 48,
+        "alumno": {
+            "id": 19,
+            "nombre": "Milagros",
+            "apellido": "Castro"
+        },
+        "periodo": "2026-09",
+        "monto": 25000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": {
+            "id": 44,
+            "fechaPago": "2026-09-03",
+            "medioPago": "debito"
+        }
+    },
+    {
+        "id": 49,
+        "alumno": {
+            "id": 20,
+            "nombre": "Franco",
+            "apellido": "González"
+        },
+        "periodo": "2026-09",
+        "monto": 30000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": {
+            "id": 45,
+            "fechaPago": "2026-09-08",
+            "medioPago": "credito"
+        }
+    },
+    {
+        "id": 50,
+        "alumno": {
+            "id": 21,
+            "nombre": "Rocío",
+            "apellido": "Flores"
+        },
+        "periodo": "2026-09",
+        "monto": 25000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": {
+            "id": 46,
+            "fechaPago": "2026-09-09",
+            "medioPago": "transferencia"
+        }
+    },
+    {
+        "id": 51,
+        "alumno": {
+            "id": 22,
+            "nombre": "Ignacio",
+            "apellido": "Morales"
+        },
+        "periodo": "2026-09",
+        "monto": 30000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": {
+            "id": 47,
+            "fechaPago": "2026-09-03",
+            "medioPago": "efectivo"
+        }
+    },
+    {
+        "id": 52,
+        "alumno": {
+            "id": 23,
+            "nombre": "Brenda",
+            "apellido": "Ortiz"
+        },
+        "periodo": "2026-09",
+        "monto": 25000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": {
+            "id": 48,
+            "fechaPago": "2026-09-02",
+            "medioPago": "transferencia"
+        }
+    },
+    {
+        "id": 53,
+        "alumno": {
+            "id": 24,
+            "nombre": "Gonzalo",
+            "apellido": "Silva"
+        },
+        "periodo": "2026-09",
+        "monto": 30000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": {
+            "id": 49,
+            "fechaPago": "2026-09-10",
+            "medioPago": "credito"
+        }
+    },
+    {
+        "id": 54,
+        "alumno": {
+            "id": 25,
+            "nombre": "Antonella",
+            "apellido": "Núñez"
+        },
+        "periodo": "2026-09",
+        "monto": 25000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": {
+            "id": 50,
+            "fechaPago": "2026-09-09",
+            "medioPago": "efectivo"
+        }
+    },
+    {
+        "id": 55,
+        "alumno": {
+            "id": 26,
+            "nombre": "Ezequiel",
+            "apellido": "Muñoz"
+        },
+        "periodo": "2026-09",
+        "monto": 30000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": {
+            "id": 51,
+            "fechaPago": "2026-09-03",
+            "medioPago": "transferencia"
+        }
+    },
+    {
+        "id": 56,
+        "alumno": {
+            "id": 27,
+            "nombre": "Luciana",
+            "apellido": "Peña"
+        },
+        "periodo": "2026-09",
+        "monto": 25000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": {
+            "id": 52,
+            "fechaPago": "2026-09-08",
+            "medioPago": "efectivo"
+        }
+    },
+    {
+        "id": 57,
+        "alumno": {
+            "id": 28,
+            "nombre": "Maximiliano",
+            "apellido": "Ibáñez"
+        },
+        "periodo": "2026-09",
+        "monto": 30000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": {
+            "id": 53,
+            "fechaPago": "2026-09-09",
+            "medioPago": "debito"
+        }
+    },
+    {
+        "id": 58,
+        "alumno": {
+            "id": 29,
+            "nombre": "Paula",
+            "apellido": "Domínguez"
+        },
+        "periodo": "2026-09",
+        "monto": 25000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": {
+            "id": 54,
+            "fechaPago": "2026-09-02",
+            "medioPago": "efectivo"
+        }
+    },
+    {
+        "id": 59,
+        "alumno": {
+            "id": 30,
+            "nombre": "Matías",
+            "apellido": "Cabrera"
+        },
+        "periodo": "2026-09",
+        "monto": 30000,
+        "fechaVencimiento": "2026-09-10",
+        "pago": null
+    },
+    {
+        "id": 60,
+        "alumno": {
+            "id": 1,
+            "nombre": "Lucía",
+            "apellido": "Gómez"
+        },
+        "periodo": "2026-10",
+        "monto": 25000,
+        "fechaVencimiento": "2026-10-10",
+        "pago": {
+            "id": 55,
+            "fechaPago": "2026-10-06",
+            "medioPago": "efectivo"
+        }
+    },
+    {
+        "id": 61,
+        "alumno": {
+            "id": 2,
+            "nombre": "Martín",
+            "apellido": "Fernández"
+        },
+        "periodo": "2026-10",
+        "monto": 30000,
+        "fechaVencimiento": "2026-10-10",
+        "pago": {
+            "id": 56,
+            "fechaPago": "2026-10-04",
+            "medioPago": "debito"
+        }
+    },
+    {
+        "id": 62,
+        "alumno": {
+            "id": 4,
+            "nombre": "Mateo",
+            "apellido": "González"
+        },
+        "periodo": "2026-10",
+        "monto": 30000,
+        "fechaVencimiento": "2026-10-10",
+        "pago": {
+            "id": 57,
+            "fechaPago": "2026-10-04",
+            "medioPago": "transferencia"
+        }
+    },
+    {
+        "id": 63,
+        "alumno": {
+            "id": 5,
+            "nombre": "Valentina",
+            "apellido": "Pérez"
+        },
+        "periodo": "2026-10",
+        "monto": 25000,
+        "fechaVencimiento": "2026-10-10",
+        "pago": null
+    },
+    {
+        "id": 64,
+        "alumno": {
+            "id": 6,
+            "nombre": "Santiago",
+            "apellido": "Sánchez"
+        },
+        "periodo": "2026-10",
+        "monto": 30000,
+        "fechaVencimiento": "2026-10-10",
+        "pago": null
+    },
+    {
+        "id": 65,
+        "alumno": {
+            "id": 7,
+            "nombre": "Camila",
+            "apellido": "Romero"
+        },
+        "periodo": "2026-10",
+        "monto": 25000,
+        "fechaVencimiento": "2026-10-10",
+        "pago": {
+            "id": 58,
+            "fechaPago": "2026-10-02",
+            "medioPago": "credito"
+        }
+    },
+    {
+        "id": 66,
+        "alumno": {
+            "id": 9,
+            "nombre": "Julieta",
+            "apellido": "Álvarez"
+        },
+        "periodo": "2026-10",
+        "monto": 25000,
+        "fechaVencimiento": "2026-10-10",
+        "pago": null
+    },
+    {
+        "id": 67,
+        "alumno": {
+            "id": 10,
+            "nombre": "Tomás",
+            "apellido": "Torres"
+        },
+        "periodo": "2026-10",
+        "monto": 30000,
+        "fechaVencimiento": "2026-10-10",
+        "pago": {
+            "id": 59,
+            "fechaPago": "2026-10-03",
+            "medioPago": "credito"
+        }
+    },
+    {
+        "id": 68,
+        "alumno": {
+            "id": 11,
+            "nombre": "Agustina",
+            "apellido": "Ruiz"
+        },
+        "periodo": "2026-10",
+        "monto": 25000,
+        "fechaVencimiento": "2026-10-10",
+        "pago": {
+            "id": 60,
+            "fechaPago": "2026-10-09",
+            "medioPago": "efectivo"
+        }
+    },
+    {
+        "id": 69,
+        "alumno": {
+            "id": 12,
+            "nombre": "Facundo",
+            "apellido": "Gómez"
+        },
+        "periodo": "2026-10",
+        "monto": 30000,
+        "fechaVencimiento": "2026-10-10",
+        "pago": {
+            "id": 61,
+            "fechaPago": "2026-10-02",
+            "medioPago": "credito"
+        }
+    },
+    {
+        "id": 70,
+        "alumno": {
+            "id": 13,
+            "nombre": "Florencia",
+            "apellido": "Benítez"
+        },
+        "periodo": "2026-10",
+        "monto": 25000,
+        "fechaVencimiento": "2026-10-10",
+        "pago": {
+            "id": 62,
+            "fechaPago": "2026-10-09",
+            "medioPago": "credito"
+        }
+    },
+    {
+        "id": 71,
+        "alumno": {
+            "id": 15,
+            "nombre": "Micaela",
+            "apellido": "Herrera"
+        },
+        "periodo": "2026-10",
+        "monto": 25000,
+        "fechaVencimiento": "2026-10-10",
+        "pago": {
+            "id": 63,
+            "fechaPago": "2026-10-04",
+            "medioPago": "credito"
+        }
+    },
+    {
+        "id": 72,
+        "alumno": {
+            "id": 16,
+            "nombre": "Lautaro",
+            "apellido": "Suárez"
+        },
+        "periodo": "2026-10",
+        "monto": 30000,
+        "fechaVencimiento": "2026-10-10",
+        "pago": {
+            "id": 64,
+            "fechaPago": "2026-10-08",
+            "medioPago": "debito"
+        }
+    },
+    {
+        "id": 73,
+        "alumno": {
+            "id": 17,
+            "nombre": "Candela",
+            "apellido": "Aguirre"
+        },
+        "periodo": "2026-10",
+        "monto": 25000,
+        "fechaVencimiento": "2026-10-10",
+        "pago": {
+            "id": 65,
+            "fechaPago": "2026-10-10",
+            "medioPago": "credito"
+        }
+    },
+    {
+        "id": 74,
+        "alumno": {
+            "id": 18,
+            "nombre": "Bruno",
+            "apellido": "Giménez"
+        },
+        "periodo": "2026-10",
+        "monto": 30000,
+        "fechaVencimiento": "2026-10-10",
+        "pago": null
+    },
+    {
+        "id": 75,
+        "alumno": {
+            "id": 20,
+            "nombre": "Franco",
+            "apellido": "González"
+        },
+        "periodo": "2026-10",
+        "monto": 30000,
+        "fechaVencimiento": "2026-10-10",
+        "pago": {
+            "id": 66,
+            "fechaPago": "2026-10-06",
+            "medioPago": "transferencia"
+        }
+    },
+    {
+        "id": 76,
+        "alumno": {
+            "id": 21,
+            "nombre": "Rocío",
+            "apellido": "Flores"
+        },
+        "periodo": "2026-10",
+        "monto": 25000,
+        "fechaVencimiento": "2026-10-10",
+        "pago": {
+            "id": 67,
+            "fechaPago": "2026-10-02",
+            "medioPago": "efectivo"
+        }
+    },
+    {
+        "id": 77,
+        "alumno": {
+            "id": 22,
+            "nombre": "Ignacio",
+            "apellido": "Morales"
+        },
+        "periodo": "2026-10",
+        "monto": 30000,
+        "fechaVencimiento": "2026-10-10",
+        "pago": {
+            "id": 68,
+            "fechaPago": "2026-10-03",
+            "medioPago": "efectivo"
+        }
+    },
+    {
+        "id": 78,
+        "alumno": {
+            "id": 23,
+            "nombre": "Brenda",
+            "apellido": "Ortiz"
+        },
+        "periodo": "2026-10",
+        "monto": 25000,
+        "fechaVencimiento": "2026-10-10",
+        "pago": {
+            "id": 69,
+            "fechaPago": "2026-10-07",
+            "medioPago": "transferencia"
+        }
+    },
+    {
+        "id": 79,
+        "alumno": {
+            "id": 24,
+            "nombre": "Gonzalo",
+            "apellido": "Silva"
+        },
+        "periodo": "2026-10",
+        "monto": 30000,
+        "fechaVencimiento": "2026-10-10",
+        "pago": {
+            "id": 70,
+            "fechaPago": "2026-10-10",
+            "medioPago": "credito"
+        }
+    },
+    {
+        "id": 80,
+        "alumno": {
+            "id": 25,
+            "nombre": "Antonella",
+            "apellido": "Núñez"
+        },
+        "periodo": "2026-10",
+        "monto": 25000,
+        "fechaVencimiento": "2026-10-10",
+        "pago": {
+            "id": 71,
+            "fechaPago": "2026-10-02",
+            "medioPago": "transferencia"
+        }
+    },
+    {
+        "id": 81,
+        "alumno": {
+            "id": 27,
+            "nombre": "Luciana",
+            "apellido": "Peña"
+        },
+        "periodo": "2026-10",
+        "monto": 25000,
+        "fechaVencimiento": "2026-10-10",
+        "pago": {
+            "id": 72,
+            "fechaPago": "2026-10-05",
+            "medioPago": "debito"
+        }
+    },
+    {
+        "id": 82,
+        "alumno": {
+            "id": 28,
+            "nombre": "Maximiliano",
+            "apellido": "Ibáñez"
+        },
+        "periodo": "2026-10",
+        "monto": 30000,
+        "fechaVencimiento": "2026-10-10",
+        "pago": {
+            "id": 73,
+            "fechaPago": "2026-10-03",
+            "medioPago": "debito"
+        }
+    },
+    {
+        "id": 83,
+        "alumno": {
+            "id": 29,
+            "nombre": "Paula",
+            "apellido": "Domínguez"
+        },
+        "periodo": "2026-10",
+        "monto": 25000,
+        "fechaVencimiento": "2026-10-10",
+        "pago": {
+            "id": 74,
+            "fechaPago": "2026-10-09",
+            "medioPago": "transferencia"
+        }
+    },
+    {
+        "id": 84,
+        "alumno": {
+            "id": 30,
+            "nombre": "Matías",
+            "apellido": "Cabrera"
+        },
+        "periodo": "2026-10",
+        "monto": 30000,
+        "fechaVencimiento": "2026-10-10",
+        "pago": null
+    },
+    {
+        "id": 85,
+        "alumno": {
+            "id": 31,
+            "nombre": "Lucía",
+            "apellido": "Vega"
+        },
+        "periodo": "2026-10",
+        "monto": 25000,
+        "fechaVencimiento": "2026-10-10",
+        "pago": {
+            "id": 75,
+            "fechaPago": "2026-10-04",
+            "medioPago": "debito"
+        }
+    },
+    {
+        "id": 86,
+        "alumno": {
+            "id": 1,
+            "nombre": "Lucía",
+            "apellido": "Gómez"
+        },
+        "periodo": "2026-11",
+        "monto": 25000,
+        "fechaVencimiento": "2026-11-10",
+        "pago": {
+            "id": 76,
+            "fechaPago": "2026-11-05",
+            "medioPago": "credito"
+        }
+    },
+    {
+        "id": 87,
+        "alumno": {
+            "id": 2,
+            "nombre": "Martín",
+            "apellido": "Fernández"
+        },
+        "periodo": "2026-11",
+        "monto": 30000,
+        "fechaVencimiento": "2026-11-10",
+        "pago": {
+            "id": 77,
+            "fechaPago": "2026-11-05",
+            "medioPago": "efectivo"
+        }
+    },
+    {
+        "id": 88,
+        "alumno": {
+            "id": 4,
+            "nombre": "Mateo",
+            "apellido": "González"
+        },
+        "periodo": "2026-11",
+        "monto": 30000,
+        "fechaVencimiento": "2026-11-10",
+        "pago": null
+    },
+    {
+        "id": 89,
+        "alumno": {
+            "id": 5,
+            "nombre": "Valentina",
+            "apellido": "Pérez"
+        },
+        "periodo": "2026-11",
+        "monto": 25000,
+        "fechaVencimiento": "2026-11-10",
+        "pago": null
+    },
+    {
+        "id": 90,
+        "alumno": {
+            "id": 6,
+            "nombre": "Santiago",
+            "apellido": "Sánchez"
+        },
+        "periodo": "2026-11",
+        "monto": 30000,
+        "fechaVencimiento": "2026-11-10",
+        "pago": {
+            "id": 78,
+            "fechaPago": "2026-11-10",
+            "medioPago": "efectivo"
+        }
+    },
+    {
+        "id": 91,
+        "alumno": {
+            "id": 7,
+            "nombre": "Camila",
+            "apellido": "Romero"
+        },
+        "periodo": "2026-11",
+        "monto": 25000,
+        "fechaVencimiento": "2026-11-10",
+        "pago": {
+            "id": 79,
+            "fechaPago": "2026-11-06",
+            "medioPago": "credito"
+        }
+    },
+    {
+        "id": 92,
+        "alumno": {
+            "id": 9,
+            "nombre": "Julieta",
+            "apellido": "Álvarez"
+        },
+        "periodo": "2026-11",
+        "monto": 25000,
+        "fechaVencimiento": "2026-11-10",
+        "pago": {
+            "id": 80,
+            "fechaPago": "2026-11-06",
+            "medioPago": "transferencia"
+        }
+    },
+    {
+        "id": 93,
+        "alumno": {
+            "id": 10,
+            "nombre": "Tomás",
+            "apellido": "Torres"
+        },
+        "periodo": "2026-11",
+        "monto": 30000,
+        "fechaVencimiento": "2026-11-10",
+        "pago": null
+    },
+    {
+        "id": 94,
+        "alumno": {
+            "id": 11,
+            "nombre": "Agustina",
+            "apellido": "Ruiz"
+        },
+        "periodo": "2026-11",
+        "monto": 25000,
+        "fechaVencimiento": "2026-11-10",
+        "pago": null
+    },
+    {
+        "id": 95,
+        "alumno": {
+            "id": 12,
+            "nombre": "Facundo",
+            "apellido": "Gómez"
+        },
+        "periodo": "2026-11",
+        "monto": 30000,
+        "fechaVencimiento": "2026-11-10",
+        "pago": null
+    },
+    {
+        "id": 96,
+        "alumno": {
+            "id": 13,
+            "nombre": "Florencia",
+            "apellido": "Benítez"
+        },
+        "periodo": "2026-11",
+        "monto": 25000,
+        "fechaVencimiento": "2026-11-10",
+        "pago": {
+            "id": 81,
+            "fechaPago": "2026-11-06",
+            "medioPago": "transferencia"
+        }
+    },
+    {
+        "id": 97,
+        "alumno": {
+            "id": 15,
+            "nombre": "Micaela",
+            "apellido": "Herrera"
+        },
+        "periodo": "2026-11",
+        "monto": 25000,
+        "fechaVencimiento": "2026-11-10",
+        "pago": {
+            "id": 82,
+            "fechaPago": "2026-11-06",
+            "medioPago": "debito"
+        }
+    },
+    {
+        "id": 98,
+        "alumno": {
+            "id": 16,
+            "nombre": "Lautaro",
+            "apellido": "Suárez"
+        },
+        "periodo": "2026-11",
+        "monto": 30000,
+        "fechaVencimiento": "2026-11-10",
+        "pago": null
+    },
+    {
+        "id": 99,
+        "alumno": {
+            "id": 17,
+            "nombre": "Candela",
+            "apellido": "Aguirre"
+        },
+        "periodo": "2026-11",
+        "monto": 25000,
+        "fechaVencimiento": "2026-11-10",
+        "pago": null
+    },
+    {
+        "id": 100,
+        "alumno": {
+            "id": 18,
+            "nombre": "Bruno",
+            "apellido": "Giménez"
+        },
+        "periodo": "2026-11",
+        "monto": 30000,
+        "fechaVencimiento": "2026-11-10",
+        "pago": {
+            "id": 83,
+            "fechaPago": "2026-11-05",
+            "medioPago": "transferencia"
+        }
+    },
+    {
+        "id": 101,
+        "alumno": {
+            "id": 20,
+            "nombre": "Franco",
+            "apellido": "González"
+        },
+        "periodo": "2026-11",
+        "monto": 30000,
+        "fechaVencimiento": "2026-11-10",
+        "pago": null
+    },
+    {
+        "id": 102,
+        "alumno": {
+            "id": 21,
+            "nombre": "Rocío",
+            "apellido": "Flores"
+        },
+        "periodo": "2026-11",
+        "monto": 25000,
+        "fechaVencimiento": "2026-11-10",
+        "pago": null
+    },
+    {
+        "id": 103,
+        "alumno": {
+            "id": 22,
+            "nombre": "Ignacio",
+            "apellido": "Morales"
+        },
+        "periodo": "2026-11",
+        "monto": 30000,
+        "fechaVencimiento": "2026-11-10",
+        "pago": null
+    },
+    {
+        "id": 104,
+        "alumno": {
+            "id": 23,
+            "nombre": "Brenda",
+            "apellido": "Ortiz"
+        },
+        "periodo": "2026-11",
+        "monto": 25000,
+        "fechaVencimiento": "2026-11-10",
+        "pago": {
+            "id": 84,
+            "fechaPago": "2026-11-02",
+            "medioPago": "transferencia"
+        }
+    },
+    {
+        "id": 105,
+        "alumno": {
+            "id": 24,
+            "nombre": "Gonzalo",
+            "apellido": "Silva"
+        },
+        "periodo": "2026-11",
+        "monto": 30000,
+        "fechaVencimiento": "2026-11-10",
+        "pago": {
+            "id": 85,
+            "fechaPago": "2026-11-04",
+            "medioPago": "credito"
+        }
+    },
+    {
+        "id": 106,
+        "alumno": {
+            "id": 25,
+            "nombre": "Antonella",
+            "apellido": "Núñez"
+        },
+        "periodo": "2026-11",
+        "monto": 25000,
+        "fechaVencimiento": "2026-11-10",
+        "pago": {
+            "id": 86,
+            "fechaPago": "2026-11-09",
+            "medioPago": "efectivo"
+        }
+    },
+    {
+        "id": 107,
+        "alumno": {
+            "id": 27,
+            "nombre": "Luciana",
+            "apellido": "Peña"
+        },
+        "periodo": "2026-11",
+        "monto": 25000,
+        "fechaVencimiento": "2026-11-10",
+        "pago": null
+    },
+    {
+        "id": 108,
+        "alumno": {
+            "id": 28,
+            "nombre": "Maximiliano",
+            "apellido": "Ibáñez"
+        },
+        "periodo": "2026-11",
+        "monto": 30000,
+        "fechaVencimiento": "2026-11-10",
+        "pago": {
+            "id": 87,
+            "fechaPago": "2026-11-08",
+            "medioPago": "transferencia"
+        }
+    },
+    {
+        "id": 109,
+        "alumno": {
+            "id": 29,
+            "nombre": "Paula",
+            "apellido": "Domínguez"
+        },
+        "periodo": "2026-11",
+        "monto": 25000,
+        "fechaVencimiento": "2026-11-10",
+        "pago": null
+    },
+    {
+        "id": 110,
+        "alumno": {
+            "id": 30,
+            "nombre": "Matías",
+            "apellido": "Cabrera"
+        },
+        "periodo": "2026-11",
+        "monto": 30000,
+        "fechaVencimiento": "2026-11-10",
+        "pago": {
+            "id": 88,
+            "fechaPago": "2026-11-03",
+            "medioPago": "debito"
+        }
+    },
+    {
+        "id": 111,
+        "alumno": {
+            "id": 31,
+            "nombre": "Lucía",
+            "apellido": "Vega"
+        },
+        "periodo": "2026-11",
+        "monto": 25000,
+        "fechaVencimiento": "2026-11-10",
+        "pago": null
+    },
+    {
+        "id": 112,
+        "alumno": {
+            "id": 32,
+            "nombre": "Sebastián",
+            "apellido": "Molina"
+        },
+        "periodo": "2026-11",
+        "monto": 30000,
+        "fechaVencimiento": "2026-11-10",
+        "pago": null
+    },
+    {
+        "id": 113,
+        "alumno": {
+            "id": 1,
+            "nombre": "Lucía",
+            "apellido": "Gómez"
+        },
+        "periodo": "2026-12",
+        "monto": 25000,
+        "fechaVencimiento": "2026-12-10",
+        "pago": null
+    },
+    {
+        "id": 114,
+        "alumno": {
+            "id": 2,
+            "nombre": "Martín",
+            "apellido": "Fernández"
+        },
+        "periodo": "2026-12",
+        "monto": 30000,
+        "fechaVencimiento": "2026-12-10",
+        "pago": {
+            "id": 89,
+            "fechaPago": "2026-11-18",
+            "medioPago": "debito"
+        }
+    },
+    {
+        "id": 115,
+        "alumno": {
+            "id": 4,
+            "nombre": "Mateo",
+            "apellido": "González"
+        },
+        "periodo": "2026-12",
+        "monto": 30000,
+        "fechaVencimiento": "2026-12-10",
+        "pago": null
+    },
+    {
+        "id": 116,
+        "alumno": {
+            "id": 5,
+            "nombre": "Valentina",
+            "apellido": "Pérez"
+        },
+        "periodo": "2026-12",
+        "monto": 25000,
+        "fechaVencimiento": "2026-12-10",
+        "pago": null
+    },
+    {
+        "id": 117,
+        "alumno": {
+            "id": 6,
+            "nombre": "Santiago",
+            "apellido": "Sánchez"
+        },
+        "periodo": "2026-12",
+        "monto": 30000,
+        "fechaVencimiento": "2026-12-10",
+        "pago": null
+    },
+    {
+        "id": 118,
+        "alumno": {
+            "id": 7,
+            "nombre": "Camila",
+            "apellido": "Romero"
+        },
+        "periodo": "2026-12",
+        "monto": 25000,
+        "fechaVencimiento": "2026-12-10",
+        "pago": {
+            "id": 90,
+            "fechaPago": "2026-11-19",
+            "medioPago": "debito"
+        }
+    },
+    {
+        "id": 119,
+        "alumno": {
+            "id": 9,
+            "nombre": "Julieta",
+            "apellido": "Álvarez"
+        },
+        "periodo": "2026-12",
+        "monto": 25000,
+        "fechaVencimiento": "2026-12-10",
+        "pago": null
+    },
+    {
+        "id": 120,
+        "alumno": {
+            "id": 10,
+            "nombre": "Tomás",
+            "apellido": "Torres"
+        },
+        "periodo": "2026-12",
+        "monto": 30000,
+        "fechaVencimiento": "2026-12-10",
+        "pago": null
+    },
+    {
+        "id": 121,
+        "alumno": {
+            "id": 11,
+            "nombre": "Agustina",
+            "apellido": "Ruiz"
+        },
+        "periodo": "2026-12",
+        "monto": 25000,
+        "fechaVencimiento": "2026-12-10",
+        "pago": null
+    },
+    {
+        "id": 122,
+        "alumno": {
+            "id": 12,
+            "nombre": "Facundo",
+            "apellido": "Gómez"
+        },
+        "periodo": "2026-12",
+        "monto": 30000,
+        "fechaVencimiento": "2026-12-10",
+        "pago": null
+    },
+    {
+        "id": 123,
+        "alumno": {
+            "id": 13,
+            "nombre": "Florencia",
+            "apellido": "Benítez"
+        },
+        "periodo": "2026-12",
+        "monto": 25000,
+        "fechaVencimiento": "2026-12-10",
+        "pago": {
+            "id": 91,
+            "fechaPago": "2026-11-24",
+            "medioPago": "efectivo"
+        }
+    },
+    {
+        "id": 124,
+        "alumno": {
+            "id": 15,
+            "nombre": "Micaela",
+            "apellido": "Herrera"
+        },
+        "periodo": "2026-12",
+        "monto": 25000,
+        "fechaVencimiento": "2026-12-10",
+        "pago": null
+    },
+    {
+        "id": 125,
+        "alumno": {
+            "id": 16,
+            "nombre": "Lautaro",
+            "apellido": "Suárez"
+        },
+        "periodo": "2026-12",
+        "monto": 30000,
+        "fechaVencimiento": "2026-12-10",
+        "pago": null
+    },
+    {
+        "id": 126,
+        "alumno": {
+            "id": 17,
+            "nombre": "Candela",
+            "apellido": "Aguirre"
+        },
+        "periodo": "2026-12",
+        "monto": 25000,
+        "fechaVencimiento": "2026-12-10",
+        "pago": null
+    },
+    {
+        "id": 127,
+        "alumno": {
+            "id": 18,
+            "nombre": "Bruno",
+            "apellido": "Giménez"
+        },
+        "periodo": "2026-12",
+        "monto": 30000,
+        "fechaVencimiento": "2026-12-10",
+        "pago": null
+    },
+    {
+        "id": 128,
+        "alumno": {
+            "id": 20,
+            "nombre": "Franco",
+            "apellido": "González"
+        },
+        "periodo": "2026-12",
+        "monto": 30000,
+        "fechaVencimiento": "2026-12-10",
+        "pago": null
+    },
+    {
+        "id": 129,
+        "alumno": {
+            "id": 21,
+            "nombre": "Rocío",
+            "apellido": "Flores"
+        },
+        "periodo": "2026-12",
+        "monto": 25000,
+        "fechaVencimiento": "2026-12-10",
+        "pago": null
+    },
+    {
+        "id": 130,
+        "alumno": {
+            "id": 22,
+            "nombre": "Ignacio",
+            "apellido": "Morales"
+        },
+        "periodo": "2026-12",
+        "monto": 30000,
+        "fechaVencimiento": "2026-12-10",
+        "pago": null
+    },
+    {
+        "id": 131,
+        "alumno": {
+            "id": 23,
+            "nombre": "Brenda",
+            "apellido": "Ortiz"
+        },
+        "periodo": "2026-12",
+        "monto": 25000,
+        "fechaVencimiento": "2026-12-10",
+        "pago": null
+    },
+    {
+        "id": 132,
+        "alumno": {
+            "id": 24,
+            "nombre": "Gonzalo",
+            "apellido": "Silva"
+        },
+        "periodo": "2026-12",
+        "monto": 30000,
+        "fechaVencimiento": "2026-12-10",
+        "pago": null
+    },
+    {
+        "id": 133,
+        "alumno": {
+            "id": 25,
+            "nombre": "Antonella",
+            "apellido": "Núñez"
+        },
+        "periodo": "2026-12",
+        "monto": 25000,
+        "fechaVencimiento": "2026-12-10",
+        "pago": null
+    },
+    {
+        "id": 134,
+        "alumno": {
+            "id": 27,
+            "nombre": "Luciana",
+            "apellido": "Peña"
+        },
+        "periodo": "2026-12",
+        "monto": 25000,
+        "fechaVencimiento": "2026-12-10",
+        "pago": {
+            "id": 92,
+            "fechaPago": "2026-11-19",
+            "medioPago": "efectivo"
+        }
+    },
+    {
+        "id": 135,
+        "alumno": {
+            "id": 28,
+            "nombre": "Maximiliano",
+            "apellido": "Ibáñez"
+        },
+        "periodo": "2026-12",
+        "monto": 30000,
+        "fechaVencimiento": "2026-12-10",
+        "pago": null
+    },
+    {
+        "id": 136,
+        "alumno": {
+            "id": 29,
+            "nombre": "Paula",
+            "apellido": "Domínguez"
+        },
+        "periodo": "2026-12",
+        "monto": 25000,
+        "fechaVencimiento": "2026-12-10",
+        "pago": null
+    },
+    {
+        "id": 137,
+        "alumno": {
+            "id": 30,
+            "nombre": "Matías",
+            "apellido": "Cabrera"
+        },
+        "periodo": "2026-12",
+        "monto": 30000,
+        "fechaVencimiento": "2026-12-10",
+        "pago": null
+    },
+    {
+        "id": 138,
+        "alumno": {
+            "id": 31,
+            "nombre": "Lucía",
+            "apellido": "Vega"
+        },
+        "periodo": "2026-12",
+        "monto": 25000,
+        "fechaVencimiento": "2026-12-10",
+        "pago": null
+    },
+    {
+        "id": 139,
+        "alumno": {
+            "id": 32,
+            "nombre": "Sebastián",
+            "apellido": "Molina"
+        },
+        "periodo": "2026-12",
+        "monto": 30000,
+        "fechaVencimiento": "2026-12-10",
+        "pago": null
+    }
+]
