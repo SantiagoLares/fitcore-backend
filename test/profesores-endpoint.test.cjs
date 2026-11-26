@@ -670,17 +670,50 @@ function enviarEliminacion(base, id) {
   });
 }
 
-test('DELETE /api/v1/profesores/:id elimina un profesor correctamente', async () => {
+test('DELETE elimina un profesor y permite reutilizar su usuario y DNI', async () => {
   const servidor = app.listen(0);
   const base = `http://localhost:${servidor.address().port}/api/v1/profesores`;
 
   try {
     const profesor = obtenerProfesorSinClases();
 
-    const response = await enviarEliminacion(base, profesor.id);
+    // Comprobar que el profesor existe.
+    const consultaInicial = await fetch(`${base}/${profesor.id}`);
+    assert.equal(consultaInicial.status, 200);
 
-    assert.equal(response.status, 204);
-    assert.equal(await response.text(), '');
+    // Eliminar el profesor.
+    const eliminacion = await enviarEliminacion(base, profesor.id);
+
+    assert.equal(eliminacion.status, 204);
+    assert.equal(await eliminacion.text(), '');
+
+    // Comprobar que ya no existe.
+    const consulta = await fetch(`${base}/${profesor.id}`);
+    const error = await consulta.json();
+
+    assert.equal(consulta.status, 404);
+    assert.equal(error.error, 'Profesor no encontrado');
+
+    // Volver a registrar el usuario y DNI liberados.
+    const { id, ...datos } = profesor;
+
+    const alta = await fetch(base, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(datos),
+    });
+
+    const body = await alta.json();
+
+    assert.equal(alta.status, 201);
+    assert.equal(body.data.usuarioId, profesor.usuarioId);
+    assert.equal(body.data.dni, profesor.dni);
+
+    // Comprobar que el nuevo profesor existe.
+    const consultaFinal = await fetch(`${base}/${body.data.id}`);
+    assert.equal(consultaFinal.status, 200);
   } finally {
     servidor.close();
   }
@@ -748,52 +781,6 @@ test('DELETE /api/v1/profesores/:id rechaza profesores con clases asignadas', as
     const resultado = await consultaFinal.json();
 
     assert.deepEqual(resultado.data, original.data);
-  } finally {
-    servidor.close();
-  }
-});
-
-test('GET /api/v1/profesores/:id devuelve 404 después de eliminar un profesor', async () => {
-  const servidor = app.listen(0);
-  const base = `http://localhost:${servidor.address().port}/api/v1/profesores`;
-
-  try {
-    const profesor = obtenerProfesorSinClases();
-
-    const response = await fetch(`${base}/${profesor.id}`);
-    const body = await response.json();
-
-    assert.equal(response.status, 404);
-    assert.equal(body.error, 'Profesor no encontrado');
-  } finally {
-    servidor.close();
-  }
-});
-
-test('POST /api/v1/profesores permite reutilizar el usuario y DNI de un profesor eliminado', async () => {
-  const servidor = app.listen(0);
-  const base = `http://localhost:${servidor.address().port}/api/v1/profesores`;
-
-  try {
-    const profesor = obtenerProfesorSinClases();
-    const { id, ...datos } = profesor;
-
-    const response = await fetch(base, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(datos),
-    });
-
-    const body = await response.json();
-
-    assert.equal(response.status, 201);
-    assert.equal(body.data.usuarioId, profesor.usuarioId);
-    assert.equal(body.data.dni, profesor.dni);
-
-    const consulta = await fetch(`${base}/${body.data.id}`);
-    assert.equal(consulta.status, 200);
   } finally {
     servidor.close();
   }
