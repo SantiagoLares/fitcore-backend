@@ -295,8 +295,8 @@ Cambia `activo` a `false`; el usuario ya no puede iniciar sesión. Un usuario no
 
 ### Listado
 
-- `sortBy` permitido: `apellido` (por defecto), `nombre`, `dni`, `fechaAlta`.
-- Filtros: `search` (apellido, nombre o DNI), `estado`. Sin filtro de estado, devuelve todos.
+- `sortBy` permitido: `id`, `apellido` (por defecto), `nombre`, `dni`, `fechaAlta`.
+- Filtros: `search` (nombre, apellido, DNI o email), `nombre` (nombre y apellido), `dni`, `email` y `estado`. Sin filtro de estado, devuelve todos.
 
 Ejemplo: `GET /api/v1/alumnos?search=gomez&estado=activo&page=1&limit=10`
 
