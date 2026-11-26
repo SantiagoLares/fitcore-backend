@@ -161,6 +161,24 @@ function validarDatosProfesor(body: unknown, usuarios: readonly Usuario[]): Omit
   };
 }
 
+function validarDuplicadosProfesor(
+  profesores: readonly Profesor[],
+  datos: Omit<Profesor, 'id'>,
+  profesorId?: number,
+): void {
+  if (profesores.some((profesor) => profesor.id !== profesorId && profesor.dni === datos.dni)) {
+    throw new HttpError(409, 'DUPLICATE_DNI', 'El DNI ya está registrado');
+  }
+
+  if (
+    profesores.some(
+      (profesor) => profesor.id !== profesorId && profesor.usuarioId === datos.usuarioId,
+    )
+  ) {
+    throw new HttpError(409, 'DUPLICATE_USER', 'El usuario ya tiene un profesor asociado');
+  }
+}
+
 export function crearProfesor(
   profesores: Profesor[],
   usuarios: readonly Usuario[],
@@ -168,20 +186,11 @@ export function crearProfesor(
 ): Profesor {
   const datos = validarDatosProfesor(body, usuarios);
 
-  if (profesores.some((profesor) => profesor.dni === datos.dni)) {
-    throw new HttpError(409, 'DUPLICATE_DNI', 'El DNI ya está registrado');
-  }
-
-  if (profesores.some((profesor) => profesor.usuarioId === datos.usuarioId)) {
-    throw new HttpError(409, 'DUPLICATE_USER', 'El usuario ya tiene un profesor asociado');
-  }
+  validarDuplicadosProfesor(profesores, datos);
 
   const id = Math.max(0, ...profesores.map((profesor) => profesor.id)) + 1;
 
-  const profesor: Profesor = {
-    id,
-    ...datos,
-  };
+  const profesor: Profesor = { id, ...datos };
 
   profesores.push(profesor);
 
@@ -204,20 +213,10 @@ export function modificarProfesor(
 
   const datos = validarDatosProfesor(body, usuarios);
 
-  if (profesores.some((profesor) => profesor.id !== Number(id) && profesor.dni === datos.dni)) {
-    throw new HttpError(409, 'DUPLICATE_DNI', 'El DNI ya está registrado');
-  }
-
-  if (
-    profesores.some(
-      (profesor) => profesor.id !== Number(id) && profesor.usuarioId === datos.usuarioId,
-    )
-  ) {
-    throw new HttpError(409, 'DUPLICATE_USER', 'El usuario ya tiene un profesor asociado');
-  }
+  validarDuplicadosProfesor(profesores, datos, profesorId);
 
   const profesorActualizado: Profesor = {
-    id: Number(id),
+    id: profesorId,
     ...datos,
   };
 
