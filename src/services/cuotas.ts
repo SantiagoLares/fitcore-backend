@@ -108,22 +108,26 @@ export function listarCuotas(
         },
     });
 
+}
 
-    export function obtenerCuotaPorId(
-        cuotas: readonly CuotaRegistro[],
-        id: unknown,
-        hoy: string = fechaDeHoy(),
-    ): Cuota {
-        if (typeof id !== 'string' || !/^[1-9]\d*$/.test(id) || !Number.isSafeInteger(Number(id))) {
-            throw new HttpError(400, 'INVALID_ID', 'El ID debe ser un entero positivo');
-        }
-
-        const cuota = cuotas.find((item) => item.id === Number(id));
-
-        if (!cuota) {
-            throw new HttpError(404, 'CUOTA_NOT_FOUND', 'Cuota no encontrada');
-        }
-
-        return { ...cuota, estado: calcularEstado(cuota, hoy) };
+export function obtenerCuotaPorId(
+    cuotas: readonly CuotaRegistro[],
+    id: unknown,
+    hoy: string = fechaDeHoy(),
+): Cuota {
+    if (
+        typeof id !== 'string' ||
+        !/^[1-9]\d*$/.test(id) ||
+        !Number.isSafeInteger(Number(id))
+    ) {
+        throw new HttpError(400, 'INVALID_ID', 'El ID debe ser un entero positivo');
     }
+
+    const cuota = cuotas.find((item) => item.id === Number(id));
+
+    if (!cuota) {
+        throw new HttpError(404, 'CUOTA_NOT_FOUND', 'Cuota no encontrada');
+    }
+
+    return { ...cuota, estado: calcularEstado(cuota, hoy) };
 }
