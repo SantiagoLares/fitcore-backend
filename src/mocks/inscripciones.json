@@ -1,0 +1,4258 @@
+[
+  {
+    "id": 1,
+    "alumno": {
+      "id": 2,
+      "nombre": "Martín",
+      "apellido": "Fernández"
+    },
+    "clase": {
+      "id": 2,
+      "nombre": "Funcional intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-01",
+    "estado": "activa"
+  },
+  {
+    "id": 2,
+    "alumno": {
+      "id": 4,
+      "nombre": "Mateo",
+      "apellido": "González"
+    },
+    "clase": {
+      "id": 2,
+      "nombre": "Funcional intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-02",
+    "estado": "activa"
+  },
+  {
+    "id": 3,
+    "alumno": {
+      "id": 5,
+      "nombre": "Valentina",
+      "apellido": "Pérez"
+    },
+    "clase": {
+      "id": 2,
+      "nombre": "Funcional intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-03",
+    "estado": "activa"
+  },
+  {
+    "id": 4,
+    "alumno": {
+      "id": 6,
+      "nombre": "Santiago",
+      "apellido": "Sánchez"
+    },
+    "clase": {
+      "id": 2,
+      "nombre": "Funcional intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-04",
+    "estado": "activa"
+  },
+  {
+    "id": 5,
+    "alumno": {
+      "id": 7,
+      "nombre": "Camila",
+      "apellido": "Romero"
+    },
+    "clase": {
+      "id": 2,
+      "nombre": "Funcional intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-05",
+    "estado": "activa"
+  },
+  {
+    "id": 6,
+    "alumno": {
+      "id": 9,
+      "nombre": "Julieta",
+      "apellido": "Álvarez"
+    },
+    "clase": {
+      "id": 2,
+      "nombre": "Funcional intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-06",
+    "estado": "activa"
+  },
+  {
+    "id": 7,
+    "alumno": {
+      "id": 10,
+      "nombre": "Tomás",
+      "apellido": "Torres"
+    },
+    "clase": {
+      "id": 2,
+      "nombre": "Funcional intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-07",
+    "estado": "activa"
+  },
+  {
+    "id": 8,
+    "alumno": {
+      "id": 11,
+      "nombre": "Agustina",
+      "apellido": "Ruiz"
+    },
+    "clase": {
+      "id": 2,
+      "nombre": "Funcional intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-08",
+    "estado": "activa"
+  },
+  {
+    "id": 9,
+    "alumno": {
+      "id": 12,
+      "nombre": "Facundo",
+      "apellido": "Gómez"
+    },
+    "clase": {
+      "id": 2,
+      "nombre": "Funcional intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-09",
+    "estado": "activa"
+  },
+  {
+    "id": 10,
+    "alumno": {
+      "id": 13,
+      "nombre": "Florencia",
+      "apellido": "Benítez"
+    },
+    "clase": {
+      "id": 2,
+      "nombre": "Funcional intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-10",
+    "estado": "activa"
+  },
+  {
+    "id": 11,
+    "alumno": {
+      "id": 15,
+      "nombre": "Micaela",
+      "apellido": "Herrera"
+    },
+    "clase": {
+      "id": 2,
+      "nombre": "Funcional intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-11",
+    "estado": "activa"
+  },
+  {
+    "id": 12,
+    "alumno": {
+      "id": 16,
+      "nombre": "Lautaro",
+      "apellido": "Suárez"
+    },
+    "clase": {
+      "id": 2,
+      "nombre": "Funcional intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-12",
+    "estado": "activa"
+  },
+  {
+    "id": 13,
+    "alumno": {
+      "id": 17,
+      "nombre": "Candela",
+      "apellido": "Aguirre"
+    },
+    "clase": {
+      "id": 2,
+      "nombre": "Funcional intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-13",
+    "estado": "activa"
+  },
+  {
+    "id": 14,
+    "alumno": {
+      "id": 18,
+      "nombre": "Bruno",
+      "apellido": "Giménez"
+    },
+    "clase": {
+      "id": 2,
+      "nombre": "Funcional intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-14",
+    "estado": "activa"
+  },
+  {
+    "id": 15,
+    "alumno": {
+      "id": 20,
+      "nombre": "Franco",
+      "apellido": "González"
+    },
+    "clase": {
+      "id": 2,
+      "nombre": "Funcional intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-15",
+    "estado": "activa"
+  },
+  {
+    "id": 16,
+    "alumno": {
+      "id": 21,
+      "nombre": "Rocío",
+      "apellido": "Flores"
+    },
+    "clase": {
+      "id": 2,
+      "nombre": "Funcional intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-16",
+    "estado": "activa"
+  },
+  {
+    "id": 17,
+    "alumno": {
+      "id": 22,
+      "nombre": "Ignacio",
+      "apellido": "Morales"
+    },
+    "clase": {
+      "id": 2,
+      "nombre": "Funcional intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-17",
+    "estado": "activa"
+  },
+  {
+    "id": 18,
+    "alumno": {
+      "id": 23,
+      "nombre": "Brenda",
+      "apellido": "Ortiz"
+    },
+    "clase": {
+      "id": 2,
+      "nombre": "Funcional intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-18",
+    "estado": "activa"
+  },
+  {
+    "id": 19,
+    "alumno": {
+      "id": 24,
+      "nombre": "Gonzalo",
+      "apellido": "Silva"
+    },
+    "clase": {
+      "id": 2,
+      "nombre": "Funcional intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-19",
+    "estado": "activa"
+  },
+  {
+    "id": 20,
+    "alumno": {
+      "id": 25,
+      "nombre": "Antonella",
+      "apellido": "Núñez"
+    },
+    "clase": {
+      "id": 2,
+      "nombre": "Funcional intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-20",
+    "estado": "activa"
+  },
+  {
+    "id": 21,
+    "alumno": {
+      "id": 4,
+      "nombre": "Mateo",
+      "apellido": "González"
+    },
+    "clase": {
+      "id": 3,
+      "nombre": "Funcional inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-21",
+    "estado": "activa"
+  },
+  {
+    "id": 22,
+    "alumno": {
+      "id": 5,
+      "nombre": "Valentina",
+      "apellido": "Pérez"
+    },
+    "clase": {
+      "id": 3,
+      "nombre": "Funcional inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-22",
+    "estado": "activa"
+  },
+  {
+    "id": 23,
+    "alumno": {
+      "id": 6,
+      "nombre": "Santiago",
+      "apellido": "Sánchez"
+    },
+    "clase": {
+      "id": 3,
+      "nombre": "Funcional inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-23",
+    "estado": "activa"
+  },
+  {
+    "id": 24,
+    "alumno": {
+      "id": 7,
+      "nombre": "Camila",
+      "apellido": "Romero"
+    },
+    "clase": {
+      "id": 3,
+      "nombre": "Funcional inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-24",
+    "estado": "activa"
+  },
+  {
+    "id": 25,
+    "alumno": {
+      "id": 9,
+      "nombre": "Julieta",
+      "apellido": "Álvarez"
+    },
+    "clase": {
+      "id": 3,
+      "nombre": "Funcional inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-25",
+    "estado": "activa"
+  },
+  {
+    "id": 26,
+    "alumno": {
+      "id": 10,
+      "nombre": "Tomás",
+      "apellido": "Torres"
+    },
+    "clase": {
+      "id": 3,
+      "nombre": "Funcional inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-26",
+    "estado": "activa"
+  },
+  {
+    "id": 27,
+    "alumno": {
+      "id": 11,
+      "nombre": "Agustina",
+      "apellido": "Ruiz"
+    },
+    "clase": {
+      "id": 3,
+      "nombre": "Funcional inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-27",
+    "estado": "activa"
+  },
+  {
+    "id": 28,
+    "alumno": {
+      "id": 12,
+      "nombre": "Facundo",
+      "apellido": "Gómez"
+    },
+    "clase": {
+      "id": 3,
+      "nombre": "Funcional inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-28",
+    "estado": "activa"
+  },
+  {
+    "id": 29,
+    "alumno": {
+      "id": 13,
+      "nombre": "Florencia",
+      "apellido": "Benítez"
+    },
+    "clase": {
+      "id": 3,
+      "nombre": "Funcional inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-29",
+    "estado": "activa"
+  },
+  {
+    "id": 30,
+    "alumno": {
+      "id": 15,
+      "nombre": "Micaela",
+      "apellido": "Herrera"
+    },
+    "clase": {
+      "id": 3,
+      "nombre": "Funcional inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-30",
+    "estado": "activa"
+  },
+  {
+    "id": 31,
+    "alumno": {
+      "id": 5,
+      "nombre": "Valentina",
+      "apellido": "Pérez"
+    },
+    "clase": {
+      "id": 4,
+      "nombre": "Funcional intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-31",
+    "estado": "activa"
+  },
+  {
+    "id": 32,
+    "alumno": {
+      "id": 6,
+      "nombre": "Santiago",
+      "apellido": "Sánchez"
+    },
+    "clase": {
+      "id": 4,
+      "nombre": "Funcional intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-01",
+    "estado": "activa"
+  },
+  {
+    "id": 33,
+    "alumno": {
+      "id": 7,
+      "nombre": "Camila",
+      "apellido": "Romero"
+    },
+    "clase": {
+      "id": 4,
+      "nombre": "Funcional intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-02",
+    "estado": "activa"
+  },
+  {
+    "id": 34,
+    "alumno": {
+      "id": 9,
+      "nombre": "Julieta",
+      "apellido": "Álvarez"
+    },
+    "clase": {
+      "id": 4,
+      "nombre": "Funcional intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-03",
+    "estado": "activa"
+  },
+  {
+    "id": 35,
+    "alumno": {
+      "id": 10,
+      "nombre": "Tomás",
+      "apellido": "Torres"
+    },
+    "clase": {
+      "id": 4,
+      "nombre": "Funcional intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-04",
+    "estado": "activa"
+  },
+  {
+    "id": 36,
+    "alumno": {
+      "id": 11,
+      "nombre": "Agustina",
+      "apellido": "Ruiz"
+    },
+    "clase": {
+      "id": 4,
+      "nombre": "Funcional intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-05",
+    "estado": "activa"
+  },
+  {
+    "id": 37,
+    "alumno": {
+      "id": 12,
+      "nombre": "Facundo",
+      "apellido": "Gómez"
+    },
+    "clase": {
+      "id": 4,
+      "nombre": "Funcional intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-06",
+    "estado": "activa"
+  },
+  {
+    "id": 38,
+    "alumno": {
+      "id": 13,
+      "nombre": "Florencia",
+      "apellido": "Benítez"
+    },
+    "clase": {
+      "id": 4,
+      "nombre": "Funcional intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-07",
+    "estado": "activa"
+  },
+  {
+    "id": 39,
+    "alumno": {
+      "id": 15,
+      "nombre": "Micaela",
+      "apellido": "Herrera"
+    },
+    "clase": {
+      "id": 4,
+      "nombre": "Funcional intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-08",
+    "estado": "activa"
+  },
+  {
+    "id": 40,
+    "alumno": {
+      "id": 16,
+      "nombre": "Lautaro",
+      "apellido": "Suárez"
+    },
+    "clase": {
+      "id": 4,
+      "nombre": "Funcional intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-09",
+    "estado": "activa"
+  },
+  {
+    "id": 41,
+    "alumno": {
+      "id": 17,
+      "nombre": "Candela",
+      "apellido": "Aguirre"
+    },
+    "clase": {
+      "id": 4,
+      "nombre": "Funcional intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-10",
+    "estado": "activa"
+  },
+  {
+    "id": 42,
+    "alumno": {
+      "id": 18,
+      "nombre": "Bruno",
+      "apellido": "Giménez"
+    },
+    "clase": {
+      "id": 4,
+      "nombre": "Funcional intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-11",
+    "estado": "activa"
+  },
+  {
+    "id": 43,
+    "alumno": {
+      "id": 20,
+      "nombre": "Franco",
+      "apellido": "González"
+    },
+    "clase": {
+      "id": 4,
+      "nombre": "Funcional intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-12",
+    "estado": "activa"
+  },
+  {
+    "id": 44,
+    "alumno": {
+      "id": 21,
+      "nombre": "Rocío",
+      "apellido": "Flores"
+    },
+    "clase": {
+      "id": 4,
+      "nombre": "Funcional intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-13",
+    "estado": "activa"
+  },
+  {
+    "id": 45,
+    "alumno": {
+      "id": 22,
+      "nombre": "Ignacio",
+      "apellido": "Morales"
+    },
+    "clase": {
+      "id": 4,
+      "nombre": "Funcional intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-14",
+    "estado": "activa"
+  },
+  {
+    "id": 46,
+    "alumno": {
+      "id": 23,
+      "nombre": "Brenda",
+      "apellido": "Ortiz"
+    },
+    "clase": {
+      "id": 4,
+      "nombre": "Funcional intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-15",
+    "estado": "activa"
+  },
+  {
+    "id": 47,
+    "alumno": {
+      "id": 24,
+      "nombre": "Gonzalo",
+      "apellido": "Silva"
+    },
+    "clase": {
+      "id": 4,
+      "nombre": "Funcional intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-16",
+    "estado": "activa"
+  },
+  {
+    "id": 48,
+    "alumno": {
+      "id": 25,
+      "nombre": "Antonella",
+      "apellido": "Núñez"
+    },
+    "clase": {
+      "id": 4,
+      "nombre": "Funcional intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-17",
+    "estado": "activa"
+  },
+  {
+    "id": 49,
+    "alumno": {
+      "id": 27,
+      "nombre": "Luciana",
+      "apellido": "Peña"
+    },
+    "clase": {
+      "id": 4,
+      "nombre": "Funcional intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-18",
+    "estado": "activa"
+  },
+  {
+    "id": 50,
+    "alumno": {
+      "id": 6,
+      "nombre": "Santiago",
+      "apellido": "Sánchez"
+    },
+    "clase": {
+      "id": 5,
+      "nombre": "Funcional avanzado noche"
+    },
+    "fechaInscripcion": "2026-11-19",
+    "estado": "activa"
+  },
+  {
+    "id": 51,
+    "alumno": {
+      "id": 7,
+      "nombre": "Camila",
+      "apellido": "Romero"
+    },
+    "clase": {
+      "id": 5,
+      "nombre": "Funcional avanzado noche"
+    },
+    "fechaInscripcion": "2026-11-20",
+    "estado": "activa"
+  },
+  {
+    "id": 52,
+    "alumno": {
+      "id": 9,
+      "nombre": "Julieta",
+      "apellido": "Álvarez"
+    },
+    "clase": {
+      "id": 5,
+      "nombre": "Funcional avanzado noche"
+    },
+    "fechaInscripcion": "2026-11-21",
+    "estado": "activa"
+  },
+  {
+    "id": 53,
+    "alumno": {
+      "id": 10,
+      "nombre": "Tomás",
+      "apellido": "Torres"
+    },
+    "clase": {
+      "id": 5,
+      "nombre": "Funcional avanzado noche"
+    },
+    "fechaInscripcion": "2026-11-22",
+    "estado": "activa"
+  },
+  {
+    "id": 54,
+    "alumno": {
+      "id": 11,
+      "nombre": "Agustina",
+      "apellido": "Ruiz"
+    },
+    "clase": {
+      "id": 5,
+      "nombre": "Funcional avanzado noche"
+    },
+    "fechaInscripcion": "2026-11-23",
+    "estado": "activa"
+  },
+  {
+    "id": 55,
+    "alumno": {
+      "id": 9,
+      "nombre": "Julieta",
+      "apellido": "Álvarez"
+    },
+    "clase": {
+      "id": 7,
+      "nombre": "Yoga intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-24",
+    "estado": "activa"
+  },
+  {
+    "id": 56,
+    "alumno": {
+      "id": 10,
+      "nombre": "Tomás",
+      "apellido": "Torres"
+    },
+    "clase": {
+      "id": 7,
+      "nombre": "Yoga intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-25",
+    "estado": "activa"
+  },
+  {
+    "id": 57,
+    "alumno": {
+      "id": 11,
+      "nombre": "Agustina",
+      "apellido": "Ruiz"
+    },
+    "clase": {
+      "id": 7,
+      "nombre": "Yoga intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-26",
+    "estado": "activa"
+  },
+  {
+    "id": 58,
+    "alumno": {
+      "id": 12,
+      "nombre": "Facundo",
+      "apellido": "Gómez"
+    },
+    "clase": {
+      "id": 7,
+      "nombre": "Yoga intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-01",
+    "estado": "activa"
+  },
+  {
+    "id": 59,
+    "alumno": {
+      "id": 13,
+      "nombre": "Florencia",
+      "apellido": "Benítez"
+    },
+    "clase": {
+      "id": 7,
+      "nombre": "Yoga intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-02",
+    "estado": "activa"
+  },
+  {
+    "id": 60,
+    "alumno": {
+      "id": 15,
+      "nombre": "Micaela",
+      "apellido": "Herrera"
+    },
+    "clase": {
+      "id": 7,
+      "nombre": "Yoga intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-03",
+    "estado": "activa"
+  },
+  {
+    "id": 61,
+    "alumno": {
+      "id": 16,
+      "nombre": "Lautaro",
+      "apellido": "Suárez"
+    },
+    "clase": {
+      "id": 7,
+      "nombre": "Yoga intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-04",
+    "estado": "activa"
+  },
+  {
+    "id": 62,
+    "alumno": {
+      "id": 17,
+      "nombre": "Candela",
+      "apellido": "Aguirre"
+    },
+    "clase": {
+      "id": 7,
+      "nombre": "Yoga intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-05",
+    "estado": "activa"
+  },
+  {
+    "id": 63,
+    "alumno": {
+      "id": 18,
+      "nombre": "Bruno",
+      "apellido": "Giménez"
+    },
+    "clase": {
+      "id": 7,
+      "nombre": "Yoga intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-06",
+    "estado": "activa"
+  },
+  {
+    "id": 64,
+    "alumno": {
+      "id": 20,
+      "nombre": "Franco",
+      "apellido": "González"
+    },
+    "clase": {
+      "id": 7,
+      "nombre": "Yoga intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-07",
+    "estado": "activa"
+  },
+  {
+    "id": 65,
+    "alumno": {
+      "id": 21,
+      "nombre": "Rocío",
+      "apellido": "Flores"
+    },
+    "clase": {
+      "id": 7,
+      "nombre": "Yoga intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-08",
+    "estado": "activa"
+  },
+  {
+    "id": 66,
+    "alumno": {
+      "id": 22,
+      "nombre": "Ignacio",
+      "apellido": "Morales"
+    },
+    "clase": {
+      "id": 7,
+      "nombre": "Yoga intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-09",
+    "estado": "activa"
+  },
+  {
+    "id": 67,
+    "alumno": {
+      "id": 23,
+      "nombre": "Brenda",
+      "apellido": "Ortiz"
+    },
+    "clase": {
+      "id": 7,
+      "nombre": "Yoga intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-10",
+    "estado": "activa"
+  },
+  {
+    "id": 68,
+    "alumno": {
+      "id": 24,
+      "nombre": "Gonzalo",
+      "apellido": "Silva"
+    },
+    "clase": {
+      "id": 7,
+      "nombre": "Yoga intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-11",
+    "estado": "activa"
+  },
+  {
+    "id": 69,
+    "alumno": {
+      "id": 25,
+      "nombre": "Antonella",
+      "apellido": "Núñez"
+    },
+    "clase": {
+      "id": 7,
+      "nombre": "Yoga intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-12",
+    "estado": "activa"
+  },
+  {
+    "id": 70,
+    "alumno": {
+      "id": 27,
+      "nombre": "Luciana",
+      "apellido": "Peña"
+    },
+    "clase": {
+      "id": 7,
+      "nombre": "Yoga intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-13",
+    "estado": "activa"
+  },
+  {
+    "id": 71,
+    "alumno": {
+      "id": 10,
+      "nombre": "Tomás",
+      "apellido": "Torres"
+    },
+    "clase": {
+      "id": 8,
+      "nombre": "Yoga inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-14",
+    "estado": "activa"
+  },
+  {
+    "id": 72,
+    "alumno": {
+      "id": 11,
+      "nombre": "Agustina",
+      "apellido": "Ruiz"
+    },
+    "clase": {
+      "id": 8,
+      "nombre": "Yoga inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-15",
+    "estado": "activa"
+  },
+  {
+    "id": 73,
+    "alumno": {
+      "id": 12,
+      "nombre": "Facundo",
+      "apellido": "Gómez"
+    },
+    "clase": {
+      "id": 8,
+      "nombre": "Yoga inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-16",
+    "estado": "activa"
+  },
+  {
+    "id": 74,
+    "alumno": {
+      "id": 13,
+      "nombre": "Florencia",
+      "apellido": "Benítez"
+    },
+    "clase": {
+      "id": 8,
+      "nombre": "Yoga inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-17",
+    "estado": "activa"
+  },
+  {
+    "id": 75,
+    "alumno": {
+      "id": 15,
+      "nombre": "Micaela",
+      "apellido": "Herrera"
+    },
+    "clase": {
+      "id": 8,
+      "nombre": "Yoga inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-18",
+    "estado": "activa"
+  },
+  {
+    "id": 76,
+    "alumno": {
+      "id": 16,
+      "nombre": "Lautaro",
+      "apellido": "Suárez"
+    },
+    "clase": {
+      "id": 8,
+      "nombre": "Yoga inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-19",
+    "estado": "activa"
+  },
+  {
+    "id": 77,
+    "alumno": {
+      "id": 17,
+      "nombre": "Candela",
+      "apellido": "Aguirre"
+    },
+    "clase": {
+      "id": 8,
+      "nombre": "Yoga inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-20",
+    "estado": "activa"
+  },
+  {
+    "id": 78,
+    "alumno": {
+      "id": 18,
+      "nombre": "Bruno",
+      "apellido": "Giménez"
+    },
+    "clase": {
+      "id": 8,
+      "nombre": "Yoga inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-21",
+    "estado": "activa"
+  },
+  {
+    "id": 79,
+    "alumno": {
+      "id": 11,
+      "nombre": "Agustina",
+      "apellido": "Ruiz"
+    },
+    "clase": {
+      "id": 9,
+      "nombre": "Yoga intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-22",
+    "estado": "activa"
+  },
+  {
+    "id": 80,
+    "alumno": {
+      "id": 12,
+      "nombre": "Facundo",
+      "apellido": "Gómez"
+    },
+    "clase": {
+      "id": 9,
+      "nombre": "Yoga intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-23",
+    "estado": "activa"
+  },
+  {
+    "id": 81,
+    "alumno": {
+      "id": 13,
+      "nombre": "Florencia",
+      "apellido": "Benítez"
+    },
+    "clase": {
+      "id": 9,
+      "nombre": "Yoga intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-24",
+    "estado": "activa"
+  },
+  {
+    "id": 82,
+    "alumno": {
+      "id": 15,
+      "nombre": "Micaela",
+      "apellido": "Herrera"
+    },
+    "clase": {
+      "id": 9,
+      "nombre": "Yoga intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-25",
+    "estado": "activa"
+  },
+  {
+    "id": 83,
+    "alumno": {
+      "id": 16,
+      "nombre": "Lautaro",
+      "apellido": "Suárez"
+    },
+    "clase": {
+      "id": 9,
+      "nombre": "Yoga intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-26",
+    "estado": "activa"
+  },
+  {
+    "id": 84,
+    "alumno": {
+      "id": 17,
+      "nombre": "Candela",
+      "apellido": "Aguirre"
+    },
+    "clase": {
+      "id": 9,
+      "nombre": "Yoga intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-27",
+    "estado": "activa"
+  },
+  {
+    "id": 85,
+    "alumno": {
+      "id": 18,
+      "nombre": "Bruno",
+      "apellido": "Giménez"
+    },
+    "clase": {
+      "id": 9,
+      "nombre": "Yoga intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-28",
+    "estado": "activa"
+  },
+  {
+    "id": 86,
+    "alumno": {
+      "id": 20,
+      "nombre": "Franco",
+      "apellido": "González"
+    },
+    "clase": {
+      "id": 9,
+      "nombre": "Yoga intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-29",
+    "estado": "activa"
+  },
+  {
+    "id": 87,
+    "alumno": {
+      "id": 21,
+      "nombre": "Rocío",
+      "apellido": "Flores"
+    },
+    "clase": {
+      "id": 9,
+      "nombre": "Yoga intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-30",
+    "estado": "activa"
+  },
+  {
+    "id": 88,
+    "alumno": {
+      "id": 22,
+      "nombre": "Ignacio",
+      "apellido": "Morales"
+    },
+    "clase": {
+      "id": 9,
+      "nombre": "Yoga intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-31",
+    "estado": "activa"
+  },
+  {
+    "id": 89,
+    "alumno": {
+      "id": 23,
+      "nombre": "Brenda",
+      "apellido": "Ortiz"
+    },
+    "clase": {
+      "id": 9,
+      "nombre": "Yoga intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-01",
+    "estado": "activa"
+  },
+  {
+    "id": 90,
+    "alumno": {
+      "id": 24,
+      "nombre": "Gonzalo",
+      "apellido": "Silva"
+    },
+    "clase": {
+      "id": 9,
+      "nombre": "Yoga intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-02",
+    "estado": "activa"
+  },
+  {
+    "id": 91,
+    "alumno": {
+      "id": 25,
+      "nombre": "Antonella",
+      "apellido": "Núñez"
+    },
+    "clase": {
+      "id": 9,
+      "nombre": "Yoga intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-03",
+    "estado": "activa"
+  },
+  {
+    "id": 92,
+    "alumno": {
+      "id": 27,
+      "nombre": "Luciana",
+      "apellido": "Peña"
+    },
+    "clase": {
+      "id": 9,
+      "nombre": "Yoga intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-04",
+    "estado": "activa"
+  },
+  {
+    "id": 93,
+    "alumno": {
+      "id": 28,
+      "nombre": "Maximiliano",
+      "apellido": "Ibáñez"
+    },
+    "clase": {
+      "id": 9,
+      "nombre": "Yoga intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-05",
+    "estado": "activa"
+  },
+  {
+    "id": 94,
+    "alumno": {
+      "id": 12,
+      "nombre": "Facundo",
+      "apellido": "Gómez"
+    },
+    "clase": {
+      "id": 10,
+      "nombre": "Yoga avanzado noche"
+    },
+    "fechaInscripcion": "2026-11-06",
+    "estado": "activa"
+  },
+  {
+    "id": 95,
+    "alumno": {
+      "id": 13,
+      "nombre": "Florencia",
+      "apellido": "Benítez"
+    },
+    "clase": {
+      "id": 10,
+      "nombre": "Yoga avanzado noche"
+    },
+    "fechaInscripcion": "2026-11-07",
+    "estado": "activa"
+  },
+  {
+    "id": 96,
+    "alumno": {
+      "id": 15,
+      "nombre": "Micaela",
+      "apellido": "Herrera"
+    },
+    "clase": {
+      "id": 10,
+      "nombre": "Yoga avanzado noche"
+    },
+    "fechaInscripcion": "2026-11-08",
+    "estado": "activa"
+  },
+  {
+    "id": 97,
+    "alumno": {
+      "id": 16,
+      "nombre": "Lautaro",
+      "apellido": "Suárez"
+    },
+    "clase": {
+      "id": 10,
+      "nombre": "Yoga avanzado noche"
+    },
+    "fechaInscripcion": "2026-11-09",
+    "estado": "activa"
+  },
+  {
+    "id": 98,
+    "alumno": {
+      "id": 17,
+      "nombre": "Candela",
+      "apellido": "Aguirre"
+    },
+    "clase": {
+      "id": 10,
+      "nombre": "Yoga avanzado noche"
+    },
+    "fechaInscripcion": "2026-11-10",
+    "estado": "activa"
+  },
+  {
+    "id": 99,
+    "alumno": {
+      "id": 18,
+      "nombre": "Bruno",
+      "apellido": "Giménez"
+    },
+    "clase": {
+      "id": 10,
+      "nombre": "Yoga avanzado noche"
+    },
+    "fechaInscripcion": "2026-11-11",
+    "estado": "activa"
+  },
+  {
+    "id": 100,
+    "alumno": {
+      "id": 15,
+      "nombre": "Micaela",
+      "apellido": "Herrera"
+    },
+    "clase": {
+      "id": 12,
+      "nombre": "Spinning intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-12",
+    "estado": "activa"
+  },
+  {
+    "id": 101,
+    "alumno": {
+      "id": 16,
+      "nombre": "Lautaro",
+      "apellido": "Suárez"
+    },
+    "clase": {
+      "id": 12,
+      "nombre": "Spinning intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-13",
+    "estado": "activa"
+  },
+  {
+    "id": 102,
+    "alumno": {
+      "id": 17,
+      "nombre": "Candela",
+      "apellido": "Aguirre"
+    },
+    "clase": {
+      "id": 12,
+      "nombre": "Spinning intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-14",
+    "estado": "activa"
+  },
+  {
+    "id": 103,
+    "alumno": {
+      "id": 18,
+      "nombre": "Bruno",
+      "apellido": "Giménez"
+    },
+    "clase": {
+      "id": 12,
+      "nombre": "Spinning intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-15",
+    "estado": "activa"
+  },
+  {
+    "id": 104,
+    "alumno": {
+      "id": 20,
+      "nombre": "Franco",
+      "apellido": "González"
+    },
+    "clase": {
+      "id": 12,
+      "nombre": "Spinning intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-16",
+    "estado": "activa"
+  },
+  {
+    "id": 105,
+    "alumno": {
+      "id": 21,
+      "nombre": "Rocío",
+      "apellido": "Flores"
+    },
+    "clase": {
+      "id": 12,
+      "nombre": "Spinning intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-17",
+    "estado": "activa"
+  },
+  {
+    "id": 106,
+    "alumno": {
+      "id": 22,
+      "nombre": "Ignacio",
+      "apellido": "Morales"
+    },
+    "clase": {
+      "id": 12,
+      "nombre": "Spinning intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-18",
+    "estado": "activa"
+  },
+  {
+    "id": 107,
+    "alumno": {
+      "id": 23,
+      "nombre": "Brenda",
+      "apellido": "Ortiz"
+    },
+    "clase": {
+      "id": 12,
+      "nombre": "Spinning intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-19",
+    "estado": "activa"
+  },
+  {
+    "id": 108,
+    "alumno": {
+      "id": 24,
+      "nombre": "Gonzalo",
+      "apellido": "Silva"
+    },
+    "clase": {
+      "id": 12,
+      "nombre": "Spinning intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-20",
+    "estado": "activa"
+  },
+  {
+    "id": 109,
+    "alumno": {
+      "id": 25,
+      "nombre": "Antonella",
+      "apellido": "Núñez"
+    },
+    "clase": {
+      "id": 12,
+      "nombre": "Spinning intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-21",
+    "estado": "activa"
+  },
+  {
+    "id": 110,
+    "alumno": {
+      "id": 27,
+      "nombre": "Luciana",
+      "apellido": "Peña"
+    },
+    "clase": {
+      "id": 12,
+      "nombre": "Spinning intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-22",
+    "estado": "activa"
+  },
+  {
+    "id": 111,
+    "alumno": {
+      "id": 28,
+      "nombre": "Maximiliano",
+      "apellido": "Ibáñez"
+    },
+    "clase": {
+      "id": 12,
+      "nombre": "Spinning intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-23",
+    "estado": "activa"
+  },
+  {
+    "id": 112,
+    "alumno": {
+      "id": 29,
+      "nombre": "Paula",
+      "apellido": "Domínguez"
+    },
+    "clase": {
+      "id": 12,
+      "nombre": "Spinning intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-24",
+    "estado": "activa"
+  },
+  {
+    "id": 113,
+    "alumno": {
+      "id": 30,
+      "nombre": "Matías",
+      "apellido": "Cabrera"
+    },
+    "clase": {
+      "id": 12,
+      "nombre": "Spinning intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-25",
+    "estado": "activa"
+  },
+  {
+    "id": 114,
+    "alumno": {
+      "id": 31,
+      "nombre": "Lucía",
+      "apellido": "Vega"
+    },
+    "clase": {
+      "id": 12,
+      "nombre": "Spinning intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-03",
+    "estado": "activa"
+  },
+  {
+    "id": 115,
+    "alumno": {
+      "id": 32,
+      "nombre": "Sebastián",
+      "apellido": "Molina"
+    },
+    "clase": {
+      "id": 12,
+      "nombre": "Spinning intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-15",
+    "estado": "activa"
+  },
+  {
+    "id": 116,
+    "alumno": {
+      "id": 1,
+      "nombre": "Lucía",
+      "apellido": "Gómez"
+    },
+    "clase": {
+      "id": 12,
+      "nombre": "Spinning intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-02",
+    "estado": "activa"
+  },
+  {
+    "id": 117,
+    "alumno": {
+      "id": 2,
+      "nombre": "Martín",
+      "apellido": "Fernández"
+    },
+    "clase": {
+      "id": 12,
+      "nombre": "Spinning intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-03",
+    "estado": "activa"
+  },
+  {
+    "id": 118,
+    "alumno": {
+      "id": 16,
+      "nombre": "Lautaro",
+      "apellido": "Suárez"
+    },
+    "clase": {
+      "id": 13,
+      "nombre": "Spinning inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-04",
+    "estado": "activa"
+  },
+  {
+    "id": 119,
+    "alumno": {
+      "id": 17,
+      "nombre": "Candela",
+      "apellido": "Aguirre"
+    },
+    "clase": {
+      "id": 13,
+      "nombre": "Spinning inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-05",
+    "estado": "activa"
+  },
+  {
+    "id": 120,
+    "alumno": {
+      "id": 18,
+      "nombre": "Bruno",
+      "apellido": "Giménez"
+    },
+    "clase": {
+      "id": 13,
+      "nombre": "Spinning inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-06",
+    "estado": "activa"
+  },
+  {
+    "id": 121,
+    "alumno": {
+      "id": 20,
+      "nombre": "Franco",
+      "apellido": "González"
+    },
+    "clase": {
+      "id": 13,
+      "nombre": "Spinning inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-07",
+    "estado": "activa"
+  },
+  {
+    "id": 122,
+    "alumno": {
+      "id": 21,
+      "nombre": "Rocío",
+      "apellido": "Flores"
+    },
+    "clase": {
+      "id": 13,
+      "nombre": "Spinning inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-08",
+    "estado": "activa"
+  },
+  {
+    "id": 123,
+    "alumno": {
+      "id": 22,
+      "nombre": "Ignacio",
+      "apellido": "Morales"
+    },
+    "clase": {
+      "id": 13,
+      "nombre": "Spinning inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-09",
+    "estado": "activa"
+  },
+  {
+    "id": 124,
+    "alumno": {
+      "id": 23,
+      "nombre": "Brenda",
+      "apellido": "Ortiz"
+    },
+    "clase": {
+      "id": 13,
+      "nombre": "Spinning inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-10",
+    "estado": "activa"
+  },
+  {
+    "id": 125,
+    "alumno": {
+      "id": 24,
+      "nombre": "Gonzalo",
+      "apellido": "Silva"
+    },
+    "clase": {
+      "id": 13,
+      "nombre": "Spinning inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-11",
+    "estado": "activa"
+  },
+  {
+    "id": 126,
+    "alumno": {
+      "id": 25,
+      "nombre": "Antonella",
+      "apellido": "Núñez"
+    },
+    "clase": {
+      "id": 13,
+      "nombre": "Spinning inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-12",
+    "estado": "activa"
+  },
+  {
+    "id": 127,
+    "alumno": {
+      "id": 17,
+      "nombre": "Candela",
+      "apellido": "Aguirre"
+    },
+    "clase": {
+      "id": 14,
+      "nombre": "Spinning intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-13",
+    "estado": "activa"
+  },
+  {
+    "id": 128,
+    "alumno": {
+      "id": 18,
+      "nombre": "Bruno",
+      "apellido": "Giménez"
+    },
+    "clase": {
+      "id": 14,
+      "nombre": "Spinning intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-14",
+    "estado": "activa"
+  },
+  {
+    "id": 129,
+    "alumno": {
+      "id": 20,
+      "nombre": "Franco",
+      "apellido": "González"
+    },
+    "clase": {
+      "id": 14,
+      "nombre": "Spinning intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-15",
+    "estado": "activa"
+  },
+  {
+    "id": 130,
+    "alumno": {
+      "id": 21,
+      "nombre": "Rocío",
+      "apellido": "Flores"
+    },
+    "clase": {
+      "id": 14,
+      "nombre": "Spinning intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-16",
+    "estado": "activa"
+  },
+  {
+    "id": 131,
+    "alumno": {
+      "id": 22,
+      "nombre": "Ignacio",
+      "apellido": "Morales"
+    },
+    "clase": {
+      "id": 14,
+      "nombre": "Spinning intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-17",
+    "estado": "activa"
+  },
+  {
+    "id": 132,
+    "alumno": {
+      "id": 23,
+      "nombre": "Brenda",
+      "apellido": "Ortiz"
+    },
+    "clase": {
+      "id": 14,
+      "nombre": "Spinning intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-18",
+    "estado": "activa"
+  },
+  {
+    "id": 133,
+    "alumno": {
+      "id": 24,
+      "nombre": "Gonzalo",
+      "apellido": "Silva"
+    },
+    "clase": {
+      "id": 14,
+      "nombre": "Spinning intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-19",
+    "estado": "activa"
+  },
+  {
+    "id": 134,
+    "alumno": {
+      "id": 25,
+      "nombre": "Antonella",
+      "apellido": "Núñez"
+    },
+    "clase": {
+      "id": 14,
+      "nombre": "Spinning intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-20",
+    "estado": "activa"
+  },
+  {
+    "id": 135,
+    "alumno": {
+      "id": 27,
+      "nombre": "Luciana",
+      "apellido": "Peña"
+    },
+    "clase": {
+      "id": 14,
+      "nombre": "Spinning intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-21",
+    "estado": "activa"
+  },
+  {
+    "id": 136,
+    "alumno": {
+      "id": 28,
+      "nombre": "Maximiliano",
+      "apellido": "Ibáñez"
+    },
+    "clase": {
+      "id": 14,
+      "nombre": "Spinning intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-22",
+    "estado": "activa"
+  },
+  {
+    "id": 137,
+    "alumno": {
+      "id": 29,
+      "nombre": "Paula",
+      "apellido": "Domínguez"
+    },
+    "clase": {
+      "id": 14,
+      "nombre": "Spinning intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-23",
+    "estado": "activa"
+  },
+  {
+    "id": 138,
+    "alumno": {
+      "id": 30,
+      "nombre": "Matías",
+      "apellido": "Cabrera"
+    },
+    "clase": {
+      "id": 14,
+      "nombre": "Spinning intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-24",
+    "estado": "activa"
+  },
+  {
+    "id": 139,
+    "alumno": {
+      "id": 31,
+      "nombre": "Lucía",
+      "apellido": "Vega"
+    },
+    "clase": {
+      "id": 14,
+      "nombre": "Spinning intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-28",
+    "estado": "activa"
+  },
+  {
+    "id": 140,
+    "alumno": {
+      "id": 32,
+      "nombre": "Sebastián",
+      "apellido": "Molina"
+    },
+    "clase": {
+      "id": 14,
+      "nombre": "Spinning intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-22",
+    "estado": "activa"
+  },
+  {
+    "id": 141,
+    "alumno": {
+      "id": 1,
+      "nombre": "Lucía",
+      "apellido": "Gómez"
+    },
+    "clase": {
+      "id": 14,
+      "nombre": "Spinning intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-27",
+    "estado": "activa"
+  },
+  {
+    "id": 142,
+    "alumno": {
+      "id": 2,
+      "nombre": "Martín",
+      "apellido": "Fernández"
+    },
+    "clase": {
+      "id": 14,
+      "nombre": "Spinning intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-28",
+    "estado": "activa"
+  },
+  {
+    "id": 143,
+    "alumno": {
+      "id": 4,
+      "nombre": "Mateo",
+      "apellido": "González"
+    },
+    "clase": {
+      "id": 14,
+      "nombre": "Spinning intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-29",
+    "estado": "activa"
+  },
+  {
+    "id": 144,
+    "alumno": {
+      "id": 18,
+      "nombre": "Bruno",
+      "apellido": "Giménez"
+    },
+    "clase": {
+      "id": 15,
+      "nombre": "Spinning avanzado noche"
+    },
+    "fechaInscripcion": "2026-10-30",
+    "estado": "activa"
+  },
+  {
+    "id": 145,
+    "alumno": {
+      "id": 20,
+      "nombre": "Franco",
+      "apellido": "González"
+    },
+    "clase": {
+      "id": 15,
+      "nombre": "Spinning avanzado noche"
+    },
+    "fechaInscripcion": "2026-10-31",
+    "estado": "activa"
+  },
+  {
+    "id": 146,
+    "alumno": {
+      "id": 21,
+      "nombre": "Rocío",
+      "apellido": "Flores"
+    },
+    "clase": {
+      "id": 15,
+      "nombre": "Spinning avanzado noche"
+    },
+    "fechaInscripcion": "2026-11-01",
+    "estado": "activa"
+  },
+  {
+    "id": 147,
+    "alumno": {
+      "id": 22,
+      "nombre": "Ignacio",
+      "apellido": "Morales"
+    },
+    "clase": {
+      "id": 15,
+      "nombre": "Spinning avanzado noche"
+    },
+    "fechaInscripcion": "2026-11-02",
+    "estado": "activa"
+  },
+  {
+    "id": 148,
+    "alumno": {
+      "id": 23,
+      "nombre": "Brenda",
+      "apellido": "Ortiz"
+    },
+    "clase": {
+      "id": 15,
+      "nombre": "Spinning avanzado noche"
+    },
+    "fechaInscripcion": "2026-11-03",
+    "estado": "activa"
+  },
+  {
+    "id": 149,
+    "alumno": {
+      "id": 24,
+      "nombre": "Gonzalo",
+      "apellido": "Silva"
+    },
+    "clase": {
+      "id": 15,
+      "nombre": "Spinning avanzado noche"
+    },
+    "fechaInscripcion": "2026-11-04",
+    "estado": "activa"
+  },
+  {
+    "id": 150,
+    "alumno": {
+      "id": 25,
+      "nombre": "Antonella",
+      "apellido": "Núñez"
+    },
+    "clase": {
+      "id": 15,
+      "nombre": "Spinning avanzado noche"
+    },
+    "fechaInscripcion": "2026-11-05",
+    "estado": "activa"
+  },
+  {
+    "id": 151,
+    "alumno": {
+      "id": 21,
+      "nombre": "Rocío",
+      "apellido": "Flores"
+    },
+    "clase": {
+      "id": 17,
+      "nombre": "Pilates intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-06",
+    "estado": "activa"
+  },
+  {
+    "id": 152,
+    "alumno": {
+      "id": 22,
+      "nombre": "Ignacio",
+      "apellido": "Morales"
+    },
+    "clase": {
+      "id": 17,
+      "nombre": "Pilates intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-07",
+    "estado": "activa"
+  },
+  {
+    "id": 153,
+    "alumno": {
+      "id": 23,
+      "nombre": "Brenda",
+      "apellido": "Ortiz"
+    },
+    "clase": {
+      "id": 17,
+      "nombre": "Pilates intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-08",
+    "estado": "activa"
+  },
+  {
+    "id": 154,
+    "alumno": {
+      "id": 24,
+      "nombre": "Gonzalo",
+      "apellido": "Silva"
+    },
+    "clase": {
+      "id": 17,
+      "nombre": "Pilates intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-09",
+    "estado": "activa"
+  },
+  {
+    "id": 155,
+    "alumno": {
+      "id": 25,
+      "nombre": "Antonella",
+      "apellido": "Núñez"
+    },
+    "clase": {
+      "id": 17,
+      "nombre": "Pilates intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-10",
+    "estado": "activa"
+  },
+  {
+    "id": 156,
+    "alumno": {
+      "id": 27,
+      "nombre": "Luciana",
+      "apellido": "Peña"
+    },
+    "clase": {
+      "id": 17,
+      "nombre": "Pilates intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-11",
+    "estado": "activa"
+  },
+  {
+    "id": 157,
+    "alumno": {
+      "id": 28,
+      "nombre": "Maximiliano",
+      "apellido": "Ibáñez"
+    },
+    "clase": {
+      "id": 17,
+      "nombre": "Pilates intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-12",
+    "estado": "activa"
+  },
+  {
+    "id": 158,
+    "alumno": {
+      "id": 29,
+      "nombre": "Paula",
+      "apellido": "Domínguez"
+    },
+    "clase": {
+      "id": 17,
+      "nombre": "Pilates intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-13",
+    "estado": "activa"
+  },
+  {
+    "id": 159,
+    "alumno": {
+      "id": 30,
+      "nombre": "Matías",
+      "apellido": "Cabrera"
+    },
+    "clase": {
+      "id": 17,
+      "nombre": "Pilates intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-14",
+    "estado": "activa"
+  },
+  {
+    "id": 160,
+    "alumno": {
+      "id": 31,
+      "nombre": "Lucía",
+      "apellido": "Vega"
+    },
+    "clase": {
+      "id": 17,
+      "nombre": "Pilates intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-18",
+    "estado": "activa"
+  },
+  {
+    "id": 161,
+    "alumno": {
+      "id": 32,
+      "nombre": "Sebastián",
+      "apellido": "Molina"
+    },
+    "clase": {
+      "id": 17,
+      "nombre": "Pilates intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-25",
+    "estado": "activa"
+  },
+  {
+    "id": 162,
+    "alumno": {
+      "id": 1,
+      "nombre": "Lucía",
+      "apellido": "Gómez"
+    },
+    "clase": {
+      "id": 17,
+      "nombre": "Pilates intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-17",
+    "estado": "activa"
+  },
+  {
+    "id": 163,
+    "alumno": {
+      "id": 22,
+      "nombre": "Ignacio",
+      "apellido": "Morales"
+    },
+    "clase": {
+      "id": 18,
+      "nombre": "Pilates inicial tarde"
+    },
+    "fechaInscripcion": "2026-11-18",
+    "estado": "activa"
+  },
+  {
+    "id": 164,
+    "alumno": {
+      "id": 23,
+      "nombre": "Brenda",
+      "apellido": "Ortiz"
+    },
+    "clase": {
+      "id": 18,
+      "nombre": "Pilates inicial tarde"
+    },
+    "fechaInscripcion": "2026-11-19",
+    "estado": "activa"
+  },
+  {
+    "id": 165,
+    "alumno": {
+      "id": 24,
+      "nombre": "Gonzalo",
+      "apellido": "Silva"
+    },
+    "clase": {
+      "id": 18,
+      "nombre": "Pilates inicial tarde"
+    },
+    "fechaInscripcion": "2026-11-20",
+    "estado": "activa"
+  },
+  {
+    "id": 166,
+    "alumno": {
+      "id": 25,
+      "nombre": "Antonella",
+      "apellido": "Núñez"
+    },
+    "clase": {
+      "id": 18,
+      "nombre": "Pilates inicial tarde"
+    },
+    "fechaInscripcion": "2026-11-21",
+    "estado": "activa"
+  },
+  {
+    "id": 167,
+    "alumno": {
+      "id": 27,
+      "nombre": "Luciana",
+      "apellido": "Peña"
+    },
+    "clase": {
+      "id": 18,
+      "nombre": "Pilates inicial tarde"
+    },
+    "fechaInscripcion": "2026-11-22",
+    "estado": "activa"
+  },
+  {
+    "id": 168,
+    "alumno": {
+      "id": 28,
+      "nombre": "Maximiliano",
+      "apellido": "Ibáñez"
+    },
+    "clase": {
+      "id": 18,
+      "nombre": "Pilates inicial tarde"
+    },
+    "fechaInscripcion": "2026-11-23",
+    "estado": "activa"
+  },
+  {
+    "id": 169,
+    "alumno": {
+      "id": 23,
+      "nombre": "Brenda",
+      "apellido": "Ortiz"
+    },
+    "clase": {
+      "id": 19,
+      "nombre": "Pilates intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-24",
+    "estado": "activa"
+  },
+  {
+    "id": 170,
+    "alumno": {
+      "id": 24,
+      "nombre": "Gonzalo",
+      "apellido": "Silva"
+    },
+    "clase": {
+      "id": 19,
+      "nombre": "Pilates intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-25",
+    "estado": "activa"
+  },
+  {
+    "id": 171,
+    "alumno": {
+      "id": 25,
+      "nombre": "Antonella",
+      "apellido": "Núñez"
+    },
+    "clase": {
+      "id": 19,
+      "nombre": "Pilates intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-26",
+    "estado": "activa"
+  },
+  {
+    "id": 172,
+    "alumno": {
+      "id": 27,
+      "nombre": "Luciana",
+      "apellido": "Peña"
+    },
+    "clase": {
+      "id": 19,
+      "nombre": "Pilates intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-01",
+    "estado": "activa"
+  },
+  {
+    "id": 173,
+    "alumno": {
+      "id": 28,
+      "nombre": "Maximiliano",
+      "apellido": "Ibáñez"
+    },
+    "clase": {
+      "id": 19,
+      "nombre": "Pilates intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-02",
+    "estado": "activa"
+  },
+  {
+    "id": 174,
+    "alumno": {
+      "id": 29,
+      "nombre": "Paula",
+      "apellido": "Domínguez"
+    },
+    "clase": {
+      "id": 19,
+      "nombre": "Pilates intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-03",
+    "estado": "activa"
+  },
+  {
+    "id": 175,
+    "alumno": {
+      "id": 30,
+      "nombre": "Matías",
+      "apellido": "Cabrera"
+    },
+    "clase": {
+      "id": 19,
+      "nombre": "Pilates intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-04",
+    "estado": "activa"
+  },
+  {
+    "id": 176,
+    "alumno": {
+      "id": 31,
+      "nombre": "Lucía",
+      "apellido": "Vega"
+    },
+    "clase": {
+      "id": 19,
+      "nombre": "Pilates intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-09",
+    "estado": "activa"
+  },
+  {
+    "id": 177,
+    "alumno": {
+      "id": 32,
+      "nombre": "Sebastián",
+      "apellido": "Molina"
+    },
+    "clase": {
+      "id": 19,
+      "nombre": "Pilates intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-23",
+    "estado": "activa"
+  },
+  {
+    "id": 178,
+    "alumno": {
+      "id": 1,
+      "nombre": "Lucía",
+      "apellido": "Gómez"
+    },
+    "clase": {
+      "id": 19,
+      "nombre": "Pilates intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-07",
+    "estado": "activa"
+  },
+  {
+    "id": 179,
+    "alumno": {
+      "id": 2,
+      "nombre": "Martín",
+      "apellido": "Fernández"
+    },
+    "clase": {
+      "id": 19,
+      "nombre": "Pilates intermedio tarde"
+    },
+    "fechaInscripcion": "2026-10-08",
+    "estado": "activa"
+  },
+  {
+    "id": 180,
+    "alumno": {
+      "id": 24,
+      "nombre": "Gonzalo",
+      "apellido": "Silva"
+    },
+    "clase": {
+      "id": 20,
+      "nombre": "Pilates avanzado noche"
+    },
+    "fechaInscripcion": "2026-10-09",
+    "estado": "activa"
+  },
+  {
+    "id": 181,
+    "alumno": {
+      "id": 25,
+      "nombre": "Antonella",
+      "apellido": "Núñez"
+    },
+    "clase": {
+      "id": 20,
+      "nombre": "Pilates avanzado noche"
+    },
+    "fechaInscripcion": "2026-10-10",
+    "estado": "activa"
+  },
+  {
+    "id": 182,
+    "alumno": {
+      "id": 27,
+      "nombre": "Luciana",
+      "apellido": "Peña"
+    },
+    "clase": {
+      "id": 20,
+      "nombre": "Pilates avanzado noche"
+    },
+    "fechaInscripcion": "2026-10-11",
+    "estado": "activa"
+  },
+  {
+    "id": 183,
+    "alumno": {
+      "id": 28,
+      "nombre": "Maximiliano",
+      "apellido": "Ibáñez"
+    },
+    "clase": {
+      "id": 20,
+      "nombre": "Pilates avanzado noche"
+    },
+    "fechaInscripcion": "2026-10-12",
+    "estado": "activa"
+  },
+  {
+    "id": 184,
+    "alumno": {
+      "id": 29,
+      "nombre": "Paula",
+      "apellido": "Domínguez"
+    },
+    "clase": {
+      "id": 20,
+      "nombre": "Pilates avanzado noche"
+    },
+    "fechaInscripcion": "2026-10-13",
+    "estado": "activa"
+  },
+  {
+    "id": 185,
+    "alumno": {
+      "id": 30,
+      "nombre": "Matías",
+      "apellido": "Cabrera"
+    },
+    "clase": {
+      "id": 20,
+      "nombre": "Pilates avanzado noche"
+    },
+    "fechaInscripcion": "2026-10-14",
+    "estado": "activa"
+  },
+  {
+    "id": 186,
+    "alumno": {
+      "id": 31,
+      "nombre": "Lucía",
+      "apellido": "Vega"
+    },
+    "clase": {
+      "id": 20,
+      "nombre": "Pilates avanzado noche"
+    },
+    "fechaInscripcion": "2026-10-19",
+    "estado": "activa"
+  },
+  {
+    "id": 187,
+    "alumno": {
+      "id": 32,
+      "nombre": "Sebastián",
+      "apellido": "Molina"
+    },
+    "clase": {
+      "id": 20,
+      "nombre": "Pilates avanzado noche"
+    },
+    "fechaInscripcion": "2026-11-15",
+    "estado": "activa"
+  },
+  {
+    "id": 188,
+    "alumno": {
+      "id": 27,
+      "nombre": "Luciana",
+      "apellido": "Peña"
+    },
+    "clase": {
+      "id": 22,
+      "nombre": "Boxeo recreativo intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-17",
+    "estado": "activa"
+  },
+  {
+    "id": 189,
+    "alumno": {
+      "id": 28,
+      "nombre": "Maximiliano",
+      "apellido": "Ibáñez"
+    },
+    "clase": {
+      "id": 22,
+      "nombre": "Boxeo recreativo intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-18",
+    "estado": "activa"
+  },
+  {
+    "id": 190,
+    "alumno": {
+      "id": 29,
+      "nombre": "Paula",
+      "apellido": "Domínguez"
+    },
+    "clase": {
+      "id": 22,
+      "nombre": "Boxeo recreativo intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-19",
+    "estado": "activa"
+  },
+  {
+    "id": 191,
+    "alumno": {
+      "id": 30,
+      "nombre": "Matías",
+      "apellido": "Cabrera"
+    },
+    "clase": {
+      "id": 22,
+      "nombre": "Boxeo recreativo intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-20",
+    "estado": "activa"
+  },
+  {
+    "id": 192,
+    "alumno": {
+      "id": 31,
+      "nombre": "Lucía",
+      "apellido": "Vega"
+    },
+    "clase": {
+      "id": 22,
+      "nombre": "Boxeo recreativo intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-25",
+    "estado": "activa"
+  },
+  {
+    "id": 193,
+    "alumno": {
+      "id": 32,
+      "nombre": "Sebastián",
+      "apellido": "Molina"
+    },
+    "clase": {
+      "id": 22,
+      "nombre": "Boxeo recreativo intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-21",
+    "estado": "activa"
+  },
+  {
+    "id": 194,
+    "alumno": {
+      "id": 1,
+      "nombre": "Lucía",
+      "apellido": "Gómez"
+    },
+    "clase": {
+      "id": 22,
+      "nombre": "Boxeo recreativo intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-23",
+    "estado": "activa"
+  },
+  {
+    "id": 195,
+    "alumno": {
+      "id": 2,
+      "nombre": "Martín",
+      "apellido": "Fernández"
+    },
+    "clase": {
+      "id": 22,
+      "nombre": "Boxeo recreativo intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-24",
+    "estado": "activa"
+  },
+  {
+    "id": 196,
+    "alumno": {
+      "id": 4,
+      "nombre": "Mateo",
+      "apellido": "González"
+    },
+    "clase": {
+      "id": 22,
+      "nombre": "Boxeo recreativo intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-25",
+    "estado": "activa"
+  },
+  {
+    "id": 197,
+    "alumno": {
+      "id": 5,
+      "nombre": "Valentina",
+      "apellido": "Pérez"
+    },
+    "clase": {
+      "id": 22,
+      "nombre": "Boxeo recreativo intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-26",
+    "estado": "activa"
+  },
+  {
+    "id": 198,
+    "alumno": {
+      "id": 6,
+      "nombre": "Santiago",
+      "apellido": "Sánchez"
+    },
+    "clase": {
+      "id": 22,
+      "nombre": "Boxeo recreativo intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-27",
+    "estado": "activa"
+  },
+  {
+    "id": 199,
+    "alumno": {
+      "id": 7,
+      "nombre": "Camila",
+      "apellido": "Romero"
+    },
+    "clase": {
+      "id": 22,
+      "nombre": "Boxeo recreativo intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-28",
+    "estado": "activa"
+  },
+  {
+    "id": 200,
+    "alumno": {
+      "id": 9,
+      "nombre": "Julieta",
+      "apellido": "Álvarez"
+    },
+    "clase": {
+      "id": 22,
+      "nombre": "Boxeo recreativo intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-29",
+    "estado": "activa"
+  },
+  {
+    "id": 201,
+    "alumno": {
+      "id": 10,
+      "nombre": "Tomás",
+      "apellido": "Torres"
+    },
+    "clase": {
+      "id": 22,
+      "nombre": "Boxeo recreativo intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-30",
+    "estado": "activa"
+  },
+  {
+    "id": 202,
+    "alumno": {
+      "id": 11,
+      "nombre": "Agustina",
+      "apellido": "Ruiz"
+    },
+    "clase": {
+      "id": 22,
+      "nombre": "Boxeo recreativo intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-31",
+    "estado": "activa"
+  },
+  {
+    "id": 203,
+    "alumno": {
+      "id": 12,
+      "nombre": "Facundo",
+      "apellido": "Gómez"
+    },
+    "clase": {
+      "id": 22,
+      "nombre": "Boxeo recreativo intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-01",
+    "estado": "activa"
+  },
+  {
+    "id": 204,
+    "alumno": {
+      "id": 28,
+      "nombre": "Maximiliano",
+      "apellido": "Ibáñez"
+    },
+    "clase": {
+      "id": 23,
+      "nombre": "Boxeo recreativo inicial tarde"
+    },
+    "fechaInscripcion": "2026-11-02",
+    "estado": "activa"
+  },
+  {
+    "id": 205,
+    "alumno": {
+      "id": 29,
+      "nombre": "Paula",
+      "apellido": "Domínguez"
+    },
+    "clase": {
+      "id": 23,
+      "nombre": "Boxeo recreativo inicial tarde"
+    },
+    "fechaInscripcion": "2026-11-03",
+    "estado": "activa"
+  },
+  {
+    "id": 206,
+    "alumno": {
+      "id": 30,
+      "nombre": "Matías",
+      "apellido": "Cabrera"
+    },
+    "clase": {
+      "id": 23,
+      "nombre": "Boxeo recreativo inicial tarde"
+    },
+    "fechaInscripcion": "2026-11-04",
+    "estado": "activa"
+  },
+  {
+    "id": 207,
+    "alumno": {
+      "id": 31,
+      "nombre": "Lucía",
+      "apellido": "Vega"
+    },
+    "clase": {
+      "id": 23,
+      "nombre": "Boxeo recreativo inicial tarde"
+    },
+    "fechaInscripcion": "2026-11-09",
+    "estado": "activa"
+  },
+  {
+    "id": 208,
+    "alumno": {
+      "id": 32,
+      "nombre": "Sebastián",
+      "apellido": "Molina"
+    },
+    "clase": {
+      "id": 23,
+      "nombre": "Boxeo recreativo inicial tarde"
+    },
+    "fechaInscripcion": "2026-11-18",
+    "estado": "activa"
+  },
+  {
+    "id": 209,
+    "alumno": {
+      "id": 1,
+      "nombre": "Lucía",
+      "apellido": "Gómez"
+    },
+    "clase": {
+      "id": 23,
+      "nombre": "Boxeo recreativo inicial tarde"
+    },
+    "fechaInscripcion": "2026-11-07",
+    "estado": "activa"
+  },
+  {
+    "id": 210,
+    "alumno": {
+      "id": 2,
+      "nombre": "Martín",
+      "apellido": "Fernández"
+    },
+    "clase": {
+      "id": 23,
+      "nombre": "Boxeo recreativo inicial tarde"
+    },
+    "fechaInscripcion": "2026-11-08",
+    "estado": "activa"
+  },
+  {
+    "id": 211,
+    "alumno": {
+      "id": 4,
+      "nombre": "Mateo",
+      "apellido": "González"
+    },
+    "clase": {
+      "id": 23,
+      "nombre": "Boxeo recreativo inicial tarde"
+    },
+    "fechaInscripcion": "2026-11-09",
+    "estado": "activa"
+  },
+  {
+    "id": 212,
+    "alumno": {
+      "id": 29,
+      "nombre": "Paula",
+      "apellido": "Domínguez"
+    },
+    "clase": {
+      "id": 24,
+      "nombre": "Boxeo recreativo intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-10",
+    "estado": "activa"
+  },
+  {
+    "id": 213,
+    "alumno": {
+      "id": 30,
+      "nombre": "Matías",
+      "apellido": "Cabrera"
+    },
+    "clase": {
+      "id": 24,
+      "nombre": "Boxeo recreativo intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-11",
+    "estado": "activa"
+  },
+  {
+    "id": 214,
+    "alumno": {
+      "id": 31,
+      "nombre": "Lucía",
+      "apellido": "Vega"
+    },
+    "clase": {
+      "id": 24,
+      "nombre": "Boxeo recreativo intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-16",
+    "estado": "activa"
+  },
+  {
+    "id": 215,
+    "alumno": {
+      "id": 32,
+      "nombre": "Sebastián",
+      "apellido": "Molina"
+    },
+    "clase": {
+      "id": 24,
+      "nombre": "Boxeo recreativo intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-25",
+    "estado": "activa"
+  },
+  {
+    "id": 216,
+    "alumno": {
+      "id": 1,
+      "nombre": "Lucía",
+      "apellido": "Gómez"
+    },
+    "clase": {
+      "id": 24,
+      "nombre": "Boxeo recreativo intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-14",
+    "estado": "activa"
+  },
+  {
+    "id": 217,
+    "alumno": {
+      "id": 2,
+      "nombre": "Martín",
+      "apellido": "Fernández"
+    },
+    "clase": {
+      "id": 24,
+      "nombre": "Boxeo recreativo intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-15",
+    "estado": "activa"
+  },
+  {
+    "id": 218,
+    "alumno": {
+      "id": 4,
+      "nombre": "Mateo",
+      "apellido": "González"
+    },
+    "clase": {
+      "id": 24,
+      "nombre": "Boxeo recreativo intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-16",
+    "estado": "activa"
+  },
+  {
+    "id": 219,
+    "alumno": {
+      "id": 5,
+      "nombre": "Valentina",
+      "apellido": "Pérez"
+    },
+    "clase": {
+      "id": 24,
+      "nombre": "Boxeo recreativo intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-17",
+    "estado": "activa"
+  },
+  {
+    "id": 220,
+    "alumno": {
+      "id": 6,
+      "nombre": "Santiago",
+      "apellido": "Sánchez"
+    },
+    "clase": {
+      "id": 24,
+      "nombre": "Boxeo recreativo intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-18",
+    "estado": "activa"
+  },
+  {
+    "id": 221,
+    "alumno": {
+      "id": 7,
+      "nombre": "Camila",
+      "apellido": "Romero"
+    },
+    "clase": {
+      "id": 24,
+      "nombre": "Boxeo recreativo intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-19",
+    "estado": "activa"
+  },
+  {
+    "id": 222,
+    "alumno": {
+      "id": 9,
+      "nombre": "Julieta",
+      "apellido": "Álvarez"
+    },
+    "clase": {
+      "id": 24,
+      "nombre": "Boxeo recreativo intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-20",
+    "estado": "activa"
+  },
+  {
+    "id": 223,
+    "alumno": {
+      "id": 10,
+      "nombre": "Tomás",
+      "apellido": "Torres"
+    },
+    "clase": {
+      "id": 24,
+      "nombre": "Boxeo recreativo intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-21",
+    "estado": "activa"
+  },
+  {
+    "id": 224,
+    "alumno": {
+      "id": 11,
+      "nombre": "Agustina",
+      "apellido": "Ruiz"
+    },
+    "clase": {
+      "id": 24,
+      "nombre": "Boxeo recreativo intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-22",
+    "estado": "activa"
+  },
+  {
+    "id": 225,
+    "alumno": {
+      "id": 12,
+      "nombre": "Facundo",
+      "apellido": "Gómez"
+    },
+    "clase": {
+      "id": 24,
+      "nombre": "Boxeo recreativo intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-23",
+    "estado": "activa"
+  },
+  {
+    "id": 226,
+    "alumno": {
+      "id": 13,
+      "nombre": "Florencia",
+      "apellido": "Benítez"
+    },
+    "clase": {
+      "id": 24,
+      "nombre": "Boxeo recreativo intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-24",
+    "estado": "activa"
+  },
+  {
+    "id": 227,
+    "alumno": {
+      "id": 30,
+      "nombre": "Matías",
+      "apellido": "Cabrera"
+    },
+    "clase": {
+      "id": 25,
+      "nombre": "Boxeo recreativo avanzado noche"
+    },
+    "fechaInscripcion": "2026-11-25",
+    "estado": "activa"
+  },
+  {
+    "id": 228,
+    "alumno": {
+      "id": 31,
+      "nombre": "Lucía",
+      "apellido": "Vega"
+    },
+    "clase": {
+      "id": 25,
+      "nombre": "Boxeo recreativo avanzado noche"
+    },
+    "fechaInscripcion": "2026-10-05",
+    "estado": "activa"
+  },
+  {
+    "id": 229,
+    "alumno": {
+      "id": 32,
+      "nombre": "Sebastián",
+      "apellido": "Molina"
+    },
+    "clase": {
+      "id": 25,
+      "nombre": "Boxeo recreativo avanzado noche"
+    },
+    "fechaInscripcion": "2026-11-21",
+    "estado": "activa"
+  },
+  {
+    "id": 230,
+    "alumno": {
+      "id": 1,
+      "nombre": "Lucía",
+      "apellido": "Gómez"
+    },
+    "clase": {
+      "id": 25,
+      "nombre": "Boxeo recreativo avanzado noche"
+    },
+    "fechaInscripcion": "2026-10-02",
+    "estado": "activa"
+  },
+  {
+    "id": 231,
+    "alumno": {
+      "id": 2,
+      "nombre": "Martín",
+      "apellido": "Fernández"
+    },
+    "clase": {
+      "id": 25,
+      "nombre": "Boxeo recreativo avanzado noche"
+    },
+    "fechaInscripcion": "2026-10-03",
+    "estado": "activa"
+  },
+  {
+    "id": 232,
+    "alumno": {
+      "id": 4,
+      "nombre": "Mateo",
+      "apellido": "González"
+    },
+    "clase": {
+      "id": 25,
+      "nombre": "Boxeo recreativo avanzado noche"
+    },
+    "fechaInscripcion": "2026-10-04",
+    "estado": "activa"
+  },
+  {
+    "id": 233,
+    "alumno": {
+      "id": 5,
+      "nombre": "Valentina",
+      "apellido": "Pérez"
+    },
+    "clase": {
+      "id": 25,
+      "nombre": "Boxeo recreativo avanzado noche"
+    },
+    "fechaInscripcion": "2026-10-05",
+    "estado": "activa"
+  },
+  {
+    "id": 234,
+    "alumno": {
+      "id": 6,
+      "nombre": "Santiago",
+      "apellido": "Sánchez"
+    },
+    "clase": {
+      "id": 25,
+      "nombre": "Boxeo recreativo avanzado noche"
+    },
+    "fechaInscripcion": "2026-10-06",
+    "estado": "activa"
+  },
+  {
+    "id": 235,
+    "alumno": {
+      "id": 7,
+      "nombre": "Camila",
+      "apellido": "Romero"
+    },
+    "clase": {
+      "id": 25,
+      "nombre": "Boxeo recreativo avanzado noche"
+    },
+    "fechaInscripcion": "2026-10-07",
+    "estado": "activa"
+  },
+  {
+    "id": 236,
+    "alumno": {
+      "id": 32,
+      "nombre": "Sebastián",
+      "apellido": "Molina"
+    },
+    "clase": {
+      "id": 27,
+      "nombre": "Movilidad intermedio mañana"
+    },
+    "fechaInscripcion": "2026-11-10",
+    "estado": "activa"
+  },
+  {
+    "id": 237,
+    "alumno": {
+      "id": 1,
+      "nombre": "Lucía",
+      "apellido": "Gómez"
+    },
+    "clase": {
+      "id": 27,
+      "nombre": "Movilidad intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-09",
+    "estado": "activa"
+  },
+  {
+    "id": 238,
+    "alumno": {
+      "id": 2,
+      "nombre": "Martín",
+      "apellido": "Fernández"
+    },
+    "clase": {
+      "id": 27,
+      "nombre": "Movilidad intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-10",
+    "estado": "activa"
+  },
+  {
+    "id": 239,
+    "alumno": {
+      "id": 4,
+      "nombre": "Mateo",
+      "apellido": "González"
+    },
+    "clase": {
+      "id": 27,
+      "nombre": "Movilidad intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-11",
+    "estado": "activa"
+  },
+  {
+    "id": 240,
+    "alumno": {
+      "id": 5,
+      "nombre": "Valentina",
+      "apellido": "Pérez"
+    },
+    "clase": {
+      "id": 27,
+      "nombre": "Movilidad intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-12",
+    "estado": "activa"
+  },
+  {
+    "id": 241,
+    "alumno": {
+      "id": 6,
+      "nombre": "Santiago",
+      "apellido": "Sánchez"
+    },
+    "clase": {
+      "id": 27,
+      "nombre": "Movilidad intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-13",
+    "estado": "activa"
+  },
+  {
+    "id": 242,
+    "alumno": {
+      "id": 7,
+      "nombre": "Camila",
+      "apellido": "Romero"
+    },
+    "clase": {
+      "id": 27,
+      "nombre": "Movilidad intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-14",
+    "estado": "activa"
+  },
+  {
+    "id": 243,
+    "alumno": {
+      "id": 9,
+      "nombre": "Julieta",
+      "apellido": "Álvarez"
+    },
+    "clase": {
+      "id": 27,
+      "nombre": "Movilidad intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-15",
+    "estado": "activa"
+  },
+  {
+    "id": 244,
+    "alumno": {
+      "id": 10,
+      "nombre": "Tomás",
+      "apellido": "Torres"
+    },
+    "clase": {
+      "id": 27,
+      "nombre": "Movilidad intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-16",
+    "estado": "activa"
+  },
+  {
+    "id": 245,
+    "alumno": {
+      "id": 11,
+      "nombre": "Agustina",
+      "apellido": "Ruiz"
+    },
+    "clase": {
+      "id": 27,
+      "nombre": "Movilidad intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-17",
+    "estado": "activa"
+  },
+  {
+    "id": 246,
+    "alumno": {
+      "id": 12,
+      "nombre": "Facundo",
+      "apellido": "Gómez"
+    },
+    "clase": {
+      "id": 27,
+      "nombre": "Movilidad intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-18",
+    "estado": "activa"
+  },
+  {
+    "id": 247,
+    "alumno": {
+      "id": 13,
+      "nombre": "Florencia",
+      "apellido": "Benítez"
+    },
+    "clase": {
+      "id": 27,
+      "nombre": "Movilidad intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-19",
+    "estado": "activa"
+  },
+  {
+    "id": 248,
+    "alumno": {
+      "id": 15,
+      "nombre": "Micaela",
+      "apellido": "Herrera"
+    },
+    "clase": {
+      "id": 27,
+      "nombre": "Movilidad intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-20",
+    "estado": "activa"
+  },
+  {
+    "id": 249,
+    "alumno": {
+      "id": 16,
+      "nombre": "Lautaro",
+      "apellido": "Suárez"
+    },
+    "clase": {
+      "id": 27,
+      "nombre": "Movilidad intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-21",
+    "estado": "activa"
+  },
+  {
+    "id": 250,
+    "alumno": {
+      "id": 17,
+      "nombre": "Candela",
+      "apellido": "Aguirre"
+    },
+    "clase": {
+      "id": 27,
+      "nombre": "Movilidad intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-22",
+    "estado": "activa"
+  },
+  {
+    "id": 251,
+    "alumno": {
+      "id": 18,
+      "nombre": "Bruno",
+      "apellido": "Giménez"
+    },
+    "clase": {
+      "id": 27,
+      "nombre": "Movilidad intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-23",
+    "estado": "activa"
+  },
+  {
+    "id": 252,
+    "alumno": {
+      "id": 20,
+      "nombre": "Franco",
+      "apellido": "González"
+    },
+    "clase": {
+      "id": 27,
+      "nombre": "Movilidad intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-24",
+    "estado": "activa"
+  },
+  {
+    "id": 253,
+    "alumno": {
+      "id": 21,
+      "nombre": "Rocío",
+      "apellido": "Flores"
+    },
+    "clase": {
+      "id": 27,
+      "nombre": "Movilidad intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-25",
+    "estado": "activa"
+  },
+  {
+    "id": 254,
+    "alumno": {
+      "id": 22,
+      "nombre": "Ignacio",
+      "apellido": "Morales"
+    },
+    "clase": {
+      "id": 27,
+      "nombre": "Movilidad intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-26",
+    "estado": "activa"
+  },
+  {
+    "id": 255,
+    "alumno": {
+      "id": 23,
+      "nombre": "Brenda",
+      "apellido": "Ortiz"
+    },
+    "clase": {
+      "id": 27,
+      "nombre": "Movilidad intermedio mañana"
+    },
+    "fechaInscripcion": "2026-10-27",
+    "estado": "activa"
+  },
+  {
+    "id": 256,
+    "alumno": {
+      "id": 1,
+      "nombre": "Lucía",
+      "apellido": "Gómez"
+    },
+    "clase": {
+      "id": 28,
+      "nombre": "Movilidad inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-28",
+    "estado": "activa"
+  },
+  {
+    "id": 257,
+    "alumno": {
+      "id": 2,
+      "nombre": "Martín",
+      "apellido": "Fernández"
+    },
+    "clase": {
+      "id": 28,
+      "nombre": "Movilidad inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-29",
+    "estado": "activa"
+  },
+  {
+    "id": 258,
+    "alumno": {
+      "id": 4,
+      "nombre": "Mateo",
+      "apellido": "González"
+    },
+    "clase": {
+      "id": 28,
+      "nombre": "Movilidad inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-30",
+    "estado": "activa"
+  },
+  {
+    "id": 259,
+    "alumno": {
+      "id": 5,
+      "nombre": "Valentina",
+      "apellido": "Pérez"
+    },
+    "clase": {
+      "id": 28,
+      "nombre": "Movilidad inicial tarde"
+    },
+    "fechaInscripcion": "2026-10-31",
+    "estado": "activa"
+  },
+  {
+    "id": 260,
+    "alumno": {
+      "id": 6,
+      "nombre": "Santiago",
+      "apellido": "Sánchez"
+    },
+    "clase": {
+      "id": 28,
+      "nombre": "Movilidad inicial tarde"
+    },
+    "fechaInscripcion": "2026-11-01",
+    "estado": "activa"
+  },
+  {
+    "id": 261,
+    "alumno": {
+      "id": 7,
+      "nombre": "Camila",
+      "apellido": "Romero"
+    },
+    "clase": {
+      "id": 28,
+      "nombre": "Movilidad inicial tarde"
+    },
+    "fechaInscripcion": "2026-11-02",
+    "estado": "activa"
+  },
+  {
+    "id": 262,
+    "alumno": {
+      "id": 9,
+      "nombre": "Julieta",
+      "apellido": "Álvarez"
+    },
+    "clase": {
+      "id": 28,
+      "nombre": "Movilidad inicial tarde"
+    },
+    "fechaInscripcion": "2026-11-03",
+    "estado": "activa"
+  },
+  {
+    "id": 263,
+    "alumno": {
+      "id": 10,
+      "nombre": "Tomás",
+      "apellido": "Torres"
+    },
+    "clase": {
+      "id": 28,
+      "nombre": "Movilidad inicial tarde"
+    },
+    "fechaInscripcion": "2026-11-04",
+    "estado": "activa"
+  },
+  {
+    "id": 264,
+    "alumno": {
+      "id": 11,
+      "nombre": "Agustina",
+      "apellido": "Ruiz"
+    },
+    "clase": {
+      "id": 28,
+      "nombre": "Movilidad inicial tarde"
+    },
+    "fechaInscripcion": "2026-11-05",
+    "estado": "activa"
+  },
+  {
+    "id": 265,
+    "alumno": {
+      "id": 12,
+      "nombre": "Facundo",
+      "apellido": "Gómez"
+    },
+    "clase": {
+      "id": 28,
+      "nombre": "Movilidad inicial tarde"
+    },
+    "fechaInscripcion": "2026-11-06",
+    "estado": "activa"
+  },
+  {
+    "id": 266,
+    "alumno": {
+      "id": 2,
+      "nombre": "Martín",
+      "apellido": "Fernández"
+    },
+    "clase": {
+      "id": 29,
+      "nombre": "Movilidad intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-07",
+    "estado": "activa"
+  },
+  {
+    "id": 267,
+    "alumno": {
+      "id": 4,
+      "nombre": "Mateo",
+      "apellido": "González"
+    },
+    "clase": {
+      "id": 29,
+      "nombre": "Movilidad intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-08",
+    "estado": "activa"
+  },
+  {
+    "id": 268,
+    "alumno": {
+      "id": 5,
+      "nombre": "Valentina",
+      "apellido": "Pérez"
+    },
+    "clase": {
+      "id": 29,
+      "nombre": "Movilidad intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-09",
+    "estado": "activa"
+  },
+  {
+    "id": 269,
+    "alumno": {
+      "id": 6,
+      "nombre": "Santiago",
+      "apellido": "Sánchez"
+    },
+    "clase": {
+      "id": 29,
+      "nombre": "Movilidad intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-10",
+    "estado": "activa"
+  },
+  {
+    "id": 270,
+    "alumno": {
+      "id": 7,
+      "nombre": "Camila",
+      "apellido": "Romero"
+    },
+    "clase": {
+      "id": 29,
+      "nombre": "Movilidad intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-11",
+    "estado": "activa"
+  },
+  {
+    "id": 271,
+    "alumno": {
+      "id": 9,
+      "nombre": "Julieta",
+      "apellido": "Álvarez"
+    },
+    "clase": {
+      "id": 29,
+      "nombre": "Movilidad intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-12",
+    "estado": "activa"
+  },
+  {
+    "id": 272,
+    "alumno": {
+      "id": 10,
+      "nombre": "Tomás",
+      "apellido": "Torres"
+    },
+    "clase": {
+      "id": 29,
+      "nombre": "Movilidad intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-13",
+    "estado": "activa"
+  },
+  {
+    "id": 273,
+    "alumno": {
+      "id": 11,
+      "nombre": "Agustina",
+      "apellido": "Ruiz"
+    },
+    "clase": {
+      "id": 29,
+      "nombre": "Movilidad intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-14",
+    "estado": "activa"
+  },
+  {
+    "id": 274,
+    "alumno": {
+      "id": 12,
+      "nombre": "Facundo",
+      "apellido": "Gómez"
+    },
+    "clase": {
+      "id": 29,
+      "nombre": "Movilidad intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-15",
+    "estado": "activa"
+  },
+  {
+    "id": 275,
+    "alumno": {
+      "id": 13,
+      "nombre": "Florencia",
+      "apellido": "Benítez"
+    },
+    "clase": {
+      "id": 29,
+      "nombre": "Movilidad intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-16",
+    "estado": "activa"
+  },
+  {
+    "id": 276,
+    "alumno": {
+      "id": 15,
+      "nombre": "Micaela",
+      "apellido": "Herrera"
+    },
+    "clase": {
+      "id": 29,
+      "nombre": "Movilidad intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-17",
+    "estado": "activa"
+  },
+  {
+    "id": 277,
+    "alumno": {
+      "id": 16,
+      "nombre": "Lautaro",
+      "apellido": "Suárez"
+    },
+    "clase": {
+      "id": 29,
+      "nombre": "Movilidad intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-18",
+    "estado": "activa"
+  },
+  {
+    "id": 278,
+    "alumno": {
+      "id": 17,
+      "nombre": "Candela",
+      "apellido": "Aguirre"
+    },
+    "clase": {
+      "id": 29,
+      "nombre": "Movilidad intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-19",
+    "estado": "activa"
+  },
+  {
+    "id": 279,
+    "alumno": {
+      "id": 18,
+      "nombre": "Bruno",
+      "apellido": "Giménez"
+    },
+    "clase": {
+      "id": 29,
+      "nombre": "Movilidad intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-20",
+    "estado": "activa"
+  },
+  {
+    "id": 280,
+    "alumno": {
+      "id": 20,
+      "nombre": "Franco",
+      "apellido": "González"
+    },
+    "clase": {
+      "id": 29,
+      "nombre": "Movilidad intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-21",
+    "estado": "activa"
+  },
+  {
+    "id": 281,
+    "alumno": {
+      "id": 21,
+      "nombre": "Rocío",
+      "apellido": "Flores"
+    },
+    "clase": {
+      "id": 29,
+      "nombre": "Movilidad intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-22",
+    "estado": "activa"
+  },
+  {
+    "id": 282,
+    "alumno": {
+      "id": 22,
+      "nombre": "Ignacio",
+      "apellido": "Morales"
+    },
+    "clase": {
+      "id": 29,
+      "nombre": "Movilidad intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-23",
+    "estado": "activa"
+  },
+  {
+    "id": 283,
+    "alumno": {
+      "id": 23,
+      "nombre": "Brenda",
+      "apellido": "Ortiz"
+    },
+    "clase": {
+      "id": 29,
+      "nombre": "Movilidad intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-24",
+    "estado": "activa"
+  },
+  {
+    "id": 284,
+    "alumno": {
+      "id": 24,
+      "nombre": "Gonzalo",
+      "apellido": "Silva"
+    },
+    "clase": {
+      "id": 29,
+      "nombre": "Movilidad intermedio tarde"
+    },
+    "fechaInscripcion": "2026-11-25",
+    "estado": "activa"
+  },
+  {
+    "id": 285,
+    "alumno": {
+      "id": 4,
+      "nombre": "Mateo",
+      "apellido": "González"
+    },
+    "clase": {
+      "id": 30,
+      "nombre": "Movilidad avanzado noche"
+    },
+    "fechaInscripcion": "2026-11-26",
+    "estado": "activa"
+  },
+  {
+    "id": 286,
+    "alumno": {
+      "id": 5,
+      "nombre": "Valentina",
+      "apellido": "Pérez"
+    },
+    "clase": {
+      "id": 30,
+      "nombre": "Movilidad avanzado noche"
+    },
+    "fechaInscripcion": "2026-10-01",
+    "estado": "activa"
+  },
+  {
+    "id": 287,
+    "alumno": {
+      "id": 6,
+      "nombre": "Santiago",
+      "apellido": "Sánchez"
+    },
+    "clase": {
+      "id": 30,
+      "nombre": "Movilidad avanzado noche"
+    },
+    "fechaInscripcion": "2026-10-02",
+    "estado": "activa"
+  },
+  {
+    "id": 288,
+    "alumno": {
+      "id": 7,
+      "nombre": "Camila",
+      "apellido": "Romero"
+    },
+    "clase": {
+      "id": 30,
+      "nombre": "Movilidad avanzado noche"
+    },
+    "fechaInscripcion": "2026-10-03",
+    "estado": "activa"
+  },
+  {
+    "id": 289,
+    "alumno": {
+      "id": 9,
+      "nombre": "Julieta",
+      "apellido": "Álvarez"
+    },
+    "clase": {
+      "id": 30,
+      "nombre": "Movilidad avanzado noche"
+    },
+    "fechaInscripcion": "2026-10-04",
+    "estado": "activa"
+  },
+  {
+    "id": 290,
+    "alumno": {
+      "id": 10,
+      "nombre": "Tomás",
+      "apellido": "Torres"
+    },
+    "clase": {
+      "id": 30,
+      "nombre": "Movilidad avanzado noche"
+    },
+    "fechaInscripcion": "2026-10-05",
+    "estado": "activa"
+  },
+  {
+    "id": 291,
+    "alumno": {
+      "id": 11,
+      "nombre": "Agustina",
+      "apellido": "Ruiz"
+    },
+    "clase": {
+      "id": 30,
+      "nombre": "Movilidad avanzado noche"
+    },
+    "fechaInscripcion": "2026-10-06",
+    "estado": "activa"
+  },
+  {
+    "id": 292,
+    "alumno": {
+      "id": 12,
+      "nombre": "Facundo",
+      "apellido": "Gómez"
+    },
+    "clase": {
+      "id": 30,
+      "nombre": "Movilidad avanzado noche"
+    },
+    "fechaInscripcion": "2026-10-07",
+    "estado": "activa"
+  },
+  {
+    "id": 293,
+    "alumno": {
+      "id": 13,
+      "nombre": "Florencia",
+      "apellido": "Benítez"
+    },
+    "clase": {
+      "id": 30,
+      "nombre": "Movilidad avanzado noche"
+    },
+    "fechaInscripcion": "2026-10-08",
+    "estado": "activa"
+  },
+  {
+    "id": 294,
+    "alumno": {
+      "id": 15,
+      "nombre": "Micaela",
+      "apellido": "Herrera"
+    },
+    "clase": {
+      "id": 30,
+      "nombre": "Movilidad avanzado noche"
+    },
+    "fechaInscripcion": "2026-10-09",
+    "estado": "activa"
+  },
+  {
+    "id": 295,
+    "alumno": {
+      "id": 1,
+      "nombre": "Lucía",
+      "apellido": "Gómez"
+    },
+    "clase": {
+      "id": 1,
+      "nombre": "Funcional inicial mañana"
+    },
+    "fechaInscripcion": "2026-10-10",
+    "estado": "cancelada"
+  },
+  {
+    "id": 296,
+    "alumno": {
+      "id": 2,
+      "nombre": "Martín",
+      "apellido": "Fernández"
+    },
+    "clase": {
+      "id": 1,
+      "nombre": "Funcional inicial mañana"
+    },
+    "fechaInscripcion": "2026-10-11",
+    "estado": "cancelada"
+  },
+  {
+    "id": 297,
+    "alumno": {
+      "id": 3,
+      "nombre": "Sofía",
+      "apellido": "Rodríguez"
+    },
+    "clase": {
+      "id": 1,
+      "nombre": "Funcional inicial mañana"
+    },
+    "fechaInscripcion": "2026-10-12",
+    "estado": "cancelada"
+  },
+  {
+    "id": 298,
+    "alumno": {
+      "id": 4,
+      "nombre": "Mateo",
+      "apellido": "González"
+    },
+    "clase": {
+      "id": 1,
+      "nombre": "Funcional inicial mañana"
+    },
+    "fechaInscripcion": "2026-10-13",
+    "estado": "cancelada"
+  },
+  {
+    "id": 299,
+    "alumno": {
+      "id": 5,
+      "nombre": "Valentina",
+      "apellido": "Pérez"
+    },
+    "clase": {
+      "id": 1,
+      "nombre": "Funcional inicial mañana"
+    },
+    "fechaInscripcion": "2026-10-14",
+    "estado": "cancelada"
+  },
+  {
+    "id": 300,
+    "alumno": {
+      "id": 6,
+      "nombre": "Santiago",
+      "apellido": "Sánchez"
+    },
+    "clase": {
+      "id": 1,
+      "nombre": "Funcional inicial mañana"
+    },
+    "fechaInscripcion": "2026-10-15",
+    "estado": "cancelada"
+  },
+  {
+    "id": 301,
+    "alumno": {
+      "id": 7,
+      "nombre": "Camila",
+      "apellido": "Romero"
+    },
+    "clase": {
+      "id": 1,
+      "nombre": "Funcional inicial mañana"
+    },
+    "fechaInscripcion": "2026-10-16",
+    "estado": "cancelada"
+  },
+  {
+    "id": 302,
+    "alumno": {
+      "id": 8,
+      "nombre": "Joaquín",
+      "apellido": "Díaz"
+    },
+    "clase": {
+      "id": 1,
+      "nombre": "Funcional inicial mañana"
+    },
+    "fechaInscripcion": "2026-10-17",
+    "estado": "cancelada"
+  },
+  {
+    "id": 303,
+    "alumno": {
+      "id": 9,
+      "nombre": "Julieta",
+      "apellido": "Álvarez"
+    },
+    "clase": {
+      "id": 1,
+      "nombre": "Funcional inicial mañana"
+    },
+    "fechaInscripcion": "2026-10-18",
+    "estado": "cancelada"
+  },
+  {
+    "id": 304,
+    "alumno": {
+      "id": 10,
+      "nombre": "Tomás",
+      "apellido": "Torres"
+    },
+    "clase": {
+      "id": 1,
+      "nombre": "Funcional inicial mañana"
+    },
+    "fechaInscripcion": "2026-10-19",
+    "estado": "cancelada"
+  }
+]
