@@ -5,6 +5,7 @@ import { sendSuccess } from "./http/response.js";
 import { errorHandler, notFound } from "./http/error-handler.js";
 import clasesRouter from "./routes/clases.js";
 import authRouter from "./routes/auth.js";
+import profesoresRouter from "./routes/profesores.js";
 
 const app = express();
 
@@ -27,6 +28,7 @@ apiRouter.get("/health", (_req, res) => {
 
 apiRouter.use("/auth", authRouter);
 apiRouter.use("/clases", clasesRouter);
+apiRouter.use("/profesores", profesoresRouter);
 
 app.use("/api/v1", apiRouter);
 
