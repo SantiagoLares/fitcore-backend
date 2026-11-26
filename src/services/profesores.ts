@@ -29,6 +29,14 @@ function normalizar(valor: string): string {
     .toLowerCase();
 }
 
+function validarIdProfesor(id: unknown): number {
+  if (typeof id !== 'string' || !/^[1-9]\d*$/.test(id) || !Number.isSafeInteger(Number(id))) {
+    throw new HttpError(400, 'INVALID_ID', 'El ID debe ser un entero positivo');
+  }
+
+  return Number(id);
+}
+
 export function listarProfesores(profesores: readonly Profesor[], query: Query) {
   const pagination = readPagination({
     page: query.page,
@@ -80,11 +88,9 @@ export function obtenerProfesorPorId(
   clases: readonly Clase[],
   id: unknown,
 ): ProfesorDetalle {
-  if (typeof id !== 'string' || !/^[1-9]\d*$/.test(id) || !Number.isSafeInteger(Number(id))) {
-    throw new HttpError(400, 'INVALID_ID', 'El ID debe ser un entero positivo');
-  }
+  const profesorId = validarIdProfesor(id);
 
-  const profesor = profesores.find((item) => item.id === Number(id));
+  const profesor = profesores.find((item) => item.id === profesorId);
 
   if (!profesor) {
     throw new HttpError(404, 'PROFESSOR_NOT_FOUND', 'Profesor no encontrado');
@@ -188,11 +194,9 @@ export function modificarProfesor(
   id: unknown,
   body: unknown,
 ): Profesor {
-  if (typeof id !== 'string' || !/^[1-9]\d*$/.test(id) || !Number.isSafeInteger(Number(id))) {
-    throw new HttpError(400, 'INVALID_ID', 'El ID debe ser un entero positivo');
-  }
+  const profesorId = validarIdProfesor(id);
 
-  const indice = profesores.findIndex((profesor) => profesor.id === Number(id));
+  const indice = profesores.findIndex((profesor) => profesor.id === profesorId);
 
   if (indice === -1) {
     throw new HttpError(404, 'PROFESSOR_NOT_FOUND', 'Profesor no encontrado');
@@ -227,17 +231,15 @@ export function eliminarProfesor(
   clases: readonly Clase[],
   id: unknown,
 ): void {
-  if (typeof id !== 'string' || !/^[1-9]\d*$/.test(id) || !Number.isSafeInteger(Number(id))) {
-    throw new HttpError(400, 'INVALID_ID', 'El ID debe ser un entero positivo');
-  }
+  const profesorId = validarIdProfesor(id);
 
-  const indice = profesores.findIndex((profesor) => profesor.id === Number(id));
+  const indice = profesores.findIndex((profesor) => profesor.id === profesorId);
 
   if (indice === -1) {
     throw new HttpError(404, 'PROFESSOR_NOT_FOUND', 'Profesor no encontrado');
   }
 
-  const tieneClases = clases.some((clase) => clase.profesor.id === Number(id));
+  const tieneClases = clases.some((clase) => clase.profesor.id === profesorId);
 
   if (tieneClases) {
     throw new HttpError(
