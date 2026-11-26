@@ -1,6 +1,7 @@
 import { HttpError } from '../http/error-handler.js';
 import { queryList, readPagination } from '../http/list-query.js';
-import type { Profesor } from '../models/profesor.js';
+import type { Profesor, ProfesorDetalle } from '../models/profesor.js';
+import type { Clase } from '../models/clase.js';
 
 type Query = Record<string, unknown>;
 
@@ -71,4 +72,30 @@ export function listarProfesores(profesores: readonly Profesor[], query: Query) 
       return (comparacion || a.id - b.id) * direccion;
     },
   });
+}
+
+export function obtenerProfesorPorId(
+  profesores: readonly Profesor[],
+  clases: readonly Clase[],
+  id: unknown,
+): ProfesorDetalle {
+  if (typeof id !== 'string' || !/^[1-9]\d*$/.test(id) || !Number.isSafeInteger(Number(id))) {
+    throw new HttpError(400, 'INVALID_ID', 'El ID debe ser un entero positivo');
+  }
+
+  const profesor = profesores.find((item) => item.id === Number(id));
+
+  if (!profesor) {
+    throw new HttpError(404, 'PROFESSOR_NOT_FOUND', 'Profesor no encontrado');
+  }
+
+  return {
+    ...profesor,
+    clases: clases
+      .filter((clase) => clase.profesor.id === profesor.id)
+      .map((clase) => ({
+        id: clase.id,
+        nombre: clase.nombre,
+      })),
+  };
 }
