@@ -126,6 +126,52 @@
           }
         }
       ]
+    },
+    {
+      "name": "Usuarios",
+      "item": [
+        {
+          "name": "Listar usuarios",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/usuarios?page=1&limit=10&sortBy=id&order=desc",
+              "host": ["{{baseUrl}}"],
+              "path": ["usuarios"],
+              "query": [
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "10" },
+                {
+                  "key": "sortBy",
+                  "value": "id",
+                  "description": "nombre (por defecto), email o id"
+                },
+                { "key": "order", "value": "desc", "description": "asc o desc" },
+                {
+                  "key": "search",
+                  "value": "",
+                  "description": "Busca en nombre o email",
+                  "disabled": true
+                },
+                {
+                  "key": "perfil",
+                  "value": "Alumno",
+                  "description": "Alumno, Profesor o Administración",
+                  "disabled": true
+                },
+                {
+                  "key": "activo",
+                  "value": "true",
+                  "description": "true o false",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Lista paginada de usuarios. Solo Administración: ejecutar antes Auth > Login con admin@fitcore.com."
+          }
+        }
+      ]
     }
   ]
 }
