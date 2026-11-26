@@ -1,11 +1,10 @@
 import { Router } from 'express';
-import usuariosMock from '../mocks/usuarios.json';
 import alumnosMock from '../mocks/alumnos.json';
 import profesoresMock from '../mocks/profesores.json';
 import { sendSuccess } from '../http/response.js';
 import { requerirSesion } from '../http/auth.js';
+import { usuarios, credenciales } from '../data/usuarios.js';
 import {
-  crearCredenciales,
   iniciarSesion,
   modificarPerfil,
   obtenerPerfil,
@@ -13,11 +12,7 @@ import {
   solicitarRecuperacion,
 } from '../services/auth.js';
 import type { PerfilesAsociados } from '../services/auth.js';
-import type { Usuario } from '../models/usuario.js';
 
-// Estado en memoria: los cambios se reinician al reiniciar el servidor.
-const usuarios: Usuario[] = structuredClone(usuariosMock) as Usuario[];
-const credenciales = crearCredenciales(usuarios);
 const perfiles: PerfilesAsociados = { alumnos: alumnosMock, profesores: profesoresMock };
 
 const authRouter = Router();
