@@ -6,6 +6,7 @@ import {
   obtenerProfesorPorId,
   crearProfesor,
   modificarProfesor,
+  eliminarProfesor,
 } from '../services/profesores.js';
 import type { Profesor } from '../models/profesor.js';
 import clasesMock from '../mocks/clases.json';
@@ -41,6 +42,12 @@ profesoresRouter.put('/:id', (req, res) => {
   const profesor = modificarProfesor(profesores, usuarios, req.params.id, req.body);
 
   return sendSuccess(res, profesor);
+});
+
+profesoresRouter.delete('/:id', (req, res) => {
+  eliminarProfesor(profesores, clasesMock, req.params.id);
+
+  return res.status(204).send();
 });
 
 export default profesoresRouter;
