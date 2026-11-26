@@ -388,3 +388,267 @@ test('POST /api/v1/profesores rechaza un usuario ya asociado', async () => {
     servidor.close();
   }
 });
+
+// Funciones auxiliares para los tests de modificación de profesor
+function prepararDatosModificacion() {
+  const { id, ...datos } = profesores[0];
+
+  return {
+    id,
+    datos: {
+      ...datos,
+      nombre: 'Martín',
+      apellido: 'López',
+      especialidad: 'Funcional',
+    },
+  };
+}
+
+function enviarModificacion(base, id, datos) {
+  return fetch(`${base}/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(datos),
+  });
+}
+
+test('PUT /api/v1/profesores/:id modifica un profesor correctamente', async () => {
+  const servidor = app.listen(0);
+  const base = `http://localhost:${servidor.address().port}/api/v1/profesores`;
+
+  try {
+    const { id, datos } = prepararDatosModificacion();
+
+    const response = await enviarModificacion(base, id, datos);
+    const body = await response.json();
+
+    assert.equal(response.status, 200);
+
+    assert.deepEqual(body.data, {
+      id,
+      ...datos,
+    });
+
+    const consulta = await fetch(`${base}/${id}`);
+    const detalle = await consulta.json();
+
+    assert.equal(consulta.status, 200);
+
+    assert.deepEqual(detalle.data, {
+      id,
+      ...datos,
+      clases: clases
+        .filter((clase) => clase.profesor.id === id)
+        .map((clase) => ({
+          id: clase.id,
+          nombre: clase.nombre,
+        })),
+    });
+  } finally {
+    servidor.close();
+  }
+});
+
+test('PUT /api/v1/profesores/:id rechaza IDs inválidos', async () => {
+  const servidor = app.listen(0);
+  const base = `http://localhost:${servidor.address().port}/api/v1/profesores`;
+
+  try {
+    const { datos } = prepararDatosModificacion();
+
+    for (const id of ['abc', '0', '-1', '1.5', '1e2', '9007199254740992']) {
+      const response = await enviarModificacion(base, id, datos);
+
+      assert.equal(response.status, 400);
+    }
+  } finally {
+    servidor.close();
+  }
+});
+
+test('PUT /api/v1/profesores/:id devuelve 404 si no existe', async () => {
+  const servidor = app.listen(0);
+  const base = `http://localhost:${servidor.address().port}/api/v1/profesores`;
+
+  try {
+    const { datos } = prepararDatosModificacion();
+
+    const response = await enviarModificacion(base, 9999, datos);
+    const body = await response.json();
+
+    assert.equal(response.status, 404);
+    assert.equal(body.error, 'Profesor no encontrado');
+  } finally {
+    servidor.close();
+  }
+});
+
+test('PUT /api/v1/profesores/:id rechaza campos obligatorios ausentes', async () => {
+  const servidor = app.listen(0);
+  const base = `http://localhost:${servidor.address().port}/api/v1/profesores`;
+
+  try {
+    const { id, datos } = prepararDatosModificacion();
+
+    const campos = ['usuarioId', 'dni', 'nombre', 'apellido', 'email', 'especialidad'];
+
+    for (const campo of campos) {
+      const datosIncompletos = { ...datos };
+      delete datosIncompletos[campo];
+
+      const response = await enviarModificacion(base, id, datosIncompletos);
+
+      assert.equal(response.status, 400);
+    }
+  } finally {
+    servidor.close();
+  }
+});
+
+test('PUT /api/v1/profesores/:id rechaza datos inválidos', async () => {
+  const servidor = app.listen(0);
+  const base = `http://localhost:${servidor.address().port}/api/v1/profesores`;
+
+  try {
+    const { id, datos } = prepararDatosModificacion();
+
+    const casos = [
+      { usuarioId: 0 },
+      { usuarioId: '101' },
+      { dni: '' },
+      { nombre: '   ' },
+      { apellido: '' },
+      { email: 'correo-invalido' },
+      { especialidad: '' },
+      { telefono: 123456 },
+    ];
+
+    for (const caso of casos) {
+      const response = await enviarModificacion(base, id, {
+        ...datos,
+        ...caso,
+      });
+
+      assert.equal(response.status, 400);
+    }
+  } finally {
+    servidor.close();
+  }
+});
+
+test('PUT /api/v1/profesores/:id rechaza un usuario inexistente', async () => {
+  const servidor = app.listen(0);
+  const base = `http://localhost:${servidor.address().port}/api/v1/profesores`;
+
+  try {
+    const { id, datos } = prepararDatosModificacion();
+
+    const response = await enviarModificacion(base, id, {
+      ...datos,
+      usuarioId: 9999,
+    });
+
+    assert.equal(response.status, 400);
+  } finally {
+    servidor.close();
+  }
+});
+
+test('PUT /api/v1/profesores/:id rechaza usuarios que no son profesores', async () => {
+  const servidor = app.listen(0);
+  const base = `http://localhost:${servidor.address().port}/api/v1/profesores`;
+
+  try {
+    const { id, datos } = prepararDatosModificacion();
+
+    for (const perfil of ['Alumno', 'Administración']) {
+      const usuario = usuariosMock.find((item) => item.perfil === perfil);
+
+      assert.ok(usuario);
+
+      const response = await enviarModificacion(base, id, {
+        ...datos,
+        usuarioId: usuario.id,
+      });
+
+      assert.equal(response.status, 400);
+    }
+  } finally {
+    servidor.close();
+  }
+});
+
+test('PUT /api/v1/profesores/:id rechaza un DNI de otro profesor', async () => {
+  const servidor = app.listen(0);
+  const base = `http://localhost:${servidor.address().port}/api/v1/profesores`;
+
+  try {
+    const { id, datos } = prepararDatosModificacion();
+
+    const response = await enviarModificacion(base, id, {
+      ...datos,
+      dni: profesores[1].dni,
+    });
+
+    const body = await response.json();
+
+    assert.equal(response.status, 409);
+    assert.equal(body.error, 'El DNI ya está registrado');
+  } finally {
+    servidor.close();
+  }
+});
+
+test('PUT /api/v1/profesores/:id rechaza un usuario asociado a otro profesor', async () => {
+  const servidor = app.listen(0);
+  const base = `http://localhost:${servidor.address().port}/api/v1/profesores`;
+
+  try {
+    const { id, datos } = prepararDatosModificacion();
+
+    const response = await enviarModificacion(base, id, {
+      ...datos,
+      usuarioId: profesores[1].usuarioId,
+    });
+
+    const body = await response.json();
+
+    assert.equal(response.status, 409);
+    assert.equal(body.error, 'El usuario ya tiene un profesor asociado');
+  } finally {
+    servidor.close();
+  }
+});
+
+test('PUT /api/v1/profesores/:id conserva los datos si falla la modificación', async () => {
+  const servidor = app.listen(0);
+  const base = `http://localhost:${servidor.address().port}/api/v1/profesores`;
+
+  try {
+    const { id, datos } = prepararDatosModificacion();
+
+    const consultaInicial = await fetch(`${base}/${id}`);
+    assert.equal(consultaInicial.status, 200);
+
+    const original = await consultaInicial.json();
+
+    const response = await enviarModificacion(base, id, {
+      ...datos,
+      nombre: 'Nombre diferente',
+      dni: profesores[1].dni,
+    });
+
+    assert.equal(response.status, 409);
+
+    const consultaFinal = await fetch(`${base}/${id}`);
+    assert.equal(consultaFinal.status, 200);
+
+    const resultado = await consultaFinal.json();
+
+    assert.deepEqual(resultado.data, original.data);
+  } finally {
+    servidor.close();
+  }
+});
