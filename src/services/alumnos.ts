@@ -1,6 +1,7 @@
 import { HttpError } from '../http/error-handler.js';
 import { queryList, readPagination } from '../http/list-query.js';
 import type { Alumno, AlumnoEstado } from '../models/alumno.js';
+import type { Usuario } from '../models/usuario.js';
 
 type Query = Record<string, unknown>;
 
@@ -108,4 +109,97 @@ export function obtenerAlumnoPorId(alumnos: readonly Alumno[], id: unknown): Alu
     }
 
     return { ...alumno };
+
+}
+
+// Fecha de hoy como AAAA-MM-DD, según la hora local del servidor.
+function fechaDeHoy(): string {
+    const ahora = new Date();
+    const mes = String(ahora.getMonth() + 1).padStart(2, '0');
+    const dia = String(ahora.getDate()).padStart(2, '0');
+
+    return `${ahora.getFullYear()}-${mes}-${dia}`;
+}
+
+function leerCuerpo(body: unknown): Record<string, unknown> {
+    if (typeof body !== 'object' || body === null || Array.isArray(body)) {
+        throw new HttpError(400, 'INVALID_BODY', 'Datos del alumno inválidos');
+    }
+
+    return body as Record<string, unknown>;
+}
+
+function validarTexto(valor: unknown, campo: string): string {
+    if (typeof valor !== 'string' || valor.trim() === '') {
+        throw new HttpError(400, 'INVALID_FIELD', `${campo} es obligatorio y debe ser un texto válido`);
+    }
+
+    return valor.trim();
+}
+
+type DatosAlumno = Omit<Alumno, 'id' | 'fechaAlta' | 'estado'>;
+
+function validarDatosAlumno(datos: Record<string, unknown>, usuarios: readonly Usuario[]): DatosAlumno {
+    const usuarioId = datos.usuarioId;
+
+    if (typeof usuarioId !== 'number' || !Number.isSafeInteger(usuarioId) || usuarioId <= 0) {
+        throw new HttpError(400, 'INVALID_USER_ID', 'usuarioId debe ser un entero positivo');
+    }
+
+    const dni = validarTexto(datos.dni, 'dni');
+    const nombre = validarTexto(datos.nombre, 'nombre');
+    const apellido = validarTexto(datos.apellido, 'apellido');
+    const email = validarTexto(datos.email, 'email');
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        throw new HttpError(400, 'INVALID_EMAIL', 'El email no es válido');
+    }
+
+    if (datos.telefono !== undefined && typeof datos.telefono !== 'string') {
+        throw new HttpError(400, 'INVALID_PHONE', 'El teléfono debe ser un texto');
+    }
+
+    const telefono = typeof datos.telefono === 'string' ? datos.telefono.trim() : '';
+
+    const usuario = usuarios.find((item) => item.id === usuarioId);
+
+    if (!usuario || usuario.perfil !== 'Alumno') {
+        throw new HttpError(400, 'INVALID_USER', 'El usuario debe existir y tener perfil Alumno');
+    }
+
+    return { usuarioId, dni, nombre, apellido, email, telefono };
+}
+
+function validarDuplicadosAlumno(
+    alumnos: readonly Alumno[],
+    datos: DatosAlumno,
+    alumnoId?: number,
+): void {
+    if (alumnos.some((alumno) => alumno.id !== alumnoId && alumno.dni === datos.dni)) {
+        throw new HttpError(409, 'DUPLICATE_DNI', 'El DNI ya está registrado');
+    }
+
+    if (alumnos.some((alumno) => alumno.id !== alumnoId && alumno.usuarioId === datos.usuarioId)) {
+        throw new HttpError(409, 'DUPLICATE_USER', 'El usuario ya tiene un alumno asociado');
+    }
+}
+
+export function crearAlumno(
+    alumnos: Alumno[],
+    usuarios: readonly Usuario[],
+    body: unknown,
+    hoy: string = fechaDeHoy(),
+): Alumno {
+    const datos = validarDatosAlumno(leerCuerpo(body), usuarios);
+
+    validarDuplicadosAlumno(alumnos, datos);
+
+    const id = Math.max(0, ...alumnos.map((alumno) => alumno.id)) + 1;
+
+    // id, fechaAlta y estado los pone el servidor: si vienen en el cuerpo, se ignoran.
+    const alumno: Alumno = { id, ...datos, fechaAlta: hoy, estado: 'activo' };
+
+    alumnos.push(alumno);
+
+    return alumno;
 }
