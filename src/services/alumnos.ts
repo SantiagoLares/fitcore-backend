@@ -91,3 +91,21 @@ export function listarAlumnos(alumnos: readonly Alumno[], query: Query) {
         },
     });
 }
+
+export function obtenerAlumnoPorId(alumnos: readonly Alumno[], id: unknown): Alumno {
+    if (
+        typeof id !== 'string' ||
+        !/^[1-9]\d*$/.test(id) ||
+        !Number.isSafeInteger(Number(id))
+    ) {
+        throw new HttpError(400, 'INVALID_ID', 'El ID debe ser un entero positivo');
+    }
+
+    const alumno = alumnos.find((item) => item.id === Number(id));
+
+    if (!alumno) {
+        throw new HttpError(404, 'ALUMNO_NOT_FOUND', 'Alumno no encontrado');
+    }
+
+    return { ...alumno };
+}
