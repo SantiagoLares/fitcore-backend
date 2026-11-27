@@ -19,9 +19,14 @@ async function probarEndpoint(callback) {
   const servidor = app.listen(0);
   const base = `http://localhost:${servidor.address().port}/api/v1/horarios`;
 
-  const pedir = (query = '', usuarioId) =>
+  const pedir = (query = '', usuarioId, opciones = {}) =>
     fetch(`${base}${query}`, {
-      headers: usuarioId === undefined ? {} : { Authorization: `Bearer ${token(usuarioId)}` },
+      method: opciones.method ?? 'GET',
+      headers: {
+        ...(usuarioId === undefined ? {} : { Authorization: `Bearer ${token(usuarioId)}` }),
+        ...(opciones.body === undefined ? {} : { 'Content-Type': 'application/json' }),
+      },
+      body: opciones.body === undefined ? undefined : JSON.stringify(opciones.body),
     });
 
   try {
@@ -244,5 +249,280 @@ test('GET /horarios/:id rechaza usuarios inactivos', async () => {
     const res = await pedir('/1', 13);
 
     assert.equal(res.status, 401);
+  });
+});
+
+const nuevoHorario = {
+  claseId: 1,
+  diaSemana: 'sabado',
+  horaInicio: '17:00',
+  horaFin: '18:00',
+};
+
+test('POST /horarios crea un horario y devuelve 201', async () => {
+  await probarEndpoint(async (pedir) => {
+    const res = await pedir('', 1, {
+      method: 'POST',
+      body: nuevoHorario,
+    });
+
+    assert.equal(res.status, 201);
+
+    const body = await res.json();
+
+    try {
+      assert.ok(Number.isInteger(body.id));
+
+      assert.deepEqual(body, {
+        id: body.id,
+        ...nuevoHorario,
+      });
+
+      const consulta = await pedir(`/${body.id}`, 1);
+
+      assert.equal(consulta.status, 200);
+      assert.deepEqual(await consulta.json(), body);
+    } finally {
+      await pedir(`/${body.id}`, 1, {
+        method: 'DELETE',
+      });
+    }
+  });
+});
+
+test('POST /horarios rechaza campos obligatorios ausentes', async () => {
+  await probarEndpoint(async (pedir) => {
+    for (const campo of Object.keys(nuevoHorario)) {
+      const entrada = { ...nuevoHorario };
+      delete entrada[campo];
+
+      const res = await pedir('', 1, {
+        method: 'POST',
+        body: entrada,
+      });
+
+      assert.equal(res.status, 400, campo);
+    }
+  });
+});
+
+test('POST /horarios rechaza datos inválidos', async () => {
+  await probarEndpoint(async (pedir) => {
+    for (const datos of [
+      { claseId: 999999 },
+      { diaSemana: 'feriado' },
+      { horaInicio: '25:00' },
+      { horaFin: '16:00' },
+    ]) {
+      const res = await pedir('', 1, {
+        method: 'POST',
+        body: {
+          ...nuevoHorario,
+          ...datos,
+        },
+      });
+
+      assert.equal(res.status, 400);
+    }
+  });
+});
+
+test('PUT /horarios/:id modifica un horario y devuelve 200', async () => {
+  await probarEndpoint(async (pedir) => {
+    const creacion = await pedir('', 1, {
+      method: 'POST',
+      body: nuevoHorario,
+    });
+
+    assert.equal(creacion.status, 201);
+
+    const creado = await creacion.json();
+
+    try {
+      const res = await pedir(`/${creado.id}`, 1, {
+        method: 'PUT',
+        body: {
+          diaSemana: 'domingo',
+          horaInicio: '10:00',
+          horaFin: '11:00',
+        },
+      });
+
+      assert.equal(res.status, 200);
+
+      const esperado = {
+        id: creado.id,
+        claseId: creado.claseId,
+        diaSemana: 'domingo',
+        horaInicio: '10:00',
+        horaFin: '11:00',
+      };
+
+      assert.deepEqual(await res.json(), esperado);
+
+      const consulta = await pedir(`/${creado.id}`, 1);
+
+      assert.equal(consulta.status, 200);
+      assert.deepEqual(await consulta.json(), esperado);
+    } finally {
+      await pedir(`/${creado.id}`, 1, {
+        method: 'DELETE',
+      });
+    }
+  });
+});
+
+test('PUT /horarios/:id rechaza campos ausentes y datos inválidos', async () => {
+  await probarEndpoint(async (pedir) => {
+    const original = horarios[0];
+
+    for (const datos of [
+      {},
+      { diaSemana: 'lunes' },
+      { ...original, diaSemana: 'feriado' },
+      { ...original, horaFin: '00:00' },
+      { ...original, claseId: original.claseId + 1 },
+    ]) {
+      const res = await pedir(`/${original.id}`, 1, {
+        method: 'PUT',
+        body: datos,
+      });
+
+      assert.equal(res.status, 400);
+    }
+
+    const consulta = await pedir(`/${original.id}`, 1);
+
+    assert.deepEqual(await consulta.json(), original);
+  });
+});
+
+test('PUT /horarios/:id devuelve 404 si no existe', async () => {
+  await probarEndpoint(async (pedir) => {
+    const res = await pedir('/999999', 1, {
+      method: 'PUT',
+      body: nuevoHorario,
+    });
+
+    assert.equal(res.status, 404);
+  });
+});
+
+test('DELETE /horarios/:id elimina el horario y devuelve 204', async () => {
+  await probarEndpoint(async (pedir) => {
+    const creacion = await pedir('', 1, {
+      method: 'POST',
+      body: nuevoHorario,
+    });
+
+    assert.equal(creacion.status, 201);
+
+    const creado = await creacion.json();
+
+    const res = await pedir(`/${creado.id}`, 1, {
+      method: 'DELETE',
+    });
+
+    assert.equal(res.status, 204);
+    assert.equal(await res.text(), '');
+
+    const consulta = await pedir(`/${creado.id}`, 1);
+
+    assert.equal(consulta.status, 404);
+  });
+});
+
+test('DELETE /horarios/:id impide eliminar el último horario de una clase', async () => {
+  await probarEndpoint(async (pedir) => {
+    const ultimo = horarios.find(
+      (h) => horarios.filter((otro) => otro.claseId === h.claseId).length === 1,
+    );
+
+    assert.ok(ultimo, 'Debe existir una clase con un solo horario');
+
+    const res = await pedir(`/${ultimo.id}`, 1, {
+      method: 'DELETE',
+    });
+
+    assert.equal(res.status, 409);
+
+    const consulta = await pedir(`/${ultimo.id}`, 1);
+
+    assert.equal(consulta.status, 200);
+    assert.deepEqual(await consulta.json(), ultimo);
+  });
+});
+
+test('DELETE /horarios/:id devuelve 404 si no existe', async () => {
+  await probarEndpoint(async (pedir) => {
+    const res = await pedir('/999999', 1, {
+      method: 'DELETE',
+    });
+
+    assert.equal(res.status, 404);
+  });
+});
+
+test('PUT y DELETE rechazan IDs inválidos', async () => {
+  await probarEndpoint(async (pedir) => {
+    for (const id of ['abc', '0', '-1', '1.5']) {
+      const modificar = await pedir(`/${id}`, 1, {
+        method: 'PUT',
+        body: nuevoHorario,
+      });
+
+      const eliminar = await pedir(`/${id}`, 1, {
+        method: 'DELETE',
+      });
+
+      assert.equal(modificar.status, 400);
+      assert.equal(eliminar.status, 400);
+    }
+  });
+});
+
+test('el ABM rechaza peticiones sin autenticación', async () => {
+  await probarEndpoint(async (pedir) => {
+    const alta = await pedir('', undefined, {
+      method: 'POST',
+      body: nuevoHorario,
+    });
+
+    const modificacion = await pedir('/1', undefined, {
+      method: 'PUT',
+      body: nuevoHorario,
+    });
+
+    const baja = await pedir('/1', undefined, {
+      method: 'DELETE',
+    });
+
+    assert.equal(alta.status, 401);
+    assert.equal(modificacion.status, 401);
+    assert.equal(baja.status, 401);
+  });
+});
+
+test('el ABM rechaza operaciones de profesores y alumnos', async () => {
+  await probarEndpoint(async (pedir) => {
+    for (const usuarioId of [101, 11]) {
+      const alta = await pedir('', usuarioId, {
+        method: 'POST',
+        body: nuevoHorario,
+      });
+
+      const modificacion = await pedir('/1', usuarioId, {
+        method: 'PUT',
+        body: nuevoHorario,
+      });
+
+      const baja = await pedir('/1', usuarioId, {
+        method: 'DELETE',
+      });
+
+      assert.equal(alta.status, 403);
+      assert.equal(modificacion.status, 403);
+      assert.equal(baja.status, 403);
+    }
   });
 });

@@ -6,6 +6,7 @@ import { requerirSesion, verificarPerfil } from '../http/auth.js';
 import { sendPaginated } from '../http/response.js';
 import { listarHorarios, obtenerHorarioPorId } from '../services/horarios.js';
 import { HttpError } from '../http/error-handler.js';
+import { crearHorario, modificarHorario, eliminarHorario } from '../services/horarios-write.js';
 
 const horariosRouter = Router();
 
@@ -53,6 +54,30 @@ horariosRouter.get('/:id', requerirSesion, (req, res) => {
   }
 
   return res.status(200).json(horario);
+});
+
+horariosRouter.post('/', requerirSesion, (req, res) => {
+  verificarPerfil(usuarios, res.locals.usuarioId, ['Administración']);
+
+  const horario = crearHorario(horarios, clases, req.body);
+
+  return res.status(201).json(horario);
+});
+
+horariosRouter.put('/:id', requerirSesion, (req, res) => {
+  verificarPerfil(usuarios, res.locals.usuarioId, ['Administración']);
+
+  const horario = modificarHorario(horarios, req.params.id, req.body);
+
+  return res.status(200).json(horario);
+});
+
+horariosRouter.delete('/:id', requerirSesion, (req, res) => {
+  verificarPerfil(usuarios, res.locals.usuarioId, ['Administración']);
+
+  eliminarHorario(horarios, req.params.id);
+
+  return res.status(204).send();
 });
 
 export default horariosRouter;
