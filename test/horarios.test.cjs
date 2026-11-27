@@ -1,7 +1,7 @@
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 
-const { listarHorarios } = require('../dist/services/horarios.js');
+const { listarHorarios, obtenerHorarioPorId } = require('../dist/services/horarios.js');
 
 const clases = [
   { id: 1, profesor: { id: 1 } },
@@ -208,4 +208,36 @@ test('rechaza parámetros inválidos con HTTP 400', () => {
   ]) {
     assert.throws(() => listarHorarios(horarios, clases, query), { status: 400 });
   }
+});
+
+test('devuelve un horario por ID con todos sus atributos', () => {
+  const resultado = obtenerHorarioPorId(horarios, '1');
+
+  assert.deepEqual(resultado, {
+    id: 1,
+    claseId: 1,
+    diaSemana: 'lunes',
+    horaInicio: '09:00',
+    horaFin: '10:00',
+  });
+});
+
+test('devuelve 404 si el horario no existe', () => {
+  assert.throws(() => obtenerHorarioPorId(horarios, '999'), { status: 404 });
+});
+
+test('rechaza IDs inválidos con HTTP 400', () => {
+  for (const id of ['abc', '0', '-1', '1.5', '', '1abc', '9007199254740992', undefined]) {
+    assert.throws(() => obtenerHorarioPorId(horarios, id), { status: 400 });
+  }
+});
+
+test('devuelve una copia sin modificar el horario original', () => {
+  const original = structuredClone(horarios[0]);
+
+  const resultado = obtenerHorarioPorId(horarios, '1');
+
+  resultado.horaInicio = '20:00';
+
+  assert.deepEqual(horarios[0], original);
 });

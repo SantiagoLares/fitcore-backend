@@ -115,3 +115,17 @@ export function listarHorarios(
     },
   });
 }
+
+export function obtenerHorarioPorId(horarios: readonly Horario[], id: unknown): Horario {
+  if (typeof id !== 'string' || !/^[1-9]\d*$/.test(id) || !Number.isSafeInteger(Number(id))) {
+    throw new HttpError(400, 'INVALID_ID', 'El ID debe ser un entero positivo');
+  }
+
+  const horario = horarios.find((item) => item.id === Number(id));
+
+  if (!horario) {
+    throw new HttpError(404, 'SCHEDULE_NOT_FOUND', 'Horario no encontrado');
+  }
+
+  return { ...horario };
+}
