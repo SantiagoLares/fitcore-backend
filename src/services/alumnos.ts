@@ -249,3 +249,17 @@ export function modificarAlumno(
 
     return alumnoActualizado;
 }
+
+// Baja lógica: el alumno no se elimina, pasa a estado "baja" y se conservan sus cuotas y pagos.
+// Todavía no existe el módulo de Inscripciones, por eso acá no se cancelan inscripciones.
+export function eliminarAlumno(alumnos: Alumno[], id: unknown): void {
+    const alumnoId = validarIdAlumno(id);
+
+    const indice = alumnos.findIndex((alumno) => alumno.id === alumnoId);
+
+    if (indice === -1) {
+        throw new HttpError(404, 'ALUMNO_NOT_FOUND', 'Alumno no encontrado');
+    }
+
+    alumnos[indice] = { ...alumnos[indice], estado: 'baja' };
+}
