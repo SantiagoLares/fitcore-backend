@@ -203,3 +203,49 @@ export function crearAlumno(
 
     return alumno;
 }
+
+function validarIdAlumno(id: unknown): number {
+    if (typeof id !== 'string' || !/^[1-9]\d*$/.test(id) || !Number.isSafeInteger(Number(id))) {
+        throw new HttpError(400, 'INVALID_ID', 'El ID debe ser un entero positivo');
+    }
+
+    return Number(id);
+}
+
+export function modificarAlumno(
+    alumnos: Alumno[],
+    usuarios: readonly Usuario[],
+    id: unknown,
+    body: unknown,
+): Alumno {
+    const alumnoId = validarIdAlumno(id);
+
+    const indice = alumnos.findIndex((alumno) => alumno.id === alumnoId);
+
+    if (indice === -1) {
+        throw new HttpError(404, 'ALUMNO_NOT_FOUND', 'Alumno no encontrado');
+    }
+
+    const cuerpo = leerCuerpo(body);
+    const datos = validarDatosAlumno(cuerpo, usuarios);
+
+    const estado = cuerpo.estado;
+
+    if (typeof estado !== 'string' || !estados.includes(estado as AlumnoEstado)) {
+        throw new HttpError(400, 'INVALID_ESTADO', 'estado debe ser activo o baja');
+    }
+
+    validarDuplicadosAlumno(alumnos, datos, alumnoId);
+
+    // id y fechaAlta no se pueden modificar.
+    const alumnoActualizado: Alumno = {
+        id: alumnoId,
+        ...datos,
+        fechaAlta: alumnos[indice].fechaAlta,
+        estado: estado as AlumnoEstado,
+    };
+
+    alumnos[indice] = alumnoActualizado;
+
+    return alumnoActualizado;
+}
