@@ -1,8 +1,8 @@
 import { HttpError } from "../http/error-handler.js";
 import { queryList, readPagination } from "../http/list-query.js";
-import type { Clase } from "../models/clase.js";
+import type { Clase, ClaseDetalle } from "../models/clase.js";
 import type { Horario } from "../models/horario.js";
-import type { ClaseDetalle } from "../models/clase.js";
+
 type Query = Record<string, unknown>;
 
 const camposOrden = [
@@ -62,11 +62,19 @@ export function listarClases(
   const order = texto(query, "order") ?? "asc";
 
   if (!camposOrden.includes(sortBy as CampoOrden)) {
-    throw new HttpError(400, "INVALID_SORT", "Campo de orden no permitido");
+    throw new HttpError(
+      400,
+      "INVALID_SORT",
+      "Campo de orden no permitido",
+    );
   }
 
   if (order !== "asc" && order !== "desc") {
-    throw new HttpError(400, "INVALID_ORDER", "order debe ser asc o desc");
+    throw new HttpError(
+      400,
+      "INVALID_ORDER",
+      "order debe ser asc o desc",
+    );
   }
 
   const search = normalizar(texto(query, "search") ?? "");
@@ -93,10 +101,15 @@ export function listarClases(
     }
   }
 
-  const dia = diaTexto === undefined ? undefined : normalizar(diaTexto);
+  const dia =
+    diaTexto === undefined ? undefined : normalizar(diaTexto);
 
   if (dia !== undefined && !dias.includes(dia)) {
-    throw new HttpError(400, "INVALID_DAY", "Día de semana inválido");
+    throw new HttpError(
+      400,
+      "INVALID_DAY",
+      "Día de semana inválido",
+    );
   }
 
   if (
@@ -122,19 +135,29 @@ export function listarClases(
 
   return queryList(clases, {
     ...pagination,
+
     filter: (clase) => {
       const nombreNormalizado = normalizar(clase.nombre);
+
+      // Sin parámetro: todas. true: con cupo. false: sin cupo.
+      const coincideCupo =
+        conCupo === undefined ||
+        (conCupo === "true"
+          ? clase.cuposDisponibles > 0
+          : clase.cuposDisponibles <= 0);
 
       return (
         nombreNormalizado.includes(search) &&
         nombreNormalizado.includes(nombre) &&
         (tipo === undefined ||
           normalizar(clase.tipo) === normalizar(tipo)) &&
-        (profesorId === undefined || clase.profesor.id === profesorId) &&
+        (profesorId === undefined ||
+          clase.profesor.id === profesorId) &&
         (dia === undefined || clasesDelDia.has(clase.id)) &&
-        (conCupo !== "true" || clase.cuposDisponibles > 0)
+        coincideCupo
       );
     },
+
     compare: (a, b) => {
       const primero = a[campo];
       const segundo = b[campo];
@@ -180,6 +203,8 @@ export function obtenerClasePorId(
 
   return {
     ...clase,
-    horarios: horarios.filter((horario) => horario.claseId === clase.id),
+    horarios: horarios.filter(
+      (horario) => horario.claseId === clase.id,
+    ),
   };
 }
